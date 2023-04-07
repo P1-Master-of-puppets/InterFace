@@ -8,6 +8,27 @@ MainGameScene::MainGameScene(QString background, QGraphicsView* mainView)
     item->setPixmap(scaled);
     addItem(item);
 
+    QPixmap filter("assets/filtre.png");
+    QPixmap scaledFilter = filter.scaled(QSize(mainView->width(), mainView->height()));
+    GFilter = new QGraphicsPixmapItem();
+    GFilter->setPixmap(scaledFilter);
+
+    QPixmap control("assets/control_menu.png");
+    //QPixmap scaledControl = control.scaled(QSize(control.width(), control.height())*2);
+    GControl = new QGraphicsPixmapItem();
+    GControl->moveBy(720,70);
+    GControl->setPixmap(control);
+
+    QPixmap reset("assets/reset.png");
+    GReset = new QGraphicsPixmapItem();
+    GReset->moveBy(720, 250);
+    GReset->setPixmap(reset);
+
+    QPixmap exit("assets/reset.png");
+    GExit = new QGraphicsPixmapItem();
+    GExit->moveBy(720, 430);
+    GExit->setPixmap(exit);
+
     level = new TextCounter(QString::number(1), mainView, "level");
     tetris = new TextCounter(QString::number(0), mainView, "tetris");
     score = new TextCounter(QString::number(0), mainView, "score");
@@ -83,7 +104,22 @@ void MainGameScene::keyPressEvent(QKeyEvent* event)
 
     updateHoldPiece(piece);
     updateNextPiece(piece);
-
+    if (menuUp == false)
+    {
+        addItem(GFilter);
+        addItem(GControl);
+        addItem(GReset);
+        addItem(GExit);
+        menuUp = true;
+    }
+    else
+    {
+        removeItem(GFilter);
+        removeItem(GControl);
+        removeItem(GReset);
+        removeItem(GExit);
+        menuUp = false;
+    }
 }
 
 

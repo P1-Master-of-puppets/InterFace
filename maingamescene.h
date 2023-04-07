@@ -49,6 +49,12 @@ private:
     Coordinate holdPieceCoords = { 0,0 };
     Coordinate nextPieceCoords = { 0,0 };
 
+    QGraphicsPixmapItem* GFilter;
+    QGraphicsPixmapItem* GControl;
+    QGraphicsPixmapItem* GReset;
+    QGraphicsPixmapItem* GExit;
+    bool menuUp = false;
+
 
 
 };
