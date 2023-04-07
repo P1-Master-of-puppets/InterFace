@@ -25,108 +25,240 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Header Files\Communication">
+      <UniqueIdentifier>{91d58ae9-a018-470b-bd72-b356bc6e963a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Controller">
+      <UniqueIdentifier>{903f9402-ac7e-4506-9d78-b54bea599721}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DAL">
+      <UniqueIdentifier>{09c6155d-0f9e-45d0-94c8-e1f744db9f92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Display">
+      <UniqueIdentifier>{052c6383-5281-447e-a333-4d71e27cf622}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Logic">
+      <UniqueIdentifier>{60abc81d-c15e-4d8a-b507-86d8396ba907}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Tests">
+      <UniqueIdentifier>{dd4017af-c3d3-4541-83e4-3c94175adb7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Controller\Action">
+      <UniqueIdentifier>{a046b6df-95f3-4ac6-b5cb-a45fb9776632}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Logic\Pieces">
+      <UniqueIdentifier>{5d08c7d3-c99f-407a-8c32-f248c859f731}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Communication">
+      <UniqueIdentifier>{e9e99d6b-4bd3-4a60-8327-c5544dd41162}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Controller">
+      <UniqueIdentifier>{6ded184f-0344-43f6-bb7c-1838178aa63f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DAL">
+      <UniqueIdentifier>{21f29192-0b21-4d31-8409-a86d5f79fbf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Display">
+      <UniqueIdentifier>{90cd1c78-a098-47ac-906a-8df592c925a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Logic">
+      <UniqueIdentifier>{8e0f143d-20f9-41bf-b482-2b5a7ee2a1a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Tests">
+      <UniqueIdentifier>{f0dfbbdf-4010-4ca7-ac3b-3b00bc8e7fc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Controller\Actions">
+      <UniqueIdentifier>{30e57aef-e204-48cb-9568-fa336607c36e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Logic\Pieces">
+      <UniqueIdentifier>{2671d04f-016a-4cc1-b63f-4f69354d979b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scenes">
+      <UniqueIdentifier>{ce1f42d2-8c4f-4f53-9b16-e4953e4536c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Renderers">
+      <UniqueIdentifier>{61a29b84-00f4-415b-81e5-a01ff5e70c1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Renderers">
+      <UniqueIdentifier>{61474be6-74c2-47aa-93c4-5cc392b697a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scenes">
+      <UniqueIdentifier>{ad4b3324-3c9b-4d1f-a3a0-f711b2328583}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="boardrenderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="colorArray2D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="flashingtext.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="gamestartscene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="maingamescene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="textcounter.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="boardrenderer.cpp">
+      <Filter>Source Files\Renderers</Filter>
     </ClCompile>
     <ClCompile Include="pieceRenderer.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Renderers</Filter>
     </ClCompile>
-    <ClCompile Include="piece.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="textcounter.cpp">
+      <Filter>Source Files\Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="flashingtext.cpp">
+      <Filter>Source Files\Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="gamestartscene.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="maingamescene.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="colorArray2D.cpp">
+      <Filter>Source Files\Logic</Filter>
     </ClCompile>
     <ClCompile Include="leftL.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Logic\Pieces</Filter>
     </ClCompile>
     <ClCompile Include="leftS.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Logic\Pieces</Filter>
     </ClCompile>
     <ClCompile Include="longBar.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Logic\Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="piece.cpp">
+      <Filter>Source Files\Logic\Pieces</Filter>
     </ClCompile>
     <ClCompile Include="rightL.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Logic\Pieces</Filter>
     </ClCompile>
     <ClCompile Include="rightS.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Logic\Pieces</Filter>
     </ClCompile>
     <ClCompile Include="square.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Logic\Pieces</Filter>
     </ClCompile>
     <ClCompile Include="thomas.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Logic\Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="SerialPort.cpp">
+      <Filter>Source Files\Communication</Filter>
+    </ClCompile>
+    <ClCompile Include="holdAction.cpp">
+      <Filter>Source Files\Controller\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="input.cpp">
+      <Filter>Source Files\Controller\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="singleInputAction.cpp">
+      <Filter>Source Files\Controller\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="translateAction.cpp">
+      <Filter>Source Files\Controller\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="action.cpp">
+      <Filter>Source Files\Controller\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="controller.cpp">
+      <Filter>Source Files\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="gameActions.cpp">
+      <Filter>Source Files\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="keyboard.cpp">
+      <Filter>Source Files\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="inputSetting.cpp">
+      <Filter>Source Files\DAL</Filter>
+    </ClCompile>
+    <ClCompile Include="consoleDisplay.cpp">
+      <Filter>Source Files\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Source Files\Logic</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="boardrenderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="colorArray2D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="colors.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <CustomBuild Include="flashingtext.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="gamestartscene.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <ClInclude Include="maingamescene.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Renderers</Filter>
     </ClInclude>
     <ClInclude Include="textcounter.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Renderers</Filter>
     </ClInclude>
     <ClInclude Include="pieceRenderer.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Renderers</Filter>
     </ClInclude>
-    <ClInclude Include="piece.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="maingamescene.h">
+      <Filter>Header Files\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="coordinate.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="colors.h">
+      <Filter>Header Files\Logic</Filter>
     </ClInclude>
     <ClInclude Include="leftL.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Logic\Pieces</Filter>
     </ClInclude>
     <ClInclude Include="leftS.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Logic\Pieces</Filter>
     </ClInclude>
     <ClInclude Include="longBar.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Logic\Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="piece.h">
+      <Filter>Header Files\Logic\Pieces</Filter>
     </ClInclude>
     <ClInclude Include="rightL.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Logic\Pieces</Filter>
     </ClInclude>
     <ClInclude Include="rightS.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Logic\Pieces</Filter>
     </ClInclude>
     <ClInclude Include="square.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Logic\Pieces</Filter>
     </ClInclude>
     <ClInclude Include="thomas.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Logic\Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="SerialPort.hpp">
+      <Filter>Header Files\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="action.h">
+      <Filter>Header Files\Controller\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="holdAction.h">
+      <Filter>Header Files\Controller\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>Header Files\Controller\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="singleInputAction.h">
+      <Filter>Header Files\Controller\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="translateAction.h">
+      <Filter>Header Files\Controller\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="control.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="controller.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="controllerInputOutput.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="gameActions.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="keyboard.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="inputSetting.h">
+      <Filter>Header Files\DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="json.hpp">
+      <Filter>Header Files\DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="consoleDisplay.h">
+      <Filter>Header Files\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Header Files\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="gameState.h">
+      <Filter>Header Files\Logic</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -148,5 +280,21 @@
     <CustomBuild Include="release\moc_predefs.h.cbt">
       <Filter>Generated Files</Filter>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="gamestartscene.h">
+      <Filter>Header Files\Scenes</Filter>
+    </CustomBuild>
+    <CustomBuild Include="flashingtext.h">
+      <Filter>Header Files\Renderers</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="colorArray2D.h">
+      <Filter>Header Files\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="coordinate.h">
+      <Filter>Header Files\Logic</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
