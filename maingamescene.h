@@ -6,9 +6,14 @@
 #include <QGraphicsPixmapItem>
 #include <QString>
 #include <QRandomGenerator>
+#include <QKeyEvent>
 #include "textcounter.h"
 #include "boardrenderer.h"
+#include "pieceRenderer.h"
 #include "colorArray2D.h"
+#include "piece.h"
+#include "rightL.h"
+
 
 class MainGameScene : public QGraphicsScene
 {
@@ -16,13 +21,13 @@ class MainGameScene : public QGraphicsScene
 public:
     MainGameScene(QString background, QGraphicsView* mainView);
 
-    void refreshUI(ColorArray2D* _board, int _piece, int _holdPiece, int _nextPiece,
+    void refreshUI(ColorArray2D* _board, Piece* _piece, Piece* _holdPiece, Piece* _nextPiece,
                    int score, int tetris, int level);
 
     void updateBoard(ColorArray2D* _board);
-    void updatePiece(int _piece);
-    void updateHoldPiece(int _holdPiece);
-    void updateNextPiece(int _nextPiece);
+    void updatePiece(Piece* _piece);
+    void updateHoldPiece(Piece* _holdPiece);
+    void updateNextPiece(Piece* _nextPiece);
 
     void updateScore(int newScore);
     void updateTetris(int newTetris);
@@ -37,7 +42,13 @@ private:
 
     BoardRenderer* monBoard;
 
-    QRandomGenerator mf;
+    PieceRenderer* gamePiece;
+    PieceRenderer* holdPiece;
+    PieceRenderer* nextPiece;
+
+    Coordinate holdPieceCoords = { 0,0 };
+    Coordinate nextPieceCoords = { 0,0 };
+
 
 
 };

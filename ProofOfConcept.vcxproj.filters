@@ -48,6 +48,33 @@
     <ClCompile Include="textcounter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="pieceRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="piece.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="leftL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="leftS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="longBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rightL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rightS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="square.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="thomas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="boardrenderer.h">
@@ -69,6 +96,36 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="textcounter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pieceRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="piece.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="coordinate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="leftL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="leftS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="longBar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rightL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rightS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="square.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="thomas.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
