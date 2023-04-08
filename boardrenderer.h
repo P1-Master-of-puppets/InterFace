@@ -6,6 +6,7 @@
 #include <QPixmap>
 #include "colorArray2D.h"
 #include "coordinate.h"
+#include "screenMapper.h"
 
 class BoardRenderer
 {

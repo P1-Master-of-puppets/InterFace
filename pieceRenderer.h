@@ -7,6 +7,7 @@
 #include <QPixmap>
 #include "piece.h"
 #include "coordinate.h"
+#include "screenMapper.h"
 
 class PieceRenderer
 {

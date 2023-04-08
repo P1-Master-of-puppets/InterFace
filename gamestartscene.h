@@ -7,7 +7,9 @@
 #include <QGraphicsPixmapItem>
 #include <QDebug>
 
-#include "flashingtext.h"
+#include "flashingTextRenderer.h"
+#include "fullScreenRenderer.h"
+#include "screenMapper.h"
 
 class GameStartScene : public QGraphicsScene
 {
@@ -27,7 +29,8 @@ private:
     void anyKeyPressed();
     QGraphicsView* mainView;
     QGraphicsScene* nextScene;
-    FlashingText* monText;
+    FlashingTextRenderer* monText;
+    FullScreenRenderer* splashScreen;
 
 
 };

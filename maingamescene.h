@@ -7,7 +7,9 @@
 #include <QString>
 #include <QRandomGenerator>
 #include <QKeyEvent>
-#include "textcounter.h"
+#include "screenMapper.h"
+#include "textRenderer.h"
+#include "fullScreenRenderer.h"
 #include "boardrenderer.h"
 #include "pieceRenderer.h"
 #include "colorArray2D.h"
@@ -36,9 +38,10 @@ public:
     void keyPressEvent(QKeyEvent *event);
 
 private:
-    TextCounter* level;
-    TextCounter* tetris;
-    TextCounter* score;
+
+    TextRenderer* level;
+    TextRenderer* tetris;
+    TextRenderer* score;
 
     BoardRenderer* monBoard;
 
@@ -46,8 +49,8 @@ private:
     PieceRenderer* holdPiece;
     PieceRenderer* nextPiece;
 
-    Coordinate holdPieceCoords = { 0,0 };
-    Coordinate nextPieceCoords = { 0,0 };
+    FullScreenRenderer* background;
+
 
     QGraphicsPixmapItem* GFilter;
     QGraphicsPixmapItem* GControl;

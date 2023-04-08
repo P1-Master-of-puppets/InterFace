@@ -3,30 +3,22 @@
 GameStartScene::GameStartScene(QGraphicsScene* next, QGraphicsView* view) :
     mainView(view), nextScene(next)
 {
+
+    //Intialise le background
+    splashScreen = new FullScreenRenderer(QString("assets/loadingScreen.png"), this, QSize(view->width(), view->height()));
+
     //Initialise variable
-    monText = new FlashingText(QString("Press any key..."), mainView);
-
-    //Load "assets/loadingScreen.png" as a background
-    QString fileName = "assets/loadingScreen.png";
-    QPixmap monPixMap(fileName);
-    QPixmap scaled = monPixMap.scaled(QSize(mainView->width(), mainView->height()));
-    QGraphicsPixmapItem* item = new QGraphicsPixmapItem();
-    item->setPixmap(scaled);
-    addItem(item);
-    addItem(monText);
-
-
+    monText = new FlashingTextRenderer(QString("Press any key to start..."), this, ScreenMapper::mapCoords(960, 1020, this->width(), this->height()), 750);
 }
 
 GameStartScene::GameStartScene(QGraphicsScene *next, QGraphicsView *view, QString fileName):
     mainView(view), nextScene(next)
 {
-    //Load "assets/loadingScreen.png" as a background
-    QPixmap monPixMap(fileName);
-    QPixmap scaled = monPixMap.scaled(QSize(mainView->width(), mainView->height()));
-    QGraphicsPixmapItem* item = new QGraphicsPixmapItem();
-    item->setPixmap(scaled);
-    addItem(item);
+    //Intialise le background
+    splashScreen = new FullScreenRenderer(QString("assets/loadingScreen.png"), this, QSize(view->width(), view->height()));
+
+    //Initialise variable
+    monText = new FlashingTextRenderer(QString("Press any key to start..."), this, ScreenMapper::mapCoords(960, 1020, this->width(), this->height()), 750);
 }
 
 void GameStartScene::keyPressEvent(QKeyEvent *event)

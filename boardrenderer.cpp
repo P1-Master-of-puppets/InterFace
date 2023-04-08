@@ -3,9 +3,8 @@
 BoardRenderer::BoardRenderer(QGraphicsScene* scene): gameScene(scene)
 {
     //Sets position varibales
-    corner.x = 0.36197916 * scene->width();
-    corner.y = 0.00925925 * scene->height();
-    pieceWidth = 0.0491 * gameScene->height();
+    corner = ScreenMapper::mapCoords(695, 10, scene->width(), scene->height());
+    pieceWidth = ScreenMapper::mapCoords(0, 53, 0, scene->height()).y;
 ;
     singleColors[0] = (new QPixmap("assets/TransBlock.png"))->scaled(QSize(pieceWidth,pieceWidth));
     singleColors[1] = (new QPixmap("assets/CyanBlock.png"))->scaled(QSize(pieceWidth,pieceWidth));

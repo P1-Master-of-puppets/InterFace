@@ -3,11 +3,8 @@
 PieceRenderer::PieceRenderer(QGraphicsScene* scene) : gameScene(scene)
 {
 	//Sets position varibales
-	position.x = 0.36197916 * scene->width();
-	position.y = 0.00925925 * scene->height();
-
-	pieceWidth = 0.0491 * gameScene->height();
-
+	position = ScreenMapper::mapCoords(695, 10, scene->width(), scene->height());
+	pieceWidth = ScreenMapper::mapCoords(0, 53, 0, scene->height()).y;
 	absolute = false;
 
 
