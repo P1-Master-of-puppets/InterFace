@@ -4,47 +4,52 @@ MainGameLoopThread::MainGameLoopThread(MainGameScene* setGameScene) {
 	gameScene = setGameScene;
 	QTimer* flashTimer = new QTimer();
 	connect(flashTimer, &QTimer::timeout, this, &MainGameLoopThread::mainGameLoop);
-	flashTimer->start(10);
+	flashTimer->start(1);
 
-	game.start();
-	game.refreshUI();
+
+	game = new Game(0, gameScene);
+	keyboard = new Keyboard;
+	actions = new GameActions(keyboard);
+
+	game->start();
+	game->refreshUI();
 }
 
 void MainGameLoopThread::mainGameLoop() {
 
-	//while (game.getState() == GameState::OnGoing)
-	//{
-		game.refreshUI();
+	if (game->getState() == GameState::OnGoing)
+	{
+		game->refreshUI();
 
 
 		if (actions->holdPiece())
 		{
-			game.swapPiece();
+			game->swapPiece();
 		}
 
 		if (actions->translateLeft())
-			game.translatePieceLeft();
+			game->translatePieceLeft();
 		else if (actions->translateRight())
-			game.translatePieceRight();
+			game->translatePieceRight();
 
 		if (actions->rotateRight())
-			game.rotatePieceRight();
+			game->rotatePieceRight();
 		else if (actions->rotateLeft())
-			game.rotatePieceLeft();
+			game->rotatePieceLeft();
 
 		if (actions->dropInstant())
 		{
-			game.instantDrop();
+			game->instantDrop();
 		}
 		if (actions->dropFaster()) {
-			game.translatePieceDown();
+			game->translatePieceDown();
 		}
 
-		if (duration_cast<milliseconds>(high_resolution_clock::now() - lastAutomaticDrop).count() > game.getGravitySpeed()) {
-			if (duration_cast<milliseconds>(high_resolution_clock::now() - lastAutomaticDrop).count() > game.getGravitySpeed()) {
+		if (duration_cast<milliseconds>(high_resolution_clock::now() - lastAutomaticDrop).count() > game->getGravitySpeed()) {
+			if (duration_cast<milliseconds>(high_resolution_clock::now() - lastAutomaticDrop).count() > game->getGravitySpeed()) {
 				lastAutomaticDrop = high_resolution_clock::now();
-				game.translatePieceDown();
+				game->translatePieceDown();
 			}
 		}
-	//}
+	}
 }

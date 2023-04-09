@@ -22,14 +22,13 @@ private slots:
 
 private:
 	MainGameScene* gameScene;
-	int startingLevel = 0;
 	//Controller* controller = new Controller(7, 115200);
-	Game game = Game(startingLevel, gameScene);
+	Game* game;
 	//game.setController(controller);
 	Keyboard* keyboard = new Keyboard();
 	GameActions* actions = new GameActions(keyboard);
 
-	high_resolution_clock::time_point lastAutomaticDrop = high_resolution_clock::now();
+	std::chrono::high_resolution_clock::time_point lastAutomaticDrop = std::chrono::high_resolution_clock::now();
 
 };
 
