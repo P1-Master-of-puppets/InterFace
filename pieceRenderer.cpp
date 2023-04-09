@@ -58,7 +58,7 @@ void PieceRenderer::renderPieceRelative(Piece* _piece)
 
 			if (j < _piece->getPiece()->getWidth() && i < _piece->getPiece()->getHeight()) {
 				pixels[i][j].setPos(position.x + _piece->getCoordinate().x * pieceWidth + pieceWidth * j,
-					position.y + _piece->getCoordinate().y * pieceWidth + pieceWidth * i);
+					position.y + _piece->getCoordinate().y * pieceWidth + pieceWidth * i - 2 * pieceWidth);
 				pixels[i][j].setPixmap(singleColors[int(_piece->getPiece()->getGrid()[i][j])]);
 			}
 			else {
