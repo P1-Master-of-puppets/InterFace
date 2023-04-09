@@ -1,3 +1,4 @@
+#pragma once
 #ifndef GAME_H__
 #define GAME_H__
 
@@ -16,11 +17,13 @@
 #include "gameState.h"
 #include "consoleDisplay.h"
 #include "controller.h"
+#include "maingamescene.h"
 
 
 class Game
 {
 private:
+    MainGameScene* _gameScene;
     GameState _state;
     Piece* _currentPiece = nullptr;
     Piece* _holdPiece = nullptr;
@@ -49,6 +52,7 @@ private:
     void addTetris();
     void updateThreat();
 public:
+    Game(int level, MainGameScene* setGameScene);
     Game(int level);
     ~Game();
 

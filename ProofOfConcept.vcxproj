@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Release|x64">
@@ -160,6 +160,7 @@
     <ClCompile Include="leftS.cpp" />
     <ClCompile Include="longBar.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mainGameLoopThread.cpp" />
     <ClCompile Include="maingamescene.cpp" />
     <ClCompile Include="piece.cpp" />
     <ClCompile Include="pieceRenderer.cpp" />
@@ -191,6 +192,7 @@
     <ClInclude Include="inputSetting.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="keyboard.h" />
+    <ClInclude Include="mainGameLoopThread.h" />
     <ClInclude Include="screenMapper.h" />
     <ClInclude Include="SerialPort.hpp" />
     <ClInclude Include="singleInputAction.h" />

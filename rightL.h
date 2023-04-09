@@ -1,3 +1,4 @@
+#pragma once
 #ifndef RightL_H__
 #define RightL_H__
 

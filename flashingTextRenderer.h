@@ -1,3 +1,4 @@
+#pragma once
 #ifndef FLASHINGTEXTRENDERER_H
 #define FLASHINGTEXTRENDERER_H
 

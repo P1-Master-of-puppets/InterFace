@@ -1,3 +1,4 @@
+#pragma once
 #ifndef THOMAS_H__
 #define THOMAS_H__
 

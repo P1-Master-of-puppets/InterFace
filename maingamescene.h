@@ -1,3 +1,4 @@
+#pragma once
 #ifndef MAINGAMESCENE_H
 #define MAINGAMESCENE_H
 
@@ -7,6 +8,7 @@
 #include <QString>
 #include <QRandomGenerator>
 #include <QKeyEvent>
+
 #include "screenMapper.h"
 #include "textRenderer.h"
 #include "fullScreenRenderer.h"
@@ -14,7 +16,6 @@
 #include "pieceRenderer.h"
 #include "colorArray2D.h"
 #include "piece.h"
-#include "rightL.h"
 
 
 class MainGameScene : public QGraphicsScene

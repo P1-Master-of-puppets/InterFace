@@ -1,3 +1,4 @@
+#pragma once
 #ifndef TRANSLATEACTION_H__
 #define TRANSLATEACTION_H__
 

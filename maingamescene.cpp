@@ -4,7 +4,7 @@ MainGameScene::MainGameScene(QString backgroundPath, QGraphicsView* mainView)
 {
     background = new FullScreenRenderer(backgroundPath, this, QSize(mainView->width(), mainView->height()));
 
-    QPixmap filter("assets/filtre.png");
+    /*QPixmap filter("assets/filtre.png");
     QPixmap scaledFilter = filter.scaled(QSize(mainView->width(), mainView->height()));
     GFilter = new QGraphicsPixmapItem();
     GFilter->setPixmap(scaledFilter);
@@ -23,7 +23,7 @@ MainGameScene::MainGameScene(QString backgroundPath, QGraphicsView* mainView)
     QPixmap exit("assets/reset.png");
     GExit = new QGraphicsPixmapItem();
     GExit->moveBy(720, 430);
-    GExit->setPixmap(exit);
+    GExit->setPixmap(exit);*/
 
     Coordinate dim = ScreenMapper::mapCoords(287, 92, this->width(), this->height());
 
@@ -49,6 +49,8 @@ void MainGameScene::refreshUI(ColorArray2D* _board, Piece* _piece, Piece* _holdP
     updateLevel(level);
 }
 
+
+
 void MainGameScene::updateBoard(ColorArray2D* _board)
 {
     monBoard->renderBoard(_board);
@@ -61,12 +63,16 @@ void MainGameScene::updatePiece(Piece* _piece)
 
 void MainGameScene::updateHoldPiece(Piece* _holdPiece)
 {
-    holdPiece->renderPiece(_holdPiece);
+    if (_holdPiece != nullptr) {
+        holdPiece->renderPiece(_holdPiece);
+    }
 }
 
 void MainGameScene::updateNextPiece(Piece* _nextPiece)
 {
-    nextPiece->renderPiece(_nextPiece);
+    if (_nextPiece != nullptr) {
+        nextPiece->renderPiece(_nextPiece);
+    }
 }
 
 void MainGameScene::updateScore(int newScore)
@@ -86,7 +92,7 @@ void MainGameScene::updateLevel(int newLevel)
 
 void MainGameScene::keyPressEvent(QKeyEvent* event)
 {
-    RightL* piece = new RightL();
+    /*RightL* piece = new RightL();
 
     updateHoldPiece(piece);
     updateNextPiece(piece);
@@ -105,7 +111,9 @@ void MainGameScene::keyPressEvent(QKeyEvent* event)
         removeItem(GReset);
         removeItem(GExit);
         menuUp = false;
-    }
+    }*/
+
+
 }
 
 

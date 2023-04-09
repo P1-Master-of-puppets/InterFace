@@ -1,3 +1,4 @@
+#pragma once
 #ifndef BOARDRENDERER_H
 #define BOARDRENDERER_H
 

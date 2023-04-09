@@ -1,10 +1,13 @@
+#pragma once
 #ifndef CONSOLEDISPLAY_H__
 #define CONSOLEDISPLAY_H__
 
-#include "colorArray2D.h"
-#include "piece.h"
 #include <iostream>
 #include <windows.h>
+
+#include "colorArray2D.h"
+#include "piece.h"
+
 
 class ConsoleDisplay
 {

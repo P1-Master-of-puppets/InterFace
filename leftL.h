@@ -1,3 +1,4 @@
+#pragma once
 #ifndef LEFTL_H__
 #define LEFTL_H__
 

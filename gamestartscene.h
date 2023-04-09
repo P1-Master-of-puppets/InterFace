@@ -1,3 +1,4 @@
+#pragma once
 #ifndef GAMESTARTSCENE_H
 #define GAMESTARTSCENE_H
 
@@ -10,15 +11,16 @@
 #include "flashingTextRenderer.h"
 #include "fullScreenRenderer.h"
 #include "screenMapper.h"
+#include "mainGameLoopThread.h"
 
 class GameStartScene : public QGraphicsScene
 {
     Q_OBJECT
 
 public:
-    GameStartScene(QGraphicsScene* next, QGraphicsView* view);
+    GameStartScene(MainGameScene* next, QGraphicsView* view);
 
-    GameStartScene(QGraphicsScene* next, QGraphicsView* view, QString filePath);
+    GameStartScene(MainGameScene* next, QGraphicsView* view, QString filePath);
 
     void keyPressEvent(QKeyEvent *event);
 
@@ -28,7 +30,7 @@ private:
 
     void anyKeyPressed();
     QGraphicsView* mainView;
-    QGraphicsScene* nextScene;
+    MainGameScene* nextScene;
     FlashingTextRenderer* monText;
     FullScreenRenderer* splashScreen;
 

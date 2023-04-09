@@ -1,3 +1,4 @@
+#pragma once
 #ifndef GAME_ACTIONS_H__
 #define GAME_ACTIONS_H__
 
@@ -11,7 +12,6 @@
 #include "controller.h"
 #include "controllerInputOutput.h"
 
-using namespace std::chrono;
 
 class GameActions
 {

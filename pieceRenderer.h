@@ -1,6 +1,6 @@
+#pragma once
 #ifndef PIECERENDERER_H
 #define PIECERENDERER_H
-#pragma once
 
 #include <QGraphicsPixmapItem>
 #include <QGraphicsScene>

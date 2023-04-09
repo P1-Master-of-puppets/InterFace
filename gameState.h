@@ -1,3 +1,4 @@
+#pragma once
 #ifndef GAMESTATE_H__
 #define GAMESTATE_H__
 

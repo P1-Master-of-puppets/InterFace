@@ -1,5 +1,7 @@
 #include "translateAction.h"
 
+using namespace std::chrono;
+
 TranslateAction::TranslateAction() : HoldAction(100)
 {
 	initialInterval = 500;

@@ -1,3 +1,4 @@
+#pragma once
 #ifndef LEFTS_H__
 #define LEFTS_H__
 

@@ -171,6 +171,9 @@
     <ClCompile Include="screenMapper.cpp">
       <Filter>Source Files\Logic</Filter>
     </ClCompile>
+    <ClCompile Include="mainGameLoopThread.cpp">
+      <Filter>Source Files\Logic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="boardrenderer.h">
@@ -264,6 +267,9 @@
       <Filter>Header Files\Renderers</Filter>
     </ClInclude>
     <ClInclude Include="screenMapper.h">
+      <Filter>Header Files\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="mainGameLoopThread.h">
       <Filter>Header Files\Logic</Filter>
     </ClInclude>
   </ItemGroup>

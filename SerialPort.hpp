@@ -6,6 +6,8 @@
 */
 
 #pragma once
+#ifndef SERIALPORT_HPP
+#define SERIALPORT_HPP
 
 #define ARDUINO_WAIT_TIME 2000
 #define MAX_DATA_LENGTH 255
@@ -29,3 +31,5 @@ public:
     bool isConnected();
     void closeSerial();
 };
+
+#endif // !SERIALPORT_HPP

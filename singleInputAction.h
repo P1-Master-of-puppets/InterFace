@@ -1,8 +1,9 @@
+#pragma once
 #ifndef SINGLEINPUTACTION_H__
 #define SINGLEINPUTACTION_H__
 
-#include "action.h"
 #include <chrono>
+#include "action.h"
 
 using namespace std::chrono;
 

@@ -1,3 +1,4 @@
+#pragma once
 #ifndef LONGBAR_H__
 #define LONGBAR_H__
 

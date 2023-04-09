@@ -1,3 +1,4 @@
+#pragma once
 #ifndef SQUARE_H__
 #define SQUARE_H__
 

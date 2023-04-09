@@ -1,8 +1,14 @@
 #include "game.h"
 
 
+Game::Game(int level, MainGameScene* setGameScene) : Game(level)
+{
+	_gameScene = setGameScene;
+}
+
 Game::Game(int level)
 {
+	_gameScene = nullptr;
 	_level = level;
 	srand(time(0));
 	_board.fill(Color::Transparent);
@@ -125,23 +131,29 @@ void Game::start()
 
 void Game::refreshUI()
 {
-	static bool firstTime = true;
+	if (_gameScene == nullptr) {
 
-	if (_isDirty)
-	{
-		COORD topLeft = { 0, 0 };
-		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), topLeft);
+		static bool firstTime = true;
 
-		_isDirty = false;
-		std::cout << "\nScore: " << _score << "\n" << "Level: " << _level << "\n" << "Nb of lines: " << _totalLines << "\n";
+		if (_isDirty)
+		{
+			COORD topLeft = { 0, 0 };
+			SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), topLeft);
 
-		_display.displayBoardWithPiece(_board, _currentPiece, extraRow);
+			_isDirty = false;
+			std::cout << "\nScore: " << _score << "\n" << "Level: " << _level << "\n" << "Nb of lines: " << _totalLines << "\n";
 
+			_display.displayBoardWithPiece(_board, _currentPiece, extraRow);
+
+		}
+
+		if (firstTime) {
+			_display.displayEmptyHoldPiece(_board);
+			firstTime = false;
+		}
 	}
-
-	if (firstTime) {
-		_display.displayEmptyHoldPiece(_board);
-		firstTime = false;
+	else {
+		_gameScene->refreshUI(&_board, _currentPiece, _holdPiece, _holdPiece, _score, _totalTetris, _level);
 	}
 
 }

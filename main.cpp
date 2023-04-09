@@ -5,9 +5,9 @@
 #include <QScreen>
 #include <QList>
 
-
 #include "gamestartscene.h"
 #include "maingamescene.h"
+#include "mainGameLoopThread.h"
 
 int main(int argc, char *argv[])
 {

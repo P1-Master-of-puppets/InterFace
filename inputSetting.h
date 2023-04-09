@@ -1,4 +1,3 @@
-
 #pragma once
 #ifndef INPUTSETTING_H__
 #define INPUTSETTING_H__

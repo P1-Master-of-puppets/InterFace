@@ -1,3 +1,4 @@
+#pragma once
 #ifndef INPUT_H__
 #define INPUT_H__
 

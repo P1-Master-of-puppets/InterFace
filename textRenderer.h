@@ -1,6 +1,6 @@
+#pragma once
 #ifndef TEXTRENDERER_H
 #define TEXTRENDERER_H
-
 
 #include <QObject>
 #include <QString>

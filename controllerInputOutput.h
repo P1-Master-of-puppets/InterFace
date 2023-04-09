@@ -1,3 +1,4 @@
+#pragma once
 #ifndef CONTROLLERINPUTOUTPUT_H__
 #define CONTROLLERINPUTOUTPUT_H__
 

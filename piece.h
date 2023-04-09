@@ -1,6 +1,9 @@
+#pragma once
 #ifndef PIECE_H__
 #define PIECE_H__
+
 #include <iostream>
+
 #include "colorArray2D.h"
 #include "coordinate.h"
 #include "colors.h"

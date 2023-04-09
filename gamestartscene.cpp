@@ -1,6 +1,6 @@
 #include "gamestartscene.h"
 
-GameStartScene::GameStartScene(QGraphicsScene* next, QGraphicsView* view) :
+GameStartScene::GameStartScene(MainGameScene* next, QGraphicsView* view) :
     mainView(view), nextScene(next)
 {
 
@@ -11,7 +11,7 @@ GameStartScene::GameStartScene(QGraphicsScene* next, QGraphicsView* view) :
     monText = new FlashingTextRenderer(QString("Press any key to start..."), this, ScreenMapper::mapCoords(960, 1020, this->width(), this->height()), 750);
 }
 
-GameStartScene::GameStartScene(QGraphicsScene *next, QGraphicsView *view, QString fileName):
+GameStartScene::GameStartScene(MainGameScene *next, QGraphicsView *view, QString fileName):
     mainView(view), nextScene(next)
 {
     //Intialise le background
@@ -34,5 +34,6 @@ GameStartScene::~GameStartScene()
 void GameStartScene::anyKeyPressed()
 {
     //Loads the next scene onto the view
+    MainGameLoopThread* thread = new MainGameLoopThread(nextScene);
     mainView->setScene(nextScene);
 }

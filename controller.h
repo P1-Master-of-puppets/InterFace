@@ -1,11 +1,13 @@
+#pragma once
 #ifndef CONTROLLER_H__
 #define CONTROLLER_H__
 
 #include <atomic>
 #include <thread>
-#include "SerialPort.hpp"
 #include <exception>
 #include <string>
+
+#include "SerialPort.hpp"
 #include "controllerInputOutput.h"
 #include "control.h"
 

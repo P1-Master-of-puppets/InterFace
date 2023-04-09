@@ -1,3 +1,4 @@
+#pragma once
 #ifndef COORDINATE_H__
 #define COORDINATE_H__
 

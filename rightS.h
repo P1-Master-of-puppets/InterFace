@@ -1,3 +1,4 @@
+#pragma once
 #ifndef RightS_H__
 #define RightS_H__
 
