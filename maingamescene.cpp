@@ -20,7 +20,7 @@ MainGameScene::MainGameScene(QString backgroundPath, QGraphicsView* mainView)
     GReset->moveBy(720, 250);
     GReset->setPixmap(reset);
 
-    QPixmap exit("assets/reset.png");
+    QPixmap exit("assets/exit.png");
     GExit = new QGraphicsPixmapItem();
     GExit->moveBy(720, 430);
     GExit->setPixmap(exit);*/
