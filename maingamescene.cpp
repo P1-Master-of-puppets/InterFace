@@ -27,15 +27,15 @@ MainGameScene::MainGameScene(QString backgroundPath, QGraphicsView* mainView)
 
     Coordinate dim = ScreenMapper::mapCoords(287, 92, this->width(), this->height());
 
-    level = new TextRenderer(QString::number(1), this, ScreenMapper::mapCoords(228, 909, this->width(), this->height()), dim);
-    tetris = new TextRenderer(QString::number(0), this, ScreenMapper::mapCoords(228, 708, this->width(), this->height()), dim);
-    score = new TextRenderer(QString::number(0), this, ScreenMapper::mapCoords(228, 507, this->width(), this->height()), dim);
+    level = new TextRenderer(QString::number(1), this, ScreenMapper::mapCoords(228, 680, this->width(), this->height()), dim);
+    tetris = new TextRenderer(QString::number(0), this, ScreenMapper::mapCoords(228, 480, this->width(), this->height()), dim);
+    score = new TextRenderer(QString::number(0), this, ScreenMapper::mapCoords(228, 278, this->width(), this->height()), dim);
 
     monBoard = new BoardRenderer(this);
     gamePiece = new PieceRenderer(this);
 
-    holdPiece = new PieceRenderer(this, ScreenMapper::mapCoords(247, 157, this->width(), this->height()) , ScreenMapper::mapCoords(250, 206, this->width(), this->height()));
-    nextPiece = new PieceRenderer(this, ScreenMapper::mapCoords(1403, 261, this->width(), this->height()), ScreenMapper::mapCoords(255, 212, this->width(), this->height()));
+    holdPiece = new PieceRenderer(this, ScreenMapper::mapCoords(1398, 278, this->width(), this->height()) , ScreenMapper::mapCoords(250, 206, this->width(), this->height()));
+    nextPiece = new PieceRenderer(this, ScreenMapper::mapCoords(1398, 697, this->width(), this->height()), ScreenMapper::mapCoords(255, 212, this->width(), this->height()));
 }
 
 void MainGameScene::refreshUI(ColorArray2D* _board, Piece* _piece, Piece* _holdPiece, Piece* _nextPiece, int score, int tetris, int level)
