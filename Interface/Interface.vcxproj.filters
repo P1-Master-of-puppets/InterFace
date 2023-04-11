@@ -116,9 +116,9 @@
     <ClInclude Include="textcounter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="toggledbutton.h">
+    <CustomBuild Include="toggledbutton.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="debug\moc_flashingtext.cpp">
@@ -133,5 +133,11 @@
     <CustomBuild Include="release\moc_predefs.h.cbt">
       <Filter>Generated Files</Filter>
     </CustomBuild>
+    <ClCompile Include="debug\moc_toggledbutton.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_toggledbutton.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

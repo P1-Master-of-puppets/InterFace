@@ -9,24 +9,24 @@
 #include <QKeyEvent>
 #include <QObject>
 
-class ToggledButton : public QGraphicsPixmapItem {
+class ToggledButton : public QObject, public QGraphicsPixmapItem
+{
+	Q_OBJECT
 public:
 	ToggledButton(QPixmap toggledImg, QPixmap unToggledImg, Coordinate coordinate, QGraphicsScene* scene, QGraphicsItem* parent = nullptr);
 	~ToggledButton();
-	
-	void changeToggle(bool value);
 
 protected:
 	void hoverEnterEvent(QGraphicsSceneHoverEvent* event);
 	void hoverLeaveEvent(QGraphicsSceneHoverEvent* event);
 	void mouseReleaseEvent(QGraphicsSceneMouseEvent* event);
 	void keyPressEvent(QKeyEvent* event);
-	
+
 public slots:
-	void toggled();
+	void changeToggle(bool value);
 signals:
 	void used();
-	
+
 private:
 	bool _isToggled;
 	QGraphicsScene* _scene;
