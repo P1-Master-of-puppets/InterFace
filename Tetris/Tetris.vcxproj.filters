@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Logic">
+      <UniqueIdentifier>{c32b4567-cd8b-4885-8d41-fde791be43cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Logic\Pieces">
+      <UniqueIdentifier>{cfa9b562-03a8-4828-be7d-9a0d764bdc17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Logic">
+      <UniqueIdentifier>{f41349ef-da34-4ba5-8e4a-c96d2ff927c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Logic\Pieces">
+      <UniqueIdentifier>{abdf6d94-d3a4-4dc3-96e5-b3d2125f60cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Tests">
+      <UniqueIdentifier>{f1861afe-cd7f-47da-acaa-7c0f2953e51a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Test">
+      <UniqueIdentifier>{1581cce9-61f8-4ba4-9e07-30cb01a66d5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Display">
+      <UniqueIdentifier>{39b005f2-1064-46fb-b776-82401678123d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Display">
+      <UniqueIdentifier>{50e099da-00b9-42ba-bd21-322bfd61b339}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Controller">
+      <UniqueIdentifier>{9cfefe1a-508f-4dc4-8dd8-7614e2b3d3f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Controller">
+      <UniqueIdentifier>{97642535-1242-40ef-bf35-3ed520cdc141}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Controller\Action">
+      <UniqueIdentifier>{97e9c1db-0671-443d-b48f-a26e26977f2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Controller\Action">
+      <UniqueIdentifier>{7defb8d4-61da-4056-a8a3-ba4381c2f7c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DAL">
+      <UniqueIdentifier>{544241c8-a8f1-4de3-be2c-07cffd00c63e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DAL">
+      <UniqueIdentifier>{c61735cd-278f-4ae2-96bf-42aa0170308c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Communication">
+      <UniqueIdentifier>{7d86db56-68dd-4a2f-adb4-cab2437690e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Communication">
+      <UniqueIdentifier>{bf578333-e769-4783-a931-175188f687b4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Tetris.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="leftL.cpp">
+      <Filter>Source Files\Logic\Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="leftS.cpp">
+      <Filter>Source Files\Logic\Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="longBar.cpp">
+      <Filter>Source Files\Logic\Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="piece.cpp">
+      <Filter>Source Files\Logic\Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="rightL.cpp">
+      <Filter>Source Files\Logic\Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="rightS.cpp">
+      <Filter>Source Files\Logic\Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="square.cpp">
+      <Filter>Source Files\Logic\Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="thomas.cpp">
+      <Filter>Source Files\Logic\Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Source Files\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="testGame.cpp">
+      <Filter>Source Files\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="consoleDisplay.cpp">
+      <Filter>Source Files\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="colorArray2D.cpp">
+      <Filter>Source Files\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="testDisplay.cpp">
+      <Filter>Source Files\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="testPiece.cpp">
+      <Filter>Source Files\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="gameState.h">
+      <Filter>Header Files\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="gameActions.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="gameActions.cpp">
+      <Filter>Source Files\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="keyboard.cpp">
+      <Filter>Source Files\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="action.cpp">
+      <Filter>Source Files\Controller\Action</Filter>
+    </ClCompile>
+    <ClCompile Include="singleInputAction.cpp">
+      <Filter>Source Files\Controller\Action</Filter>
+    </ClCompile>
+    <ClCompile Include="holdAction.cpp">
+      <Filter>Source Files\Controller\Action</Filter>
+    </ClCompile>
+    <ClCompile Include="translateAction.cpp">
+      <Filter>Source Files\Controller\Action</Filter>
+    </ClCompile>
+    <ClCompile Include="controller.cpp">
+      <Filter>Source Files\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="SerialPort.cpp">
+      <Filter>Source Files\Communication</Filter>
+    </ClCompile>
+    <ClCompile Include="testActions.cpp">
+      <Filter>Source Files\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="control.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="input.cpp">
+      <Filter>Source Files\Controller\Action</Filter>
+    </ClCompile>
+    <ClCompile Include="inputSetting.cpp">
+      <Filter>Source Files\DAL</Filter>
+    </ClCompile>
+    <ClCompile Include="gameDisplay.cpp">
+      <Filter>Source Files\Display</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="colors.h">
+      <Filter>Header Files\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Header Files\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="longBar.h">
+      <Filter>Header Files\Logic\Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="piece.h">
+      <Filter>Header Files\Logic\Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="rightL.h">
+      <Filter>Header Files\Logic\Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="rightS.h">
+      <Filter>Header Files\Logic\Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="square.h">
+      <Filter>Header Files\Logic\Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="leftL.h">
+      <Filter>Header Files\Logic\Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="leftS.h">
+      <Filter>Header Files\Logic\Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="coordinate.h">
+      <Filter>Header Files\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="colorArray2D.h">
+      <Filter>Header Files\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="testGame.h">
+      <Filter>Header Files\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="consoleDisplay.h">
+      <Filter>Header Files\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="testDisplay.h">
+      <Filter>Header Files\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="thomas.h">
+      <Filter>Header Files\Logic\Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="keyboard.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="holdAction.h">
+      <Filter>Header Files\Controller\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="action.h">
+      <Filter>Header Files\Controller\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="singleInputAction.h">
+      <Filter>Header Files\Controller\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="translateAction.h">
+      <Filter>Header Files\Controller\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="controllerInputOutput.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="controller.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="SerialPort.hpp">
+      <Filter>Header Files\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="testActions.h">
+      <Filter>Header Files\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>Header Files\Controller\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="json.hpp">
+      <Filter>Header Files\DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="inputSetting.h">
+      <Filter>Header Files\DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="gameDisplay.h">
+      <Filter>Header Files\Display</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

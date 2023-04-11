@@ -1,7 +1,8 @@
 #include "toggledbutton.h"
 
-ToggledButton::ToggledButton(QPixmap toggledImg, QPixmap unToggledImg, Coordinate coordinate, QGraphicsScene* scene, QGraphicsItem* parent) : QGraphicsPixmapItem(parent), _scene(scene)
+ToggledButton::ToggledButton(int id,QPixmap toggledImg, QPixmap unToggledImg, Coordinate coordinate, QGraphicsScene* scene, QGraphicsItem* parent) : QGraphicsPixmapItem(parent), _scene(scene)
 {
+	_id = id;
 	setPixmap(unToggledImg);
 	_toggledImg = toggledImg;
 	_unToggledImg = unToggledImg;
@@ -40,7 +41,7 @@ void ToggledButton::hoverLeaveEvent(QGraphicsSceneHoverEvent* event)
 void ToggledButton::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 {
 	if (_isToggled) {
-		emit used();
+		emit used(_id);
 	}
 }
 
@@ -50,6 +51,6 @@ void ToggledButton::keyPressEvent(QKeyEvent* event) {
 		return;
 
 	if (_isToggled) {
-		emit used();
+		emit used(_id);
 	}
 }

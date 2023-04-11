@@ -19,7 +19,7 @@ GameMenuScene::GameMenuScene(QGraphicsView* mainView)
 	QPixmap startButtonGlow(START_BUTTON_GLOW_IMAGE_PATH);
 	Coordinate center = RendererHelper::fitImageInHorizontalMiddle(startButton.width(), mainView->width());
 	
-	_startButton = new ToggledButton(startButtonGlow, startButton, center, this);
+	_startButton = new ToggledButton(1,startButtonGlow, startButton, center, this);
 	_startButton->show();
 }
 

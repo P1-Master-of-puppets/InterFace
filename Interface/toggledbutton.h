@@ -13,7 +13,7 @@ class ToggledButton : public QObject, public QGraphicsPixmapItem
 {
 	Q_OBJECT
 public:
-	ToggledButton(QPixmap toggledImg, QPixmap unToggledImg, Coordinate coordinate, QGraphicsScene* scene, QGraphicsItem* parent = nullptr);
+	ToggledButton(int id,QPixmap toggledImg, QPixmap unToggledImg, Coordinate coordinate, QGraphicsScene* scene, QGraphicsItem* parent = nullptr);
 	~ToggledButton();
 
 protected:
@@ -25,9 +25,10 @@ protected:
 public slots:
 	void changeToggle(bool value);
 signals:
-	void used();
+	void used(int id);
 
 private:
+	int _id;
 	bool _isToggled;
 	QGraphicsScene* _scene;
 	QPixmap _toggledImg;

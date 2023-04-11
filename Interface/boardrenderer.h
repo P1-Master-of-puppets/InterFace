@@ -5,10 +5,12 @@
 #include <QGraphicsPixmapItem>
 #include <QGraphicsScene>
 #include <QPixmap>
-#include "./leftS.h"
-#include "./coordinate.h"
+#include "colorArray2D.h"
+#include "coordinate.h"
 #include "screenMapper.h"
+#include "rendererhelper.h"
 #include "assets.h"
+
 class BoardRenderer
 {
 public:
