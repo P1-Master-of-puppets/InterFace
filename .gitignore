@@ -445,3 +445,5 @@ github/gitignore: A collection of useful .gitignore templates
 MakeFile.*
 MakeFile
 .qmake.stash
+assets/Thumbs.db
+assets/Thumbs.db:encryptable
