@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
     mainView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     mainView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     mainView->setFrameStyle(QFrame::NoFrame);
+
     MainGameScene* mainGame = new MainGameScene(QString("assets/background.png"), mainView);
     GameStartScene* startScene = new GameStartScene(mainGame, mainView);
 

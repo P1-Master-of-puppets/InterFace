@@ -33,6 +33,7 @@ public:
 	GameActions(Controller* controller, Keyboard* keyboard);
 	GameActions(Keyboard* keyboard);
 	~GameActions();
+	void initAllActions();
 	bool translateLeft();
 	bool translateRight();
 	bool rotateRight();

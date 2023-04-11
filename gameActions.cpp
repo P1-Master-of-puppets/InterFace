@@ -32,6 +32,18 @@ GameActions::~GameActions()
 {
 }
 
+void GameActions::initAllActions()
+{
+	translateLeft();
+	translateRight();
+	rotateRight();
+	rotateLeft();
+	dropFaster();
+	dropInstant();
+	menu();
+	holdPiece();
+}
+
 bool GameActions::translateLeft()
 {
 	return translateLeftAction.isActive();

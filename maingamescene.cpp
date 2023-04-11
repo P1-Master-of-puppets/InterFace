@@ -34,8 +34,8 @@ MainGameScene::MainGameScene(QString backgroundPath, QGraphicsView* mainView)
     monBoard = new BoardRenderer(this);
     gamePiece = new PieceRenderer(this);
 
-    holdPiece = new PieceRenderer(this, ScreenMapper::mapCoords(1398, 278, this->width(), this->height()) , ScreenMapper::mapCoords(250, 206, this->width(), this->height()));
-    nextPiece = new PieceRenderer(this, ScreenMapper::mapCoords(1398, 697, this->width(), this->height()), ScreenMapper::mapCoords(255, 212, this->width(), this->height()));
+    holdPiece = new PieceRenderer(this, ScreenMapper::mapCoords(1398, 697, this->width(), this->height()) , ScreenMapper::mapCoords(250, 206, this->width(), this->height()));
+    nextPiece = new PieceRenderer(this, ScreenMapper::mapCoords(1398, 278, this->width(), this->height()), ScreenMapper::mapCoords(255, 212, this->width(), this->height()));
 }
 
 void MainGameScene::refreshUI(ColorArray2D* _board, Piece* _piece, Piece* _holdPiece, Piece* _nextPiece, int score, int tetris, int level)

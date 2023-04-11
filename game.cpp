@@ -153,7 +153,7 @@ void Game::refreshUI()
 		}
 	}
 	else {
-		_gameScene->refreshUI(&_board, _currentPiece, _holdPiece, _holdPiece, _score, _totalTetris, _level);
+		_gameScene->refreshUI(&_board, _currentPiece, _holdPiece, _queue.front(), _score, _totalTetris, _level);
 	}
 
 }

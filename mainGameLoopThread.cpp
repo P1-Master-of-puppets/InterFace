@@ -2,22 +2,23 @@
 
 MainGameLoopThread::MainGameLoopThread(MainGameScene* setGameScene) {
 	gameScene = setGameScene;
-	QTimer* flashTimer = new QTimer();
-	connect(flashTimer, &QTimer::timeout, this, &MainGameLoopThread::mainGameLoop);
-	flashTimer->start(1);
-
+	gameTimer = new QTimer();
+	connect(gameTimer, &QTimer::timeout, this, &MainGameLoopThread::mainGameLoop);
+	gameTimer->start(1);
 
 	game = new Game(0, gameScene);
 	keyboard = new Keyboard;
 	actions = new GameActions(keyboard);
+	actions->initAllActions();
 
 	game->start();
 	game->refreshUI();
 }
 
+
 void MainGameLoopThread::mainGameLoop() {
 
-	if (game->getState() == GameState::OnGoing)
+	if (game->getState() == GameState::OnGoing && init)
 	{
 		game->refreshUI();
 
@@ -51,5 +52,8 @@ void MainGameLoopThread::mainGameLoop() {
 				game->translatePieceDown();
 			}
 		}
+	}
+	else if(duration_cast<milliseconds>(high_resolution_clock::now() - lastAutomaticDrop).count() > 500 && !init){
+		init = true;
 	}
 }

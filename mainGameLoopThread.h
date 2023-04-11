@@ -27,6 +27,8 @@ private:
 	//game.setController(controller);
 	Keyboard* keyboard = new Keyboard();
 	GameActions* actions = new GameActions(keyboard);
+	QTimer* gameTimer;
+	bool init = false;
 
 	std::chrono::high_resolution_clock::time_point lastAutomaticDrop = std::chrono::high_resolution_clock::now();
 
