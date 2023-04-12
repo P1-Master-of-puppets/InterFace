@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 
     startScene->setSceneRect(mainView->rect());
 
-    mainView->setScene(startScene);
+    mainView->setScene(scene);
 
     mainView->show();
 

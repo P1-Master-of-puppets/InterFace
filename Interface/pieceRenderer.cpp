@@ -7,8 +7,6 @@ PieceRenderer::PieceRenderer(QGraphicsScene* scene) : gameScene(scene)
 	pieceWidth = ScreenMapper::mapCoords(0, 53, 0, scene->height()).y;
 	absolute = false;
 
-
-
 	singleColors[0] = (new QPixmap("assets/TransBlock.png"))->scaled(QSize(pieceWidth, pieceWidth));
 	singleColors[1] = (new QPixmap("assets/CyanBlock.png"))->scaled(QSize(pieceWidth, pieceWidth));
 	singleColors[2] = (new QPixmap("assets/YellowBlock.png"))->scaled(QSize(pieceWidth, pieceWidth));

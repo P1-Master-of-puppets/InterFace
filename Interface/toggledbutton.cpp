@@ -1,8 +1,7 @@
 #include "toggledbutton.h"
 
-ToggledButton::ToggledButton(int id,QPixmap toggledImg, QPixmap unToggledImg, Coordinate coordinate, QGraphicsScene* scene, QGraphicsItem* parent) : QGraphicsPixmapItem(parent), _scene(scene)
+ToggledButton::ToggledButton(QPixmap toggledImg, QPixmap unToggledImg, Coordinate coordinate, QGraphicsScene* scene, QGraphicsItem* parent) : QGraphicsPixmapItem(parent), _scene(scene)
 {
-	_id = id;
 	setPixmap(unToggledImg);
 	_toggledImg = toggledImg;
 	_unToggledImg = unToggledImg;
@@ -13,6 +12,11 @@ ToggledButton::ToggledButton(int id,QPixmap toggledImg, QPixmap unToggledImg, Co
 
 ToggledButton::~ToggledButton()
 {
+}
+
+void ToggledButton::setId(int id)
+{
+	_id = id;
 }
 
 void ToggledButton::changeToggle(bool value)
@@ -31,17 +35,19 @@ void ToggledButton::changeToggle(bool value)
 void ToggledButton::hoverEnterEvent(QGraphicsSceneHoverEvent* event)
 {
 	changeToggle(true);
+	emit toggledByMouse(_id, true);
 }
 
 void ToggledButton::hoverLeaveEvent(QGraphicsSceneHoverEvent* event)
 {
 	changeToggle(false);
+	emit toggledByMouse(_id, false);
 }
 
 void ToggledButton::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 {
 	if (_isToggled) {
-		emit used(_id);
+		emit clicked();
 	}
 }
 
@@ -51,6 +57,6 @@ void ToggledButton::keyPressEvent(QKeyEvent* event) {
 		return;
 
 	if (_isToggled) {
-		emit used(_id);
+		emit clicked();
 	}
 }

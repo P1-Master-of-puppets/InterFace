@@ -23,7 +23,8 @@ SOURCES += \
     textcounter.cpp \
     textRenderer.cpp \
     pieceRenderer.cpp \
-    main.cpp
+    main.cpp \
+    buttonGroup2D.cpp
 
 
 HEADERS += \
@@ -41,7 +42,8 @@ HEADERS += \
     screenMapper.h \
     textcounter.h \
     textRenderer.h \
-    pieceRenderer.h
+    pieceRenderer.h \
+    buttonGroup2D.h
 
 INCLUDEPATH += ..\Tetris
 DEPENDPATH += ..\Tetris

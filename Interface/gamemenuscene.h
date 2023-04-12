@@ -11,6 +11,7 @@
 #include "toggledbutton.h"
 #include "coordinate.h"
 #include "rendererhelper.h"
+#include "buttonGroup2D.h"
 
 class GameMenuScene : public QGraphicsScene
 {
@@ -18,10 +19,15 @@ public:
 	GameMenuScene(QGraphicsView* mainView);
 	~GameMenuScene();
 
+public slots:
+	void exitButtonClicked();
+	void controlButtonClicked();
+	void startButtonClicked();
+
 private:
 	FullScreenRenderer* _background;
 	QGraphicsView* _mainView;
-	ToggledButton* _startButton;
+	ButtonGroup2D* _buttonGroup;
 };
 
 #endif // GAMEMENUSCENE_H
