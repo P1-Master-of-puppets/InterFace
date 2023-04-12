@@ -15,6 +15,13 @@ MainGameLoopThread::MainGameLoopThread(MainGameScene* setGameScene) {
 	game->refreshUI();
 }
 
+MainGameLoopThread::~MainGameLoopThread()
+{
+	delete gameTimer;
+	delete game;
+	delete actions;
+	delete keyboard;
+}
 
 void MainGameLoopThread::mainGameLoop() {
 

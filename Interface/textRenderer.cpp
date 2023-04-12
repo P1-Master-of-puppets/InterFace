@@ -54,3 +54,8 @@ TextRenderer::TextRenderer(QString setText, QGraphicsScene* setRenderScene, Coor
 
     updateText(text);
 }
+
+TextRenderer::~TextRenderer()
+{
+    renderScene->removeItem(this);
+}

@@ -1,8 +1,8 @@
 #include "maingamescene.h"
 
-MainGameScene::MainGameScene(QGraphicsView* mainView)
+MainGameScene::MainGameScene(QSize viewSize)
 {
-    background = new FullScreenRenderer(QPixmap(BACKGROUND_IMAGE_PATH), this, QSize(mainView->width(), mainView->height()));
+    background = new FullScreenRenderer(QPixmap(BACKGROUND_IMAGE_PATH), this, viewSize);
 
     /*QPixmap filter("assets/filtre.png");
     QPixmap scaledFilter = filter.scaled(QSize(mainView->width(), mainView->height()));
@@ -41,6 +41,18 @@ MainGameScene::MainGameScene(QGraphicsView* mainView)
 MainGameScene::~MainGameScene()
 {
     //TODO, NE PAS OUBLIER DE DELETE LES ELEMENTS VISUELS QUAND NOUS NOUS DEBARASSONS DE CET OBJET, LA MAJORITE DES PROPRIETES SONT DES POINTEURS
+    
+    delete level;
+    delete tetris;
+    delete score;
+
+    delete monBoard;
+
+    delete gamePiece;
+    delete holdPiece;
+    delete nextPiece;
+
+    delete background;
 }
 
 void MainGameScene::refreshUI(ColorArray2D* _board, Piece* _piece, Piece* _holdPiece, Piece* _nextPiece, int score, int tetris, int level)

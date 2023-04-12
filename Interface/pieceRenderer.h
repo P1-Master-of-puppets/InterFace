@@ -14,6 +14,7 @@ class PieceRenderer
 public:
 	PieceRenderer(QGraphicsScene* scene);
 	PieceRenderer(QGraphicsScene* scene, Coordinate setCorner, Coordinate setDimensions);
+	~PieceRenderer();
 	void renderPiece(Piece* _piece);
 
 private:

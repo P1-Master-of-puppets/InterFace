@@ -60,13 +60,13 @@
     <ClCompile Include="rendererhelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="sceneManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="screenMapper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="textRenderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="textcounter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="toggledbutton.cpp">
@@ -89,6 +89,9 @@
     <ClInclude Include="fullScreenRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="gameSceneSignals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="gamemenuscene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -107,13 +110,13 @@
     <ClInclude Include="rendererhelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="sceneManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="screenMapper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="textRenderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="textcounter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <CustomBuild Include="toggledbutton.h">

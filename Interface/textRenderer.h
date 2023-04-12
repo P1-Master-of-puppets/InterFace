@@ -19,6 +19,8 @@ public:
 	//Places the text's center on centerPosition
 	TextRenderer(QString setText, QGraphicsScene* setRenderScene, Coordinate centerPosition);
 
+	~TextRenderer();
+
 	//Update the text
 	void updateText(int value);
 	void updateText(QString value);

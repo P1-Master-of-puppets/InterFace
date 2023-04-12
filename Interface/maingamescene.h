@@ -10,6 +10,8 @@
 #include <QKeyEvent>
 #include <QObject>
 
+#include "gameSceneSignals.h"
+
 #include "screenMapper.h"
 #include "textRenderer.h"
 #include "fullScreenRenderer.h"
@@ -20,11 +22,11 @@
 #include "assets.h"
 #include "gameDisplay.h"
 
-class MainGameScene : public GameDisplay, public QGraphicsScene
+class MainGameScene : public GameDisplay, public GameSceneSignals
 {
 
 public:
-    MainGameScene(QGraphicsView* mainView);
+    MainGameScene(QSize viewSize);
     ~MainGameScene();
     void refreshUI(ColorArray2D* _board, Piece* _piece, Piece* _holdPiece, Piece* _nextPiece,
                    int score, int tetris, int level);
@@ -54,11 +56,11 @@ private:
     FullScreenRenderer* background;
 
 
-    QGraphicsPixmapItem* GFilter;
-    QGraphicsPixmapItem* GControl;
-    QGraphicsPixmapItem* GReset;
-    QGraphicsPixmapItem* GExit;
-    bool menuUp = false;
+    //QGraphicsPixmapItem * GFilter;
+    //QGraphicsPixmapItem* GControl;
+    //QGraphicsPixmapItem* GReset;
+    //QGraphicsPixmapItem* GExit;
+    //bool menuUp = false;
 };
 
 #endif // MAINGAMESCENE_H

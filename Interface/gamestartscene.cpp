@@ -1,11 +1,10 @@
 #include "gamestartscene.h"
 
-GameStartScene::GameStartScene(MainGameScene* next, QGraphicsView* view) :
-    mainView(view), nextScene(next)
+GameStartScene::GameStartScene(QSize mainView)
 {
 
     //Intialise le background
-    splashScreen = new FullScreenRenderer(QString(LOADING_SCREEN_IMAGE_PATH), this, QSize(view->width(), view->height()));
+    splashScreen = new FullScreenRenderer(QString(LOADING_SCREEN_IMAGE_PATH), this, mainView);
 
     //Initialise variable
     monText = new FlashingTextRenderer(QString("Press any key to start..."), this, ScreenMapper::mapCoords(960, 1020, this->width(), this->height()), 750);
@@ -13,11 +12,14 @@ GameStartScene::GameStartScene(MainGameScene* next, QGraphicsView* view) :
 
 void GameStartScene::keyPressEvent(QKeyEvent *event)
 {
-    MainGameLoopThread* thread = new MainGameLoopThread(nextScene);
-    mainView->setScene(nextScene);
+    emit goToMainGame();
 }
 
 GameStartScene::~GameStartScene()
 {
-    //Delete required
+    removeItem(monText);
+    removeItem(splashScreen);
+
+    delete monText;
+    delete splashScreen;
 }

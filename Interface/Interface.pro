@@ -19,11 +19,11 @@ SOURCES += \
     maingamescene.cpp \
     rendererhelper.cpp \
     screenMapper.cpp \
-    textcounter.cpp \
     textRenderer.cpp \
     pieceRenderer.cpp \
     main.cpp \
-    buttonGroup2D.cpp
+    buttonGroup2D.cpp \
+    sceneManager.cpp
 
 
 HEADERS += \
@@ -38,10 +38,11 @@ HEADERS += \
     maingamescene.h \
     rendererhelper.h \
     screenMapper.h \
-    textcounter.h \
     textRenderer.h \
     pieceRenderer.h \
-    buttonGroup2D.h
+    buttonGroup2D.h \
+    sceneManager.h \
+    gameSceneSignals.h
 
 INCLUDEPATH += ..\Tetris
 DEPENDPATH += ..\Tetris

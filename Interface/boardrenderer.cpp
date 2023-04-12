@@ -31,6 +31,15 @@ BoardRenderer::BoardRenderer(QGraphicsScene* scene) : gameScene(scene)
 
 }
 
+BoardRenderer::~BoardRenderer()
+{
+	for (int i = 0; i < boardHeight; i++) {
+		delete[] mapPixel[i];
+	}
+
+	delete mapPixel;
+}
+
 void BoardRenderer::renderBoard(ColorArray2D* _board)
 {
 
