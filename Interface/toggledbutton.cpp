@@ -1,11 +1,10 @@
 #include "toggledbutton.h"
 
-ToggledButton::ToggledButton(QPixmap toggledImg, QPixmap unToggledImg, Coordinate coordinate, QGraphicsScene* scene, QGraphicsItem* parent) : QGraphicsPixmapItem(parent), _scene(scene)
+ToggledButton::ToggledButton(QPixmap toggledImg, QPixmap unToggledImg, Coordinate coordinate, QGraphicsItem* parent) : QGraphicsPixmapItem(parent)
 {
 	setPixmap(unToggledImg);
 	_toggledImg = toggledImg;
 	_unToggledImg = unToggledImg;
-	scene->addItem(this);
 	moveBy(coordinate.x, coordinate.y);
 	setAcceptHoverEvents(true);
 }
@@ -23,13 +22,16 @@ void ToggledButton::changeToggle(bool value)
 {
 	_isToggled = value;
 	if (value) {
-		grabKeyboard();
 		setPixmap(_toggledImg);
 	}
 	else {
-		ungrabKeyboard();
 		setPixmap(_unToggledImg);
 	}
+}
+
+void ToggledButton::listen()
+{
+	setEnabled(true);
 }
 
 void ToggledButton::hoverEnterEvent(QGraphicsSceneHoverEvent* event)
@@ -52,6 +54,7 @@ void ToggledButton::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 }
 
 void ToggledButton::keyPressEvent(QKeyEvent* event) {
+	int i = 0;
 	if (event->key() != Qt::Key_Enter &&
 		event->key() != Qt::Key_Return)
 		return;
@@ -59,4 +62,8 @@ void ToggledButton::keyPressEvent(QKeyEvent* event) {
 	if (_isToggled) {
 		emit clicked();
 	}
+}
+
+void ToggledButton::click() {
+	emit clicked();
 }

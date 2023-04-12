@@ -13,10 +13,11 @@ class ToggledButton : public QObject, public QGraphicsPixmapItem
 {
 	Q_OBJECT
 public:
-	ToggledButton(QPixmap toggledImg, QPixmap unToggledImg, Coordinate coordinate, QGraphicsScene* scene, QGraphicsItem* parent = nullptr);
+	ToggledButton(QPixmap toggledImg, QPixmap unToggledImg, Coordinate coordinate, QGraphicsItem* parent = nullptr);
 	~ToggledButton();
 	void setId(int id);
 	void changeToggle(bool value);
+	void listen();
 protected:
 	void hoverEnterEvent(QGraphicsSceneHoverEvent* event);
 	void hoverLeaveEvent(QGraphicsSceneHoverEvent* event);
@@ -24,13 +25,13 @@ protected:
 	void keyPressEvent(QKeyEvent* event);
 
 public slots:
+	void click();
 signals:
 	void clicked();
 	void toggledByMouse(int id, bool state);
 private:
 	int _id;
 	bool _isToggled;
-	QGraphicsScene* _scene;
 	QPixmap _toggledImg;
 	QPixmap _unToggledImg;
 };

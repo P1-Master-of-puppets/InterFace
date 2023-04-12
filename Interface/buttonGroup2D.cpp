@@ -6,6 +6,7 @@ ButtonGroup2D::ButtonGroup2D(int height, int width)
 	_height = height;
 	_width = width;
 	_buttons = new ToggledButton * [height * width];
+	
 	grabKeyboard();
 }
 
@@ -21,19 +22,25 @@ ButtonGroup2D::~ButtonGroup2D()
 	delete[] _buttons;
 }
 
-void ButtonGroup2D::setButton(int col, int row, ToggledButton* button)
+int ButtonGroup2D::setButton(int col, int row, ToggledButton* button)
 {
 	QObject::connect(button, &ToggledButton::toggledByMouse,
 		this, &ButtonGroup2D::buttonToggledByMouse);
-
+	
 	int id = col + row * _width;
 	_buttons[col + row * _width] = button;
 	button->setId(col + row * _width);
 	button->show();
+	return id;
 }
 
 void ButtonGroup2D::keyPressEvent(QKeyEvent* event)
 {
+	if (_currentButton >= 0 && event->key() == Qt::Key_Enter ||
+		event->key() == Qt::Key_Return)
+	{
+		_buttons[_currentButton]->click();
+	}
 	//Navigate trough the option with the keypressed events
 	if (event->key() == Qt::Key_Down || event->key() == Qt::Key_S)
 	{
@@ -98,5 +105,13 @@ void ButtonGroup2D::buttonToggledByMouse(int id, bool state)
 	else
 	{
 		_currentButton = -1;
+	}
+}
+
+void ButtonGroup2D::mouseReleaseEvent(QMouseEvent* event)
+{
+	if (_currentButton >= 0)
+	{
+		_buttons[_currentButton]->click();
 	}
 }
