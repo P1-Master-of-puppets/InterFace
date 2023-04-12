@@ -162,6 +162,7 @@
     <ClCompile Include="control.h" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gameDisplay.cpp" />
+    <ClCompile Include="gameInformation.cpp" />
     <ClCompile Include="gameState.h" />
     <ClCompile Include="gameActions.cpp" />
     <ClCompile Include="gameActions.h" />
@@ -195,7 +196,7 @@
     <ClInclude Include="controller.h" />
     <ClInclude Include="coordinate.h" />
     <ClInclude Include="game.h" />
-    <ClInclude Include="gameDisplay.h" />
+    <ClInclude Include="gameInformation.h" />
     <ClInclude Include="inputSetting.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="holdAction.h" />

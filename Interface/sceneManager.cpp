@@ -26,7 +26,9 @@ void SceneManager::goToControlSetup() {
 }
 
 void SceneManager::goToMainGame() {
-
+	MainGameScene* scene = new MainGameScene(getSize());
+	changeView(scene);
+	scene->startGame();
 }
 
 void SceneManager::exitApplication() {
@@ -48,6 +50,5 @@ void SceneManager::changeView(ApplicationScene* newScene)
 
 	if (_currentScene != nullptr)
 		delete temp;
-
 }
 

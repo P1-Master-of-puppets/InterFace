@@ -48,16 +48,10 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="mainGameLoopThread.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="maingamescene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="pieceRenderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="rendererhelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="sceneManager.cpp">
@@ -95,16 +89,10 @@
     <ClInclude Include="gamestartscene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="mainGameLoopThread.h">
+    <CustomBuild Include="maingamescene.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="maingamescene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    </CustomBuild>
     <ClInclude Include="pieceRenderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="rendererhelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <CustomBuild Include="sceneManager.h">
@@ -131,6 +119,12 @@
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="release\moc_gamemenuscene.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_maingamescene.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_maingamescene.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
     <CustomBuild Include="debug\moc_predefs.h.cbt">

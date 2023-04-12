@@ -9,12 +9,10 @@ GameMenuScene::GameMenuScene(QSize windowSize) : ApplicationScene(windowSize)
 	QPainter painter(backgroundImage);
 	painter.drawPixmap(0, 0, filtreImage);
 	painter.end();
-
 	setBackground(backgroundImage->copy());
-	
-	setSceneRect(QRect(0, 0, windowSize.width(), windowSize.height()));
 	delete backgroundImage;
 #pragma endregion
+
 
 	QPixmap startButton(START_BUTTON_IMAGE_PATH);
 	QPixmap startButtonGlow(START_BUTTON_GLOW_IMAGE_PATH);
@@ -25,7 +23,7 @@ GameMenuScene::GameMenuScene(QSize windowSize) : ApplicationScene(windowSize)
 	QPixmap controlButton(CONTROL_BUTTON_IMAGE_PATH);
 	QPixmap controlButtonGlow(CONTROL_BUTTON_GLOW_IMAGE_PATH);
 
-	Coordinate center = RendererHelper::fitImageInHorizontalMiddle(startButton.width(), windowSize.width());
+	Coordinate center = ScreenMapper::fitImageInHorizontalMiddle(startButton.width(), windowSize.width());
 
 	ToggledButton* _startButton = new ToggledButton(startButtonGlow, startButton, center);
 	QObject::connect(_startButton, &ToggledButton::clicked,
@@ -57,7 +55,6 @@ GameMenuScene::~GameMenuScene()
 	delete _buttonGroup;
 }
 
-
 void GameMenuScene::exitButtonClicked() {
 	emit exitApplication();
 }
@@ -67,5 +64,5 @@ void GameMenuScene::controlButtonClicked() {
 }
 
 void GameMenuScene::startButtonClicked() {
-	emit startButtonClicked();
+	emit goToMainGame();
 }

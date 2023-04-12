@@ -1,14 +1,7 @@
 #include "game.h"
 
-
-Game::Game(int level, GameDisplay* setGameScene) : Game(level)
-{
-	_gameScene = setGameScene;
-}
-
 Game::Game(int level)
 {
-	_gameScene = nullptr;
 	_level = level;
 	srand(time(0));
 	_board.fill(Color::Transparent);
@@ -126,12 +119,6 @@ void Game::start()
 	_state = GameState::OnGoing;
 	_currentPiece = _queue.front();
 	_queue.pop();
-}
-
-
-void Game::refreshUI()
-{
-	_gameScene->refreshUI(&_board, _currentPiece, _holdPiece, _queue.front(), _score, _totalTetris, _level);
 }
 
 void Game::setController(Controller* controller)
@@ -364,4 +351,9 @@ void Game::updateThreat()
 			_controller->updateThreatIndicator(3);
 		}
 	}
+}
+
+GameInformation Game::getGameInformation()
+{
+	return GameInformation(&_board, _currentPiece, _holdPiece, _queue.front(), _score, _totalTetris, _level);
 }

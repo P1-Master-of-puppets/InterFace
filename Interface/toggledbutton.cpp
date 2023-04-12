@@ -31,7 +31,7 @@ void ToggledButton::changeToggle(bool value)
 
 void ToggledButton::listen()
 {
-	setEnabled(true);
+	
 }
 
 void ToggledButton::hoverEnterEvent(QGraphicsSceneHoverEvent* event)

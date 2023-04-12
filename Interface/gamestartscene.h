@@ -11,7 +11,6 @@
 #include "applicationScene.h"
 #include "flashingTextRenderer.h"
 #include "screenMapper.h"
-#include "mainGameLoopThread.h"
 #include "assets.h"
 
 class GameStartScene : public ApplicationScene

@@ -14,6 +14,8 @@ public:
 
 	//Assumes a base resolution of 1920x1080
 	static Coordinate mapCoords(int posX, int posY, int destX, int destY);
+
+	static Coordinate fitImageInHorizontalMiddle(int imageWidth, int boxWidth);
 };
 #endif // !SCREENMAPPER_H
 

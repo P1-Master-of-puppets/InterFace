@@ -14,9 +14,7 @@ SOURCES += \
     flashingTextRenderer.cpp \
     gamemenuscene.cpp \
     gamestartscene.cpp \
-    mainGameLoopThread.cpp \
     maingamescene.cpp \
-    rendererhelper.cpp \
     screenMapper.cpp \
     textRenderer.cpp \
     pieceRenderer.cpp \
@@ -33,9 +31,7 @@ HEADERS += \
     flashingTextRenderer.h \
     gamemenuscene.h \
     gamestartscene.h \
-    mainGameLoopThread.h \
     maingamescene.h \
-    rendererhelper.h \
     screenMapper.h \
     textRenderer.h \
     pieceRenderer.h \

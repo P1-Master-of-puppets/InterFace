@@ -12,6 +12,7 @@
 #include "coordinate.h"
 #include "rendererhelper.h"
 #include "buttonGroup2D.h"
+#include "sceneManager.h"
 
 class GameMenuScene: public ApplicationScene
 {
@@ -19,7 +20,7 @@ class GameMenuScene: public ApplicationScene
 public:
 	GameMenuScene(QSize windowSize);
 	~GameMenuScene();
-
+	
 public slots:
 	void exitButtonClicked();
 	void controlButtonClicked();
