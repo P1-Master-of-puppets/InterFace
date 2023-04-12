@@ -6,6 +6,7 @@
 #include <QWidget>
 #include "toggledbutton.h"
 #include "coordinate.h"
+#include <QMouseEvent>
 
 class ButtonGroup2D : public QWidget
 {
@@ -13,9 +14,10 @@ class ButtonGroup2D : public QWidget
 public:
 	ButtonGroup2D(int height, int width);
 	~ButtonGroup2D();
-	void setButton(int x, int y, ToggledButton* button);
+	int setButton(int x, int y, ToggledButton* button);
 protected:
 	void keyPressEvent(QKeyEvent* event);
+	void mouseReleaseEvent(QMouseEvent* event);
 public slots:
 	void buttonToggledByMouse(int id, bool state);
 

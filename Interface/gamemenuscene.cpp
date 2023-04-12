@@ -26,20 +26,24 @@ GameMenuScene::GameMenuScene(QGraphicsView* mainView)
 
 	Coordinate center = RendererHelper::fitImageInHorizontalMiddle(startButton.width(), mainView->width());
 
-	ToggledButton* _startButton = new ToggledButton(startButtonGlow, startButton, center, this);
+	ToggledButton* _startButton = new ToggledButton(startButtonGlow, startButton, center);
 	QObject::connect(_startButton, &ToggledButton::clicked,
 		this, &GameMenuScene::startButtonClicked);
 
 	center.y += startButton.height() - 150;
-	ToggledButton* _controlButton = new ToggledButton(controlButtonGlow, controlButton, center, this);
+	ToggledButton* _controlButton = new ToggledButton(controlButtonGlow, controlButton, center);
 
 	QObject::connect(_controlButton, &ToggledButton::clicked,
 		this, &GameMenuScene::controlButtonClicked);
 
 	center.y += startButton.height() - 150;
-	ToggledButton* _exitButton = new ToggledButton(exitButtonGlow, exitButton, center, this);
-	QObject::connect(_startButton, &ToggledButton::clicked,
+	ToggledButton* _exitButton = new ToggledButton(exitButtonGlow, exitButton, center);
+	QObject::connect(_exitButton, &ToggledButton::clicked,
 		this, &GameMenuScene::exitButtonClicked);
+
+	addItem(_startButton);
+	addItem(_controlButton);
+	addItem(_exitButton);
 
 	_buttonGroup = new ButtonGroup2D(3, 1);
 	_buttonGroup->setButton(0, 0, _startButton);
