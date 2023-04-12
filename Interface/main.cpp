@@ -23,13 +23,13 @@ int main(int argc, char *argv[])
     mainView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     mainView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     mainView->setFrameStyle(QFrame::NoFrame);
-    GameMenuScene* scene = new GameMenuScene(mainView);
+    //GameMenuScene* scene = new GameMenuScene(mainView);
     MainGameScene* mainGame = new MainGameScene(mainView);
     GameStartScene* startScene = new GameStartScene(mainGame, mainView);
 
     startScene->setSceneRect(mainView->rect());
 
-    mainView->setScene(scene);
+    mainView->setScene(startScene);
 
     mainView->show();
 

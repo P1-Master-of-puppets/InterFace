@@ -20,7 +20,7 @@
 #include "assets.h"
 #include "gameDisplay.h"
 
-class MainGameScene : public GameDisplay, public QGraphicsScene
+class MainGameScene : public GameDisplay, public GameSceneSignals
 {
 
 public:

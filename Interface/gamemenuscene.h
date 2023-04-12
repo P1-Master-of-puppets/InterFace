@@ -6,6 +6,7 @@
 #include <QGraphicsView>
 #include <QDebug>
 #include <QObject>
+#include "gameSceneSignals.h"
 #include "fullScreenRenderer.h"
 #include "assets.h"
 #include "toggledbutton.h"
@@ -13,7 +14,7 @@
 #include "rendererhelper.h"
 #include "buttonGroup2D.h"
 
-class GameMenuScene : public QGraphicsScene
+class GameMenuScene : public GameSceneSignals
 {
 public:
 	GameMenuScene(QGraphicsView* mainView);

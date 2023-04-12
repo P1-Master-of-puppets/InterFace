@@ -60,6 +60,9 @@
     <ClCompile Include="rendererhelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="sceneManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="screenMapper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -86,6 +89,9 @@
     <ClInclude Include="fullScreenRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="gameSceneSignals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="gamemenuscene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -104,6 +110,9 @@
     <ClInclude Include="rendererhelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <CustomBuild Include="sceneManager.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
     <ClInclude Include="screenMapper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -127,6 +136,12 @@
     <CustomBuild Include="release\moc_predefs.h.cbt">
       <Filter>Generated Files</Filter>
     </CustomBuild>
+    <ClCompile Include="debug\moc_sceneManager.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_sceneManager.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
     <ClCompile Include="debug\moc_toggledbutton.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
