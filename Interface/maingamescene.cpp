@@ -4,6 +4,8 @@ MainGameScene::MainGameScene(QSize viewSize)
 {
     background = new FullScreenRenderer(QPixmap(BACKGROUND_IMAGE_PATH), this, viewSize);
 
+    mainThread = new MainGameLoopThread(this);
+
     /*QPixmap filter("assets/filtre.png");
     QPixmap scaledFilter = filter.scaled(QSize(mainView->width(), mainView->height()));
     GFilter = new QGraphicsPixmapItem();

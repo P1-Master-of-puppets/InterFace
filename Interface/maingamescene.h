@@ -22,6 +22,8 @@
 #include "assets.h"
 #include "gameDisplay.h"
 
+#include "mainGameLoopThread.h"
+
 class MainGameScene : public GameDisplay, public GameSceneSignals
 {
 
@@ -54,6 +56,8 @@ private:
     PieceRenderer* nextPiece;
 
     FullScreenRenderer* background;
+
+    MainGameLoopThread* mainThread;
 
 
     //QGraphicsPixmapItem * GFilter;
