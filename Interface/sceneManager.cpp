@@ -1,33 +1,53 @@
 #include <sceneManager.h>
 
-SceneManager::SceneManager(QGraphicsView* setView): mainView(setView)
+SceneManager::SceneManager(QGraphicsView* mainView) : _mainView(mainView)
 {
-	viewSize = QSize(mainView->width(), mainView->height());
+	_currentScene = nullptr;
 	goToSplashScreen();
 }
 
-void SceneManager::exitApplication() {
-
+QSize SceneManager::getSize()
+{
+	return QSize(_mainView->width(), _mainView->height());
 }
 
+
+
 void SceneManager::goToSplashScreen() {
-	splashScreen = new GameStartScene(viewSize);
-	splashScreen->setSceneRect(mainView->rect());
-	mainView->setScene(splashScreen);
-	connect(splashScreen, &GameStartScene::goToMainGame, this, &SceneManager::goToMainGame);
+	changeView(new GameStartScene(getSize()));
 }
 
 void SceneManager::goToMainMenu() {
-
+	changeView(new GameMenuScene(getSize()));
 }
 
 void SceneManager::goToControlSetup() {
-
+	
 }
 
 void SceneManager::goToMainGame() {
-	mainGame = new MainGameScene(viewSize);
-	mainGame->setSceneRect(mainView->rect());
-	mainView->setScene(mainGame);
+
+}
+
+void SceneManager::exitApplication() {
+	changeView(new GameStartScene(getSize()));
+}
+
+void SceneManager::changeView(ApplicationScene* newScene)
+{
+	ApplicationScene* temp = _currentScene;
+
+
+	_currentScene = newScene;
+	_mainView->setScene(newScene);
+	QObject::connect(newScene, &ApplicationScene::exitApplication, this, &SceneManager::exitApplication);
+	QObject::connect(newScene, &ApplicationScene::goToSplashScreen, this, &SceneManager::goToSplashScreen);
+	QObject::connect(newScene, &ApplicationScene::goToMainMenu, this, &SceneManager::goToMainMenu);
+	QObject::connect(newScene, &ApplicationScene::goToControlSetup, this, &SceneManager::goToControlSetup);
+	QObject::connect(newScene, &ApplicationScene::goToMainGame, this, &SceneManager::goToMainGame);
+
+	if (_currentScene != nullptr)
+		delete temp;
+
 }
 

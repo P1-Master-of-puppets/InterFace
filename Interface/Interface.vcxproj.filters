@@ -27,6 +27,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="applicationScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="boardrenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -34,9 +37,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="flashingTextRenderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="fullScreenRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="gamemenuscene.cpp">
@@ -74,27 +74,24 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <CustomBuild Include="applicationScene.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
     <ClInclude Include="assets.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="boardrenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <CustomBuild Include="buttonGroup2D.h">
+    <ClInclude Include="buttonGroup2D.h">
       <Filter>Header Files</Filter>
-    </CustomBuild>
+    </ClInclude>
     <ClInclude Include="flashingTextRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="fullScreenRenderer.h">
+    <CustomBuild Include="gamemenuscene.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="gameSceneSignals.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="gamemenuscene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    </CustomBuild>
     <ClInclude Include="gamestartscene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -110,9 +107,9 @@
     <ClInclude Include="rendererhelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="sceneManager.h">
+    <CustomBuild Include="sceneManager.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
+    </CustomBuild>
     <ClInclude Include="screenMapper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -124,10 +121,16 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="debug\moc_buttonGroup2D.cpp">
+    <ClCompile Include="debug\moc_applicationScene.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="release\moc_buttonGroup2D.cpp">
+    <ClCompile Include="release\moc_applicationScene.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_gamemenuscene.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_gamemenuscene.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
@@ -136,6 +139,12 @@
     <CustomBuild Include="release\moc_predefs.h.cbt">
       <Filter>Generated Files</Filter>
     </CustomBuild>
+    <ClCompile Include="debug\moc_sceneManager.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_sceneManager.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
     <ClCompile Include="debug\moc_toggledbutton.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>

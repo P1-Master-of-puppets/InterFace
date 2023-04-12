@@ -9,12 +9,12 @@
 #include <QKeyEvent>
 #include <QObject>
 
-class ToggledButton : public QObject, public QGraphicsPixmapItem
+class ToggledButton :public QObject, public QGraphicsPixmapItem
 {
 	Q_OBJECT
 public:
 	ToggledButton(QPixmap toggledImg, QPixmap unToggledImg, Coordinate coordinate, QGraphicsItem* parent = nullptr);
-	~ToggledButton();
+	~ToggledButton();	
 	void setId(int id);
 	void changeToggle(bool value);
 	void listen();

@@ -7,7 +7,6 @@
 class ScreenMapper {
 
 public: 
-
 	static Coordinate mapCoords(Coordinate position, Coordinate baseResolution, Coordinate destResolution);
 
 	//Assumes a base resolution of 1920x1080

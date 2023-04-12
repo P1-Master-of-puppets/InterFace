@@ -8,28 +8,21 @@
 #include <QGraphicsPixmapItem>
 #include <QDebug>
 
-#include "gameSceneSignals.h"
+#include "applicationScene.h"
 #include "flashingTextRenderer.h"
-#include "fullScreenRenderer.h"
 #include "screenMapper.h"
 #include "mainGameLoopThread.h"
 #include "assets.h"
 
-class GameStartScene : public GameSceneSignals
+class GameStartScene : public ApplicationScene
 {
-
 public:
-	GameStartScene(QSize mainView);
+	GameStartScene(QSize mainView, QObject* parent = nullptr);
 	~GameStartScene();
-
 	void keyPressEvent(QKeyEvent* event);
 
 private:
-	QGraphicsView* mainView;
-	//TODO CHANGER CELA
-	MainGameScene* nextScene;
 	FlashingTextRenderer* monText;
-	FullScreenRenderer* splashScreen;
 };
 
 #endif // GAMESTARTSCENE_H

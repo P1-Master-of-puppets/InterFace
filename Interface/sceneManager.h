@@ -5,21 +5,20 @@
 #include <QObject>
 #include <QGraphicsScene>
 #include <QGraphicsView>
-
-#include "gameSceneSignals.h"
+#include <QSize>
+#include "applicationScene.h"
 #include "gamestartscene.h"
 #include "maingamescene.h"
 #include "gamemenuscene.h"
 
 class SceneManager : public QObject
 {
-
+	Q_OBJECT
 public:
 
-	SceneManager(QGraphicsView* setView);
-
+	SceneManager(QGraphicsView* mainView);
+	QSize getSize();
 private slots:
-
 	void exitApplication();
 	void goToSplashScreen();
 	void goToMainMenu();
@@ -27,13 +26,10 @@ private slots:
 	void goToMainGame();
 
 private:
+	void changeView(ApplicationScene* newScene);
 
-	QSize viewSize;
-	QGraphicsView* mainView;
-	GameStartScene* splashScreen;
-	MainGameScene* mainGame;
-	GameMenuScene* menu;
-
+	QGraphicsView* _mainView;
+	ApplicationScene* _currentScene;
 };
 
 #endif // !SCENEMANAGER_H

@@ -12,7 +12,6 @@ SOURCES += \
     toggledbutton.cpp \
     boardrenderer.cpp \
     flashingTextRenderer.cpp \
-    fullScreenRenderer.cpp \
     gamemenuscene.cpp \
     gamestartscene.cpp \
     mainGameLoopThread.cpp \
@@ -23,7 +22,8 @@ SOURCES += \
     pieceRenderer.cpp \
     main.cpp \
     buttonGroup2D.cpp \
-    sceneManager.cpp
+    sceneManager.cpp \
+    applicationScene.cpp
 
 
 HEADERS += \
@@ -31,7 +31,6 @@ HEADERS += \
     assets.h \
     boardrenderer.h \
     flashingTextRenderer.h \
-    fullScreenRenderer.h \
     gamemenuscene.h \
     gamestartscene.h \
     mainGameLoopThread.h \
@@ -42,7 +41,7 @@ HEADERS += \
     pieceRenderer.h \
     buttonGroup2D.h \
     sceneManager.h \
-    gameSceneSignals.h
+    applicationScene.h
 
 INCLUDEPATH += ..\Tetris
 DEPENDPATH += ..\Tetris

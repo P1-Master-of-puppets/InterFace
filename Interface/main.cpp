@@ -22,7 +22,6 @@ int main(int argc, char *argv[])
     mainView->setFrameStyle(QFrame::NoFrame);
     
     SceneManager mainManager(mainView);
-
     mainView->show();
 
     return a.exec();

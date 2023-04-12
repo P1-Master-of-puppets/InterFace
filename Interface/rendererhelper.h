@@ -9,5 +9,4 @@ public:
 	static Coordinate fitImageInHorizontalMiddle(int imageWidth, int boxWidth);
 };
 
-
 #endif // !PIECERENDERER_H

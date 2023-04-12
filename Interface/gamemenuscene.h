@@ -6,18 +6,18 @@
 #include <QGraphicsView>
 #include <QDebug>
 #include <QObject>
-#include "gameSceneSignals.h"
-#include "fullScreenRenderer.h"
+#include "applicationScene.h"
 #include "assets.h"
 #include "toggledbutton.h"
 #include "coordinate.h"
 #include "rendererhelper.h"
 #include "buttonGroup2D.h"
 
-class GameMenuScene : public GameSceneSignals
+class GameMenuScene: public ApplicationScene
 {
+	Q_OBJECT
 public:
-	GameMenuScene(QGraphicsView* mainView);
+	GameMenuScene(QSize windowSize);
 	~GameMenuScene();
 
 public slots:
@@ -26,7 +26,6 @@ public slots:
 	void startButtonClicked();
 
 private:
-	FullScreenRenderer* _background;
 	QGraphicsView* _mainView;
 	ButtonGroup2D* _buttonGroup;
 };
