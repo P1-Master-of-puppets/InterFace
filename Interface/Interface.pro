@@ -19,7 +19,6 @@ SOURCES += \
     maingamescene.cpp \
     rendererhelper.cpp \
     screenMapper.cpp \
-    textcounter.cpp \
     textRenderer.cpp \
     pieceRenderer.cpp \
     main.cpp \
@@ -38,7 +37,6 @@ HEADERS += \
     maingamescene.h \
     rendererhelper.h \
     screenMapper.h \
-    textcounter.h \
     textRenderer.h \
     pieceRenderer.h \
     buttonGroup2D.h
