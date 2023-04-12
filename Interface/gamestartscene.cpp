@@ -19,5 +19,9 @@ void GameStartScene::keyPressEvent(QKeyEvent *event)
 
 GameStartScene::~GameStartScene()
 {
-    //Delete required
+    removeItem(monText);
+    removeItem(splashScreen);
+
+    delete monText;
+    delete splashScreen;
 }

@@ -15,6 +15,7 @@ class MainGameLoopThread : public QObject
 
 public:
 	MainGameLoopThread(MainGameScene* setGameScene);
+	~MainGameLoopThread();
 
 
 private slots:

@@ -15,6 +15,7 @@ class BoardRenderer
 {
 public:
 	BoardRenderer(QGraphicsScene* scene);
+	~BoardRenderer();
 
 	void renderBoard(ColorArray2D* _board);
 

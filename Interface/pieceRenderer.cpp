@@ -25,7 +25,7 @@ PieceRenderer::PieceRenderer(QGraphicsScene* scene) : gameScene(scene)
 	for (int i = 0; i < maxPieceSize; i++) {
 		for (int j = 0; j < maxPieceSize; j++) {
 			pixels[i][j].setPixmap(singleColors[0]);
-			gameScene->addItem(&pixels[j][i]);
+			gameScene->addItem(&pixels[i][j]);
 		}
 	}
 
@@ -36,6 +36,21 @@ PieceRenderer::PieceRenderer(QGraphicsScene* scene, Coordinate setCorner, Coordi
 	corner = setCorner;
 	dimensions = setDimensions;
 	absolute = true;
+}
+
+PieceRenderer::~PieceRenderer()
+{
+	for (int i = 0; i < maxPieceSize; i++) {
+		for (int j = 0; j < maxPieceSize; j++) {
+			gameScene->removeItem(&pixels[i][j]);
+		}
+	}
+
+	for (int i = 0; i < maxPieceSize; i++) {
+		delete[] pixels[i];
+	}
+
+	delete pixels;
 }
 
 void PieceRenderer::renderPiece(Piece* _piece)

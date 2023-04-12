@@ -41,6 +41,18 @@ MainGameScene::MainGameScene(QGraphicsView* mainView)
 MainGameScene::~MainGameScene()
 {
     //TODO, NE PAS OUBLIER DE DELETE LES ELEMENTS VISUELS QUAND NOUS NOUS DEBARASSONS DE CET OBJET, LA MAJORITE DES PROPRIETES SONT DES POINTEURS
+    
+    delete level;
+    delete tetris;
+    delete score;
+
+    delete monBoard;
+
+    delete gamePiece;
+    delete holdPiece;
+    delete nextPiece;
+
+    delete background;
 }
 
 void MainGameScene::refreshUI(ColorArray2D* _board, Piece* _piece, Piece* _holdPiece, Piece* _nextPiece, int score, int tetris, int level)

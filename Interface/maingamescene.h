@@ -54,11 +54,11 @@ private:
     FullScreenRenderer* background;
 
 
-    QGraphicsPixmapItem* GFilter;
-    QGraphicsPixmapItem* GControl;
-    QGraphicsPixmapItem* GReset;
-    QGraphicsPixmapItem* GExit;
-    bool menuUp = false;
+    //QGraphicsPixmapItem * GFilter;
+    //QGraphicsPixmapItem* GControl;
+    //QGraphicsPixmapItem* GReset;
+    //QGraphicsPixmapItem* GExit;
+    //bool menuUp = false;
 };
 
 #endif // MAINGAMESCENE_H
