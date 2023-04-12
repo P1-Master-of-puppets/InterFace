@@ -5,10 +5,7 @@
 #include <QScreen>
 #include <QList>
 
-#include "gamestartscene.h"
-#include "maingamescene.h"
-#include "mainGameLoopThread.h"
-#include "gamemenuscene.h"
+#include "sceneManager.h"
 
 int main(int argc, char *argv[])
 {
@@ -23,13 +20,8 @@ int main(int argc, char *argv[])
     mainView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     mainView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     mainView->setFrameStyle(QFrame::NoFrame);
-    //GameMenuScene* scene = new GameMenuScene(mainView);
-    MainGameScene* mainGame = new MainGameScene(mainView);
-    GameStartScene* startScene = new GameStartScene(mainGame, mainView);
-
-    startScene->setSceneRect(mainView->rect());
-
-    mainView->setScene(startScene);
+    
+    SceneManager mainManager(mainView);
 
     mainView->show();
 

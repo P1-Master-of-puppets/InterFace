@@ -7,13 +7,13 @@
 class GameSceneSignals : public QGraphicsScene
 {
 
-public slots:
+signals:
 
-	void exitApplication();
-	void goToSplashScreen();
-	void goToMainMenu();
-	void goToControlSetup();
-	void goToMainGame();
+	void exitApplication() {};
+	void goToSplashScreen() {};
+	void goToMainMenu() {};
+	void goToControlSetup() {};
+	void goToMainGame() {};
 
 };
 

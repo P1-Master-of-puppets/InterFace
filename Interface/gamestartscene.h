@@ -19,7 +19,7 @@ class GameStartScene : public GameSceneSignals
 {
 
 public:
-	GameStartScene(MainGameScene* next, QGraphicsView* view);
+	GameStartScene(QSize mainView);
 	~GameStartScene();
 
 	void keyPressEvent(QKeyEvent* event);

@@ -110,9 +110,9 @@
     <ClInclude Include="rendererhelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <CustomBuild Include="sceneManager.h">
+    <ClInclude Include="sceneManager.h">
       <Filter>Header Files</Filter>
-    </CustomBuild>
+    </ClInclude>
     <ClInclude Include="screenMapper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -136,12 +136,6 @@
     <CustomBuild Include="release\moc_predefs.h.cbt">
       <Filter>Generated Files</Filter>
     </CustomBuild>
-    <ClCompile Include="debug\moc_sceneManager.cpp">
-      <Filter>Generated Files</Filter>
-    </ClCompile>
-    <ClCompile Include="release\moc_sceneManager.cpp">
-      <Filter>Generated Files</Filter>
-    </ClCompile>
     <ClCompile Include="debug\moc_toggledbutton.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>

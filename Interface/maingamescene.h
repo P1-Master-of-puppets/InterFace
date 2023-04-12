@@ -10,6 +10,8 @@
 #include <QKeyEvent>
 #include <QObject>
 
+#include "gameSceneSignals.h"
+
 #include "screenMapper.h"
 #include "textRenderer.h"
 #include "fullScreenRenderer.h"
@@ -24,7 +26,7 @@ class MainGameScene : public GameDisplay, public GameSceneSignals
 {
 
 public:
-    MainGameScene(QGraphicsView* mainView);
+    MainGameScene(QSize viewSize);
     ~MainGameScene();
     void refreshUI(ColorArray2D* _board, Piece* _piece, Piece* _holdPiece, Piece* _nextPiece,
                    int score, int tetris, int level);

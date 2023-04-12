@@ -1,8 +1,8 @@
 #include "maingamescene.h"
 
-MainGameScene::MainGameScene(QGraphicsView* mainView)
+MainGameScene::MainGameScene(QSize viewSize)
 {
-    background = new FullScreenRenderer(QPixmap(BACKGROUND_IMAGE_PATH), this, QSize(mainView->width(), mainView->height()));
+    background = new FullScreenRenderer(QPixmap(BACKGROUND_IMAGE_PATH), this, viewSize);
 
     /*QPixmap filter("assets/filtre.png");
     QPixmap scaledFilter = filter.scaled(QSize(mainView->width(), mainView->height()));

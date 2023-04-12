@@ -7,10 +7,12 @@
 #include <QGraphicsView>
 
 #include "gameSceneSignals.h"
+#include "gamestartscene.h"
+#include "maingamescene.h"
+#include "gamemenuscene.h"
 
-class SceneManager {
-
-	Q_OBJECT
+class SceneManager : public QObject
+{
 
 public:
 
@@ -26,7 +28,11 @@ private slots:
 
 private:
 
+	QSize viewSize;
 	QGraphicsView* mainView;
+	GameStartScene* splashScreen;
+	MainGameScene* mainGame;
+	GameMenuScene* menu;
 
 };
 
