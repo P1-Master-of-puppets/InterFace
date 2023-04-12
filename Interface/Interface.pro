@@ -11,7 +11,6 @@ CONFIG += c++17
 SOURCES += \
     toggledbutton.cpp \
     boardrenderer.cpp \
-    flashingtext.cpp \
     flashingTextRenderer.cpp \
     fullScreenRenderer.cpp \
     gamemenuscene.cpp \
@@ -31,7 +30,6 @@ HEADERS += \
     toggledbutton.h \
     assets.h \
     boardrenderer.h \
-    flashingtext.h \
     flashingTextRenderer.h \
     fullScreenRenderer.h \
     gamemenuscene.h \

@@ -36,9 +36,6 @@
     <ClCompile Include="flashingTextRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="flashingtext.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="fullScreenRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -89,9 +86,6 @@
     <ClInclude Include="flashingTextRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <CustomBuild Include="flashingtext.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
     <ClInclude Include="fullScreenRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -131,12 +125,6 @@
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="release\moc_buttonGroup2D.cpp">
-      <Filter>Generated Files</Filter>
-    </ClCompile>
-    <ClCompile Include="debug\moc_flashingtext.cpp">
-      <Filter>Generated Files</Filter>
-    </ClCompile>
-    <ClCompile Include="release\moc_flashingtext.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
     <CustomBuild Include="debug\moc_predefs.h.cbt">

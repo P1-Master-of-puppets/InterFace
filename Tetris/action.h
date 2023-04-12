@@ -15,7 +15,7 @@ public:
 	virtual ~Action();
 	virtual bool isActive() = 0;
 	void resetInputs();
-	//ça ne fonctionnera pas pour la manette, il va faloir la mettre statique
+	//ca ne fonctionnera pas pour la manette, il va faloir la mettre statique
 	void addInput(Input* input);
 };
 
