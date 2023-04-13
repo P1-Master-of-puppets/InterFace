@@ -1,4 +1,5 @@
 QT       += core gui
+QT       += multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -25,7 +26,8 @@ SOURCES += \
     controlSelectionScene.cpp \
     controlSelectionButton.cpp \
     pauseMenuRenderer.cpp \
-    gameOverRenderer.cpp
+    gameOverRenderer.cpp \
+    gameSoundPlayer.cpp
 
 
 HEADERS += \
@@ -45,7 +47,8 @@ HEADERS += \
     controlSelectionScene.h \
     controlSelectionButton.h \
     pauseMenuRenderer.h \
-    gameOverRenderer.h
+    gameOverRenderer.h \
+    gameSoundPlayer.h
 
 INCLUDEPATH += ..\Tetris
 DEPENDPATH += ..\Tetris

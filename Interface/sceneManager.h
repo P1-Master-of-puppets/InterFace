@@ -11,6 +11,7 @@
 #include "maingamescene.h"
 #include "gamemenuscene.h"
 #include "controlSelectionScene.h"
+#include "gameSoundPlayer.h"
 
 class SceneManager : public QObject
 {

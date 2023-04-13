@@ -55,6 +55,7 @@ void ButtonGroup2D::keyPressEvent(QKeyEvent* event)
 		{
 			_currentButton = 0;
 		}
+		GameSoundPlayer::playTic();
 		_buttons[_currentButton]->changeToggle(true);
 	}
 	else if (event->key() == Qt::Key_Up || event->key() == Qt::Key_W)
@@ -66,6 +67,7 @@ void ButtonGroup2D::keyPressEvent(QKeyEvent* event)
 		{
 			_currentButton = _height * _width - 1;
 		}
+		GameSoundPlayer::playTic();
 		_buttons[_currentButton]->changeToggle(true);
 	}
 	else if (event->key() == Qt::Key_Left || event->key() == Qt::Key_A)
@@ -77,6 +79,7 @@ void ButtonGroup2D::keyPressEvent(QKeyEvent* event)
 		{
 			_currentButton = _height * _width - 1;
 		}
+		GameSoundPlayer::playTic();
 		_buttons[_currentButton]->changeToggle(true);
 	}
 	else if (event->key() == Qt::Key_Right || event->key() == Qt::Key_D)
@@ -88,6 +91,7 @@ void ButtonGroup2D::keyPressEvent(QKeyEvent* event)
 		{
 			_currentButton = 0;
 		}
+		GameSoundPlayer::playTic();
 		_buttons[_currentButton]->changeToggle(true);
 	}
 }

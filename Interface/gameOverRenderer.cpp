@@ -29,6 +29,7 @@ GameOverRenderer::~GameOverRenderer()
 // Fonction show qui affiche les éléments
 void GameOverRenderer::show(int score, int tetris, int level)
 {
+	GameSoundPlayer::playMainTheme(true);
 	_renderScene->addItem(_overlayFilterItem);
 	_renderScene->addItem(_overlayGOItem);
 	_score = new TextRenderer(QString("bruh"), _renderScene, ScreenMapper::mapCoords(1130, 500, _renderScene->width(), _renderScene->height()));

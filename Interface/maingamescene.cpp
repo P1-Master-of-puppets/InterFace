@@ -94,9 +94,11 @@ void MainGameScene::keyPressEvent(QKeyEvent* event)
 	}
 
 
-	if (event->key() == Qt::Key_M)
+	if (event->key() == Qt::Key_P || event->key() == Qt::Key_Escape)
 	{
+
 		if (!_isPaused) {
+			GameSoundPlayer::playMainTheme(true);
 			_gameTimer.stop();
 			_pauseMenu->show();
 		}
@@ -111,6 +113,7 @@ void MainGameScene::keyPressEvent(QKeyEvent* event)
 
 void MainGameScene::resumeGame()
 {
+	GameSoundPlayer::playMainTheme();
 	_pauseMenu->dismiss();
 	_gameView->grabKeyboard();
 	_gameTimer.start(1);
@@ -146,10 +149,13 @@ void MainGameScene::gameLoop()
 
 	if (_actions->dropInstant())
 	{
+		GameSoundPlayer::playBoop();
 		_game.instantDrop();
 	}
 	if (_actions->dropFaster()) {
-		_game.translatePieceDown();
+		if (!_game.translatePieceDown()) {
+			GameSoundPlayer::playBoop();
+		}
 	}
 
 	if (duration_cast<milliseconds>(high_resolution_clock::now() - _lastAutomaticDrop).count() > _game.getGravitySpeed()) {

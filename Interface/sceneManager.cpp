@@ -24,6 +24,7 @@ void SceneManager::goToControlSetup() {
 }
 
 void SceneManager::goToMainGame() {
+	GameSoundPlayer::playMainTheme();
 	MainGameScene* scene = new MainGameScene(getSize(), _mainView);
 	changeView(scene);
 	scene->startGame();

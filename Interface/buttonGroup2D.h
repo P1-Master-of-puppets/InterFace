@@ -6,6 +6,7 @@
 #include <QWidget>
 #include "toggledbutton.h"
 #include "coordinate.h"
+#include "gameSoundPlayer.h"
 #include <QMouseEvent>
 
 class ButtonGroup2D : public QWidget

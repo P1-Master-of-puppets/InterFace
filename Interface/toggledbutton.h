@@ -6,6 +6,7 @@
 #include <QGraphicsScene>
 #include "coordinate.h"
 #include "rendererhelper.h"
+#include "gameSoundPlayer.h"
 #include <QKeyEvent>
 #include <QObject>
 

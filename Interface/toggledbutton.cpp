@@ -75,5 +75,6 @@ void ToggledButton::secondClick()
 }
 
 void ToggledButton::click() {
+	GameSoundPlayer::playSelect();
 	emit clicked();
 }
