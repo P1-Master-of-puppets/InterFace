@@ -14,6 +14,7 @@ public:
 	InputSetting();
 	bool readSettings(std::string fileName);
 	bool writeSettings(std::string fileName);
+	bool alreadyExist(ControllerInputOutput input);
 	std::vector<ControllerInputOutput> translateLeft;
 	std::vector<ControllerInputOutput> translateRight;
 	std::vector<ControllerInputOutput> rotateRight;

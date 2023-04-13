@@ -28,12 +28,14 @@ protected:
 	QPixmap _unToggledImg;
 public slots:
 	void click();
+	void secondClick();
 signals:
 	void clicked();
+	void secondClicked();
 	void toggledByMouse(int id, bool state);
 private:
 	int _id;
-	bool _isToggled;
-
+	bool _isToggled = false;
+	
 };
 #endif // !TOGGLEDBUTTON_H

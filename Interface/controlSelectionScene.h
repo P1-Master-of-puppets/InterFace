@@ -9,6 +9,7 @@
 #include "controlSelectionButton.h"
 #include "assets.h"
 #include "screenMapper.h"
+#include "inputSetting.h"
 
 class ControlSelectionScene : public ApplicationScene
 {
@@ -16,7 +17,7 @@ class ControlSelectionScene : public ApplicationScene
 public:
 	ControlSelectionScene(QSize windowSize);
 	~ControlSelectionScene();
-	
+
 public slots:
 	void translateLeftOptionClicked();
 	void translateRightOptionClicked();
@@ -26,10 +27,19 @@ public slots:
 	void dropFasterOptionClicked();
 	void holdPieceOptionClicked();
 
+	void translateLeftDeleteClicked();
+	void translateRightDeleteClicked();
+	void rotateRightDeleteClicked();
+	void rotateLeftDeleteClicked();
+	void dropInstantDeleteClicked();
+	void dropFasterDeleteClicked();
+	void holdPieceDeleteClicked();
+
+	void exitPage();
+
 private:
 	ButtonGroup2D* _buttonGroup;
 	InputSetting settings;
-	
 	ControlSelectionButton* _translateLeftButton;
 	ControlSelectionButton* _translateRightButton;
 	ControlSelectionButton* _rotateRightButton;
@@ -38,6 +48,10 @@ private:
 	ControlSelectionButton* _dropFasterButton;
 	ControlSelectionButton* _holdPieceButton;
 	ToggledButton* _saveAndExitButton;
+
+	InputSetting _inputSetting;
+
+	ControllerInputOutput waitForInput();
 };
 
 #endif // CONTROLSELECTIONSCENE_H
