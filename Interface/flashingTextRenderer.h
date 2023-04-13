@@ -12,6 +12,8 @@
 
 class FlashingTextRenderer : public TextRenderer
 {
+	Q_OBJECT
+
 public:
 	//Centers the text in a box with up left corner and dimensions
 	FlashingTextRenderer(QString setText, QGraphicsScene* setRenderScene, Coordinate corner, Coordinate dimensions, int flashDelay);

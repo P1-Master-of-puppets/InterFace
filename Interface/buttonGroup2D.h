@@ -10,6 +10,8 @@
 
 class ButtonGroup2D : public QWidget
 {
+	Q_OBJECT
+
 public:
 	ButtonGroup2D(int height, int width);
 	~ButtonGroup2D();

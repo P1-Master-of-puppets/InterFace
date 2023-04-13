@@ -9,6 +9,8 @@
 
 class ControlSelectionButton : public ToggledButton
 {
+	Q_OBJECT
+
 public:
 	ControlSelectionButton(QPixmap toggledImg, QPixmap unToggledImg, Coordinate coordinate, QGraphicsItem* parent = nullptr);
 	~ControlSelectionButton();

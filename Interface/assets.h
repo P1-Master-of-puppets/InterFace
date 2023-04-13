@@ -30,7 +30,7 @@ class Assets {
 
 //Game
 #define BACKGROUND_IMAGE_PATH "assets/background.png"
-#define GAME_OVER_POP_UP_PATH "assets/Gameover.png"
+#define GAME_OVER_POP_UP_PATH "assets/Game_Over.png"
 
 #define LEVEL_SELECTION_IMAGE_PATH "assets/level.png"
 #define LEVEL_SELECTION_GLOW_IMAGE_PATH "assets/level_glow.png"
