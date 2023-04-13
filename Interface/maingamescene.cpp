@@ -81,7 +81,7 @@ void MainGameScene::startGame()
 
 void MainGameScene::keyPressEvent(QKeyEvent* event)
 {
-	if (event->key() == Qt::Key_M)
+	if (event->key() == Qt::Key_P || event->key() == Qt::Key_Escape)
 	{
 		if (!_isPaused) {
 			_gameTimer.stop();
@@ -90,7 +90,7 @@ void MainGameScene::keyPressEvent(QKeyEvent* event)
 			
 		_isPaused = !_isPaused;
 	}
-	else if (event->key() == Qt::Key_P)
+	else if (event->key() == Qt::Key_M)
 	{
 		emit goToMainMenu();
 	}
