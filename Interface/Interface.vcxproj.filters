@@ -45,6 +45,9 @@
     <ClCompile Include="flashingTextRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gameOverRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="gamemenuscene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -86,16 +89,19 @@
     <ClInclude Include="boardrenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="buttonGroup2D.h">
+    <CustomBuild Include="buttonGroup2D.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="controlSelectionButton.h">
+    </CustomBuild>
+    <CustomBuild Include="controlSelectionButton.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
+    </CustomBuild>
     <CustomBuild Include="controlSelectionScene.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <ClInclude Include="flashingTextRenderer.h">
+    <CustomBuild Include="flashingTextRenderer.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="gameOverRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <CustomBuild Include="gamemenuscene.h">
@@ -133,10 +139,28 @@
     <ClCompile Include="release\moc_applicationScene.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="debug\moc_buttonGroup2D.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_buttonGroup2D.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_controlSelectionButton.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_controlSelectionButton.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
     <ClCompile Include="debug\moc_controlSelectionScene.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="release\moc_controlSelectionScene.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_flashingTextRenderer.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_flashingTextRenderer.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="debug\moc_gamemenuscene.cpp">

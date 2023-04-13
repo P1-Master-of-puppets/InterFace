@@ -20,8 +20,8 @@ class PauseMenuRenderer : public QObject
 public:
 	PauseMenuRenderer(ApplicationScene* renderScene);
 	~PauseMenuRenderer();
-	void dismiss();
 	void show();
+	void dismiss();
 
 public slots:
 	void exitButtonClickedSlot();

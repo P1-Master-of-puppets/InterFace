@@ -3,7 +3,10 @@
 MainGameScene::MainGameScene(QSize viewSize, QGraphicsView* parent) : ApplicationScene(viewSize), _game(Game(0)), _gameView(parent)
 {
 	_keyboard = new Keyboard();
+	_controller = new Controller(7, 115200);
 	_actions = new GameActions(_keyboard);
+	_actions->initAllActions();
+	_game.setController(_controller);
 	_game.start();
 	QPixmap background(BACKGROUND_IMAGE_PATH);
 	setBackground(background);
@@ -21,6 +24,7 @@ MainGameScene::MainGameScene(QSize viewSize, QGraphicsView* parent) : Applicatio
 	_nextPiece = new PieceRenderer(this, ScreenMapper::mapCoords(1398, 278, this->width(), this->height()), ScreenMapper::mapCoords(255, 212, this->width(), this->height()));
 	
 	_pauseMenu = new PauseMenuRenderer(this);
+	_GO = new GameOverRenderer(this);
 	
 	_gameView->grabKeyboard();
 	
@@ -51,6 +55,9 @@ MainGameScene::~MainGameScene()
 void MainGameScene::refreshUI(ColorArray2D* board, Piece* piece, Piece* holdPiece, Piece* nextPiece,
 	int score, int tetris, int level) {
 
+	_scoreVal = score;
+	_tetrisVal = tetris;
+	_levelVal = level;
 	//Images
 	_monBoard->renderBoard(board);
 	_gamePiece->renderPiece(piece);
@@ -74,6 +81,7 @@ void MainGameScene::startGame()
 	
 	connect(_pauseMenu, &PauseMenuRenderer::resumeButtonClicked, this, &MainGameScene::resumeGame);
 	connect(_pauseMenu, &PauseMenuRenderer::exitButtonClicked, this, &MainGameScene::exitGame);
+	
 	_gameTimer.start(1);
 
 
@@ -81,7 +89,12 @@ void MainGameScene::startGame()
 
 void MainGameScene::keyPressEvent(QKeyEvent* event)
 {
-	if (event->key() == Qt::Key_P || event->key() == Qt::Key_Escape)
+	if (_game.getState() == GameState::Finished) {
+		exitGame();
+	}
+
+
+	if (event->key() == Qt::Key_M)
 	{
 		if (!_isPaused) {
 			_gameTimer.stop();
@@ -150,6 +163,6 @@ void MainGameScene::gameLoop()
 
 
 void MainGameScene::gameFinished() {
- 	int i = 0;
 	_gameTimer.stop();
+	_GO->show(_scoreVal, _tetrisVal, _levelVal);
 }

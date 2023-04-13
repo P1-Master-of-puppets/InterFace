@@ -24,9 +24,9 @@ signals:
 
 protected:
 	QGraphicsView* _applicationView;
+	QSize _sceneSize;
 private:
 	QGraphicsPixmapItem* _background;
-	QSize _sceneSize;
 
 };
 #endif // !APPLICATIONSCENE_H

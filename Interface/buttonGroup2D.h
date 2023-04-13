@@ -10,6 +10,8 @@
 
 class ButtonGroup2D : public QWidget
 {
+	Q_OBJECT
+
 public:
 	ButtonGroup2D(int height, int width);
 	~ButtonGroup2D();
@@ -24,6 +26,6 @@ private:
 	ToggledButton** _buttons;
 	int _height;
 	int _width;
-	int _currentButton;
+	int _currentButton = -1;
 };
 #endif // !BUTTONGROUP2D_H

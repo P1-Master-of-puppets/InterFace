@@ -12,6 +12,7 @@
 #include <QObject>
 #include "pauseMenuRenderer.h"
 #include "applicationScene.h"
+#include "gameOverRenderer.h"
 #include "screenMapper.h"
 #include "textRenderer.h"
 #include "boardrenderer.h"
@@ -61,6 +62,7 @@ private:
 	QGraphicsView* _gameView;
 
 	PauseMenuRenderer* _pauseMenu;
+	GameOverRenderer* _GO;
 
 	std::atomic<bool>  _isPaused = false;
 	QTimer _gameTimer;
@@ -70,6 +72,9 @@ private:
 	Game _game;
 	high_resolution_clock::time_point _lastAutomaticDrop = high_resolution_clock::now();
 	void gameLoop();
+	int _scoreVal=0;
+	int _tetrisVal=0;
+	int _levelVal=0;
 
 };
 

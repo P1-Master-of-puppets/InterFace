@@ -21,17 +21,12 @@ void ToggledButton::setId(int id)
 void ToggledButton::changeToggle(bool value)
 {
 	_isToggled = value;
-	if (value) {
-		setPixmap(_toggledImg);
-	}
-	else {
-		setPixmap(_unToggledImg);
-	}
+	updateImage();
 }
 
 void ToggledButton::listen()
 {
-	
+
 }
 
 void ToggledButton::hoverEnterEvent(QGraphicsSceneHoverEvent* event)
@@ -62,6 +57,21 @@ void ToggledButton::keyPressEvent(QKeyEvent* event) {
 	if (_isToggled) {
 		emit clicked();
 	}
+}
+
+void ToggledButton::updateImage()
+{
+	if (_isToggled) {
+		setPixmap(_toggledImg);
+	}
+	else {
+		setPixmap(_unToggledImg);
+	}
+}
+
+void ToggledButton::secondClick()
+{
+	emit secondClicked();
 }
 
 void ToggledButton::click() {
