@@ -150,9 +150,6 @@
     <ClCompile Include="inputSetting.cpp">
       <Filter>Source Files\DAL</Filter>
     </ClCompile>
-    <ClCompile Include="gameDisplay.cpp">
-      <Filter>Source Files\Display</Filter>
-    </ClCompile>
     <ClCompile Include="gameInformation.cpp">
       <Filter>Source Files\Logic</Filter>
     </ClCompile>
@@ -241,6 +238,9 @@
     </ClInclude>
     <ClInclude Include="gameInformation.h">
       <Filter>Header Files\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="gameDisplay.h">
+      <Filter>Header Files\Display</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

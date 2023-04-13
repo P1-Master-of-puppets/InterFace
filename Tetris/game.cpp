@@ -357,3 +357,12 @@ GameInformation Game::getGameInformation()
 {
 	return GameInformation(&_board, _currentPiece, _holdPiece, _queue.front(), _score, _totalTetris, _level);
 }
+
+void Game::refreshUI(GameDisplay* display)
+{
+	if (_isDirty)
+	{
+		display->refreshUI(&_board, _currentPiece, _holdPiece, _queue.front(), _score, _totalTetris, _level);
+		_isDirty = false;
+	}
+}

@@ -24,29 +24,26 @@
 #include "controller.h"
 #include "game.h"
 #include "gameState.h"
-#include <thread>
+#include "gameDisplay.h"
+#include "QTimer"
 #include <chrono>
 #include <atomic>
 
 
 using namespace std::chrono;
 
-class MainGameScene : public ApplicationScene
+class MainGameScene : public ApplicationScene, public GameDisplay
 {
 	Q_OBJECT
 public:
 	MainGameScene(QSize viewSize);
 	~MainGameScene();
 	void startGame();
-
+public slots:
+	void refreshUI(ColorArray2D* board, Piece* piece, Piece* holdPiece, Piece* nextPiece, int score, int tetris, int level);
+	void gameFinished();
 protected:
 	void keyPressEvent(QKeyEvent* event);
-
-public slots:
-	void refreshUI(GameInformation information);
-signals:
-	void sendRefreshUI(GameInformation information);
-
 
 private:
 	TextRenderer* _level;
@@ -57,10 +54,13 @@ private:
 	PieceRenderer* _holdPiece;
 	PieceRenderer* _nextPiece;
 
-	std::atomic<bool> _isPaused = false;
-	std::atomic<bool> _windowQuit = false;
-	std::atomic<int> _gameLevel = 0;
-	std::thread _gameThread;
+	std::atomic<bool>  _isPaused = false;
+	QTimer _gameTimer;
+	Keyboard* _keyboard;
+	Controller* _controller; //	 = new Controller(7, 115200);
+	GameActions* _actions;
+	Game _game;
+	high_resolution_clock::time_point _lastAutomaticDrop = high_resolution_clock::now();
 	void gameLoop();
 
 };
