@@ -10,6 +10,7 @@
 #include <QRandomGenerator>
 #include <QKeyEvent>
 #include <QObject>
+#include "pauseMenuRenderer.h"
 #include "applicationScene.h"
 #include "screenMapper.h"
 #include "textRenderer.h"
@@ -36,12 +37,15 @@ class MainGameScene : public ApplicationScene, public GameDisplay
 {
 	Q_OBJECT
 public:
-	MainGameScene(QSize viewSize);
+	MainGameScene(QSize viewSize, QGraphicsView* parent);
 	~MainGameScene();
 	void startGame();
 public slots:
 	void refreshUI(ColorArray2D* board, Piece* piece, Piece* holdPiece, Piece* nextPiece, int score, int tetris, int level);
 	void gameFinished();
+	void resumeGame();
+	void exitGame();
+
 protected:
 	void keyPressEvent(QKeyEvent* event);
 
@@ -53,6 +57,10 @@ private:
 	PieceRenderer* _gamePiece;
 	PieceRenderer* _holdPiece;
 	PieceRenderer* _nextPiece;
+
+	QGraphicsView* _gameView;
+
+	PauseMenuRenderer* _pauseMenu;
 
 	std::atomic<bool>  _isPaused = false;
 	QTimer _gameTimer;

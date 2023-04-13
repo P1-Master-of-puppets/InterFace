@@ -17,13 +17,13 @@ PauseMenuRenderer::PauseMenuRenderer(ApplicationScene* renderScene) : _renderSce
 
 	_resumeButton = new ToggledButton(resumeButtonGlow, resumeButton, center);
 	QObject::connect(_resumeButton, &ToggledButton::clicked,
-		this, &PauseMenuRenderer::exitButtonClickedSlot);
+		this, &PauseMenuRenderer::resumeButtonClickedSlot);
 
 	center.y += resumeButton.height() - 150;
 	_exitButton = new ToggledButton(exitButtonGlow, exitButton, center);
 
 	QObject::connect(_exitButton, &ToggledButton::clicked,
-		this, &PauseMenuRenderer::resumeButtonClickedSlot);
+		this, &PauseMenuRenderer::exitButtonClickedSlot);
 
 
 	_pauseButtonGroup = new ButtonGroup2D(2, 1);
@@ -33,12 +33,10 @@ PauseMenuRenderer::PauseMenuRenderer(ApplicationScene* renderScene) : _renderSce
 }
 
 void PauseMenuRenderer::exitButtonClickedSlot() {
-	dismiss();
 	emit exitButtonClicked();
 }
 
 void PauseMenuRenderer::resumeButtonClickedSlot() {
-	dismiss();
 	emit resumeButtonClicked();
 }
 
@@ -58,9 +56,11 @@ void PauseMenuRenderer::dismiss()
 }
 
 void PauseMenuRenderer::show() {
+	_pauseButtonGroup->grabKeyboard();
+	_renderScene->addItem(&_overlayFilterItem);
 	_renderScene->addItem(_resumeButton);
 	_renderScene->addItem(_exitButton);
-	_renderScene->addItem(&_overlayFilterItem);
+	
 }
 
 
