@@ -45,6 +45,9 @@
     <ClCompile Include="flashingTextRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gameOverRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="gamemenuscene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -75,9 +78,6 @@
     <ClCompile Include="toggledbutton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="gameOverRenderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="applicationScene.h">
@@ -101,6 +101,9 @@
     <CustomBuild Include="flashingTextRenderer.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <ClInclude Include="gameOverRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <CustomBuild Include="gamemenuscene.h">
       <Filter>Header Files</Filter>
     </CustomBuild>

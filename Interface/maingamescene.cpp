@@ -20,8 +20,8 @@ MainGameScene::MainGameScene(QSize viewSize, QGraphicsView* parent) : Applicatio
 	_monBoard = new BoardRenderer(this);
 	_gamePiece = new PieceRenderer(this);
 
-	_holdPiece = new PieceRenderer(this, ScreenMapper::mapCoords(1398, 278, this->width(), this->height()), ScreenMapper::mapCoords(250, 206, this->width(), this->height()));
-	_nextPiece = new PieceRenderer(this, ScreenMapper::mapCoords(1398, 697, this->width(), this->height()), ScreenMapper::mapCoords(255, 212, this->width(), this->height()));
+	_holdPiece = new PieceRenderer(this, ScreenMapper::mapCoords(1398, 697, this->width(), this->height()), ScreenMapper::mapCoords(250, 206, this->width(), this->height()));
+	_nextPiece = new PieceRenderer(this, ScreenMapper::mapCoords(1398, 278, this->width(), this->height()), ScreenMapper::mapCoords(255, 212, this->width(), this->height()));
 	
 	_pauseMenu = new PauseMenuRenderer(this);
 	_GO = new GameOverRenderer(this);
