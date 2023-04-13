@@ -18,7 +18,7 @@ int main()
 	Game game = Game(startingLevel);
 	game.setController(controller);
 	game.start();
-	game.refreshUI();
+	//game.refreshUI();
 	Keyboard* keyboard = new Keyboard();
 	GameActions* actions = new GameActions(keyboard);
 	
@@ -31,7 +31,7 @@ int main()
 
 	while (game.getState() == GameState::OnGoing)
 	{
-		game.refreshUI();
+		//game.refreshUI();
 
 
 		if (actions->holdPiece())
