@@ -9,6 +9,7 @@
 #include <QFontDatabase>
 #include <QGraphicsView>
 #include "coordinate.h"
+#include <QApplication>
 
 class TextRenderer : public QGraphicsTextItem
 {

@@ -12,7 +12,7 @@ class ApplicationScene : public QGraphicsScene
 	Q_OBJECT
 public:
 	ApplicationScene(QSize size, QObject* parent = nullptr);
-	~ApplicationScene();
+	virtual ~ApplicationScene();
 	void setBackground(QPixmap image);
 public slots:
 signals:

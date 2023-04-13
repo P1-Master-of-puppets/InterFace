@@ -15,7 +15,7 @@ Coordinate ScreenMapper::mapCoords(Coordinate position, Coordinate destResolutio
 
 Coordinate ScreenMapper::mapCoords(int posX, int posY, int destX, int destY)
 {
-	return mapCoords(Coordinate({posX, posY}), Coordinate({destX, destY}));
+	return mapCoords(Coordinate({ posX, posY }), Coordinate({ destX, destY }));
 }
 
 Coordinate ScreenMapper::fitImageInHorizontalMiddle(int imageWidth, int boxWidth)
@@ -25,4 +25,13 @@ Coordinate ScreenMapper::fitImageInHorizontalMiddle(int imageWidth, int boxWidth
 	//Since the position of an image is in its top left corner we remove half the image width to the center of its container
 
 	return Coordinate{ middlePosition - halfImage, 0 };
+}
+
+Coordinate ScreenMapper::fitImageInHorisontalForth(int imageWidth, int boxWidth, int forth) {
+	int forthPosition = boxWidth / 4;
+	if (forth == 2)
+	{
+		forthPosition = forthPosition * 3;
+	}
+	return  Coordinate{ forthPosition - imageWidth / 2, 0 };
 }

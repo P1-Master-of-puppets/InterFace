@@ -22,10 +22,8 @@ TextRenderer::TextRenderer(QString setText, QGraphicsScene* setRenderScene, Coor
 {
     renderScene->addItem(this);
 
-    int id = QFontDatabase::addApplicationFont("assets/Quinquefive-K7qep.ttf");
-    QString family = QFontDatabase::applicationFontFamilies(id).at(0);
-    QFont monospace(family, renderScene->width() / 75);
-
+    QFont monospace(qApp->font().family(), renderScene->width() / 75);
+    
     setPlainText(text);
     setDefaultTextColor(Qt::black);
     setFont(monospace);
@@ -41,10 +39,8 @@ TextRenderer::TextRenderer(QString setText, QGraphicsScene* setRenderScene, Coor
 TextRenderer::TextRenderer(QString setText, QGraphicsScene* setRenderScene, Coordinate centerPosition) : text(setText), renderScene(setRenderScene), centerCoords(centerPosition)
 {
     renderScene->addItem(this);
-
-    int id = QFontDatabase::addApplicationFont("assets/Quinquefive-K7qep.ttf");
-    QString family = QFontDatabase::applicationFontFamilies(id).at(0);
-    QFont monospace(family, renderScene->width() / 75);
+	//monospace.
+    QFont monospace(qApp->font().family(), renderScene->width() / 75);
 
     setPlainText(text);
     setDefaultTextColor(Qt::black);

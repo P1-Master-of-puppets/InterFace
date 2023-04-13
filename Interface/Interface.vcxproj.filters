@@ -36,6 +36,12 @@
     <ClCompile Include="buttonGroup2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="controlSelectionButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controlSelectionScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="flashingTextRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -80,6 +86,12 @@
     <ClInclude Include="buttonGroup2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="controlSelectionButton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="controlSelectionScene.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
     <ClInclude Include="flashingTextRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -113,6 +125,12 @@
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="release\moc_applicationScene.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_controlSelectionScene.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_controlSelectionScene.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="debug\moc_gamemenuscene.cpp">

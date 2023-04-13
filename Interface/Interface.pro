@@ -21,7 +21,9 @@ SOURCES += \
     main.cpp \
     buttonGroup2D.cpp \
     sceneManager.cpp \
-    applicationScene.cpp
+    applicationScene.cpp \
+    controlSelectionScene.cpp \
+    controlSelectionButton.cpp
 
 
 HEADERS += \
@@ -37,7 +39,9 @@ HEADERS += \
     pieceRenderer.h \
     buttonGroup2D.h \
     sceneManager.h \
-    applicationScene.h
+    applicationScene.h \
+    controlSelectionScene.h \
+    controlSelectionButton.h
 
 INCLUDEPATH += ..\Tetris
 DEPENDPATH += ..\Tetris

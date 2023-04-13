@@ -11,8 +11,6 @@ QSize SceneManager::getSize()
 	return QSize(_mainView->width(), _mainView->height());
 }
 
-
-
 void SceneManager::goToSplashScreen() {
 	changeView(new GameStartScene(getSize()));
 }
@@ -22,7 +20,7 @@ void SceneManager::goToMainMenu() {
 }
 
 void SceneManager::goToControlSetup() {
-	
+	changeView(new ControlSelectionScene(getSize()));
 }
 
 void SceneManager::goToMainGame() {

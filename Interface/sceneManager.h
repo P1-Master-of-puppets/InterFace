@@ -10,6 +10,7 @@
 #include "gamestartscene.h"
 #include "maingamescene.h"
 #include "gamemenuscene.h"
+#include "controlSelectionScene.h"
 
 class SceneManager : public QObject
 {
