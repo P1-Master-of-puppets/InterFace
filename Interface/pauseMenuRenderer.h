@@ -36,7 +36,7 @@ private:
 	ButtonGroup2D* _pauseButtonGroup;
 	ToggledButton* _resumeButton;
 	ToggledButton* _exitButton;
-	QGraphicsPixmapItem _overlayFilterItem;
+	QGraphicsPixmapItem* _overlayFilterItem;
 
 };
 

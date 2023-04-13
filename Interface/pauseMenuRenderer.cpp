@@ -4,8 +4,9 @@ PauseMenuRenderer::PauseMenuRenderer(ApplicationScene* renderScene) : _renderSce
 {
 	//Overlay filtre
 	QPixmap overlayFilter(FILTER_IMAGE_PATH);
-	_overlayFilterItem.setPixmap(overlayFilter.scaled(QSize(renderScene->width(), renderScene->height())));
-	
+	_overlayFilterItem = new QGraphicsPixmapItem();
+	_overlayFilterItem->setPixmap(overlayFilter.scaled(QSize(renderScene->width(), renderScene->height())));
+
 
 	QPixmap resumeButton(START_BUTTON_IMAGE_PATH);
 	QPixmap resumeButtonGlow(START_BUTTON_GLOW_IMAGE_PATH);
@@ -42,25 +43,22 @@ void PauseMenuRenderer::resumeButtonClickedSlot() {
 
 PauseMenuRenderer::~PauseMenuRenderer()
 {
-	dismiss();
 	delete _pauseButtonGroup;
-	delete _resumeButton;
-	delete _exitButton;
+	delete _overlayFilterItem;
 }
 
 void PauseMenuRenderer::dismiss()
 {
 	_renderScene->removeItem(_resumeButton);
 	_renderScene->removeItem(_exitButton);
-	_renderScene->removeItem(&_overlayFilterItem);
+	_renderScene->removeItem(_overlayFilterItem);
 }
 
 void PauseMenuRenderer::show() {
 	_pauseButtonGroup->grabKeyboard();
-	_renderScene->addItem(&_overlayFilterItem);
+	_renderScene->addItem(_overlayFilterItem);
 	_renderScene->addItem(_resumeButton);
 	_renderScene->addItem(_exitButton);
-	
 }
 
 

@@ -16,7 +16,7 @@
 class GameStartScene : public ApplicationScene
 {
 public:
-	GameStartScene(QSize mainView, QObject* parent = nullptr);
+	GameStartScene(QSize mainView, QGraphicsView* applicationView, QObject* parent = nullptr);
 	~GameStartScene();
 	void keyPressEvent(QKeyEvent* event);
 

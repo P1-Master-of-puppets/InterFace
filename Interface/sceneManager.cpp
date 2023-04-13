@@ -12,7 +12,7 @@ QSize SceneManager::getSize()
 }
 
 void SceneManager::goToSplashScreen() {
-	changeView(new GameStartScene(getSize()));
+	changeView(new GameStartScene(getSize(), _mainView));
 }
 
 void SceneManager::goToMainMenu() {
@@ -30,7 +30,7 @@ void SceneManager::goToMainGame() {
 }
 
 void SceneManager::exitApplication() {
-	changeView(new GameStartScene(getSize()));
+	changeView(new GameStartScene(getSize(), _mainView));
 }
 
 void SceneManager::changeView(ApplicationScene* newScene)

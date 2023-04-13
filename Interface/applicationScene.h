@@ -22,6 +22,8 @@ signals:
 	void goToControlSetup();
 	void goToMainGame();
 
+protected:
+	QGraphicsView* _applicationView;
 private:
 	QGraphicsPixmapItem* _background;
 	QSize _sceneSize;

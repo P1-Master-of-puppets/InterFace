@@ -29,6 +29,9 @@ MainGameScene::MainGameScene(QSize viewSize, QGraphicsView* parent) : Applicatio
 
 MainGameScene::~MainGameScene()
 {
+	_gameView->releaseKeyboard();
+	_gameTimer.stop();
+
 	//Ui elements
 	delete _level;
 	delete _tetris;
