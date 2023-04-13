@@ -6,16 +6,22 @@
 #include "QString"
 #include "QPainter"
 #include "QApplication"
+#include "coordinate.h"
+#include <Vector>
+#include "controllerInputOutput.h"
 
 class ControlSelectionButton : public ToggledButton
 {
 	Q_OBJECT
 
 public:
-	ControlSelectionButton(QPixmap toggledImg, QPixmap unToggledImg, Coordinate coordinate, QGraphicsItem* parent = nullptr);
+	ControlSelectionButton(QString optionName, QPixmap toggledImg, QPixmap unToggledImg, Coordinate coordinate, QGraphicsItem* parent = nullptr);
 	~ControlSelectionButton();
-	void setText(QString string);
+	void setSettings(std::vector<ControllerInputOutput> settings);
+	const Coordinate optionTextPosition{ 170,120 };
+	const Coordinate mappingTextPosition{ 620,120 };
 private:
+	QFont getFont();
 	QPixmap _originalToggledImg;
 	QPixmap _originalUnToggledImg;
 };

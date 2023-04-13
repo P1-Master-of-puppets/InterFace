@@ -11,12 +11,8 @@ InputSetting::InputSetting()
 		dropFaster.push_back(ControllerInputOutput::JoyStickDown);
 		holdPiece.push_back(ControllerInputOutput::LeftTrigger);
 		holdPiece.push_back(ControllerInputOutput::RightTrigger);
-
 		writeSettings("settings.json");
-
 	}
-
-
 }
 
 bool InputSetting::readSettings(std::string fileName)
@@ -60,7 +56,7 @@ bool InputSetting::readSettings(std::string fileName)
 
 	accelerometer = myJson["accelerometer"];
 	vibration = myJson["vibration"];
-
+	fichier.close();
 	return true;
 }
 
@@ -68,7 +64,7 @@ bool InputSetting::writeSettings(std::string fileName)
 {
 	std::ofstream fichier(fileName);
 	nlohmann::json myJson;
-	
+
 	if (!fichier.is_open()) {
 		return false;
 	}
@@ -87,4 +83,40 @@ bool InputSetting::writeSettings(std::string fileName)
 	fichier.close();
 
 	return true;
+}
+
+bool InputSetting::alreadyExist(ControllerInputOutput input)
+{
+	for (int i = 0; i < translateLeft.size(); i++)
+	{
+		if (translateLeft[i] == input)
+			return true;
+	}
+
+	for (int i = 0; i < translateRight.size(); i++)
+	{
+		if (translateRight[i] == input)
+			return true;
+	}
+	for (int i = 0; i < rotateRight.size(); i++)
+	{
+		if (rotateRight[i] == input)
+			return true;
+	}
+	for (int i = 0; i < rotateLeft.size(); i++)
+	{
+		if (rotateLeft[i] == input)
+			return true;
+	}
+	for (int i = 0; i < dropInstant.size(); i++)
+	{
+		if (dropInstant[i] == input)
+			return true;
+	}
+	for (int i = 0; i < holdPiece.size(); i++)
+	{
+		if (holdPiece[i] == input)
+			return true;
+	}
+	return false;
 }

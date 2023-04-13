@@ -26,6 +26,6 @@ private:
 	ToggledButton** _buttons;
 	int _height;
 	int _width;
-	int _currentButton;
+	int _currentButton = -1;
 };
 #endif // !BUTTONGROUP2D_H

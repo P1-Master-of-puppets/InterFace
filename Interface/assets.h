@@ -7,6 +7,9 @@ class Assets {
 #define START_BUTTON_IMAGE_PATH "assets/start.png"
 #define START_BUTTON_GLOW_IMAGE_PATH "assets/start_glow.png"	
 
+#define RESUME_BUTTON_IMAGE_PATH "assets/resume.png"
+#define RESUME_BUTTON_GLOW_IMAGE_PATH "assets/resume_glow.png"
+ 
 #define EXIT_BUTTON_IMAGE_PATH "assets/exit.png"
 #define EXIT_BUTTON_GLOW_IMAGE_PATH "assets/exit_glow.png"
 

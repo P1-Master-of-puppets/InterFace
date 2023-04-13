@@ -8,8 +8,8 @@ PauseMenuRenderer::PauseMenuRenderer(ApplicationScene* renderScene) : _renderSce
 	_overlayFilterItem->setPixmap(overlayFilter.scaled(QSize(renderScene->width(), renderScene->height())));
 
 
-	QPixmap resumeButton(START_BUTTON_IMAGE_PATH);
-	QPixmap resumeButtonGlow(START_BUTTON_GLOW_IMAGE_PATH);
+	QPixmap resumeButton(RESUME_BUTTON_IMAGE_PATH);
+	QPixmap resumeButtonGlow(RESUME_BUTTON_GLOW_IMAGE_PATH);
 
 	QPixmap exitButton(EXIT_BUTTON_IMAGE_PATH);
 	QPixmap exitButtonGlow(EXIT_BUTTON_GLOW_IMAGE_PATH);
