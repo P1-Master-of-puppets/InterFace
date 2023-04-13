@@ -57,6 +57,9 @@
     <ClCompile Include="maingamescene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="pauseMenuRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="pieceRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -104,6 +107,9 @@
     <CustomBuild Include="maingamescene.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="pauseMenuRenderer.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
     <ClInclude Include="pieceRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -143,6 +149,12 @@
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="release\moc_maingamescene.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_pauseMenuRenderer.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_pauseMenuRenderer.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
     <CustomBuild Include="debug\moc_predefs.h.cbt">

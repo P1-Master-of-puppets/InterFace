@@ -10,7 +10,6 @@
 #include "assets.h"
 #include "toggledbutton.h"
 #include "coordinate.h"
-#include "rendererhelper.h"
 #include "buttonGroup2D.h"
 #include "sceneManager.h"
 

@@ -1,6 +1,6 @@
 #include "maingamescene.h"
 
-MainGameScene::MainGameScene(QSize viewSize) : ApplicationScene(viewSize), _game(Game(0))
+MainGameScene::MainGameScene(QSize viewSize, QGraphicsView* parent) : ApplicationScene(viewSize), _game(Game(0)), _gameView(parent)
 {
 	_keyboard = new Keyboard();
 	_actions = new GameActions(_keyboard);
@@ -19,6 +19,11 @@ MainGameScene::MainGameScene(QSize viewSize) : ApplicationScene(viewSize), _game
 
 	_holdPiece = new PieceRenderer(this, ScreenMapper::mapCoords(1398, 278, this->width(), this->height()), ScreenMapper::mapCoords(250, 206, this->width(), this->height()));
 	_nextPiece = new PieceRenderer(this, ScreenMapper::mapCoords(1398, 697, this->width(), this->height()), ScreenMapper::mapCoords(255, 212, this->width(), this->height()));
+	
+	_pauseMenu = new PauseMenuRenderer(this);
+	
+	_gameView->grabKeyboard();
+	
 	startGame();
 }
 
@@ -63,23 +68,42 @@ void MainGameScene::startGame()
 {
 	_gameTimer;
 	connect(&_gameTimer, &QTimer::timeout, this, &MainGameScene::gameLoop);
+	
+	connect(_pauseMenu, &PauseMenuRenderer::resumeButtonClicked, this, &MainGameScene::resumeGame);
+	connect(_pauseMenu, &PauseMenuRenderer::exitButtonClicked, this, &MainGameScene::exitGame);
 	_gameTimer.start(1);
+
+
 }
 
 void MainGameScene::keyPressEvent(QKeyEvent* event)
 {
 	if (event->key() == Qt::Key_M)
 	{
-		if (_isPaused)
-			_gameTimer.start(1);
-		else
+		if (!_isPaused) {
 			_gameTimer.stop();
+			_pauseMenu->show();
+		}
+			
 		_isPaused = !_isPaused;
 	}
 	else if (event->key() == Qt::Key_P)
 	{
 		emit goToMainMenu();
 	}
+}
+
+void MainGameScene::resumeGame()
+{
+	_pauseMenu->dismiss();
+	_gameView->grabKeyboard();
+	_gameTimer.start(1);
+	_isPaused = false;
+}
+
+void MainGameScene::exitGame()
+{
+	emit exitApplication();
 }
 
 void MainGameScene::gameLoop()

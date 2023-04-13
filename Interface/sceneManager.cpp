@@ -24,7 +24,7 @@ void SceneManager::goToControlSetup() {
 }
 
 void SceneManager::goToMainGame() {
-	MainGameScene* scene = new MainGameScene(getSize());
+	MainGameScene* scene = new MainGameScene(getSize(), _mainView);
 	changeView(scene);
 	scene->startGame();
 }

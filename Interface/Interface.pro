@@ -23,7 +23,8 @@ SOURCES += \
     sceneManager.cpp \
     applicationScene.cpp \
     controlSelectionScene.cpp \
-    controlSelectionButton.cpp
+    controlSelectionButton.cpp \
+    pauseMenuRenderer.cpp
 
 
 HEADERS += \
@@ -41,7 +42,8 @@ HEADERS += \
     sceneManager.h \
     applicationScene.h \
     controlSelectionScene.h \
-    controlSelectionButton.h
+    controlSelectionButton.h \
+    pauseMenuRenderer.h
 
 INCLUDEPATH += ..\Tetris
 DEPENDPATH += ..\Tetris
