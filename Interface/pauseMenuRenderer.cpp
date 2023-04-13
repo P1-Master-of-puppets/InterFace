@@ -25,10 +25,6 @@ PauseMenuRenderer::PauseMenuRenderer(ApplicationScene* renderScene) : _renderSce
 	QObject::connect(_exitButton, &ToggledButton::clicked,
 		this, &PauseMenuRenderer::resumeButtonClickedSlot);
 
-	renderScene->addItem(&_overlayFilterItem);
-	renderScene->addItem(_resumeButton);
-	renderScene->addItem(_exitButton);
-
 
 	_pauseButtonGroup = new ButtonGroup2D(2, 1);
 	_pauseButtonGroup->setButton(0, 0, _resumeButton);

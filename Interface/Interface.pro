@@ -21,7 +21,8 @@ SOURCES += \
     main.cpp \
     buttonGroup2D.cpp \
     sceneManager.cpp \
-    applicationScene.cpp
+    applicationScene.cpp \
+    pauseMenuRenderer.cpp
 
 
 HEADERS += \
@@ -37,7 +38,8 @@ HEADERS += \
     pieceRenderer.h \
     buttonGroup2D.h \
     sceneManager.h \
-    applicationScene.h
+    applicationScene.h \
+    pauseMenuRenderer.h
 
 INCLUDEPATH += ..\Tetris
 DEPENDPATH += ..\Tetris
