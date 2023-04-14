@@ -96,12 +96,14 @@ bool Game::translatePieceDown()
 		int* rows = getFullRows(rowAmount);
 		removeRows(rows, rowAmount);
 		delete rows;
-		_score += countLineScore(rowAmount);
-		_totalLines += rowAmount;
 		if (rowAmount == 4)
 			addTetris();
+
+		_score += countLineScore(rowAmount);
+		_totalLines += rowAmount;
+
 		updateLvlAndGravity();
-		updateThreat();
+		updateThreatAndLines();
 		gameLost();
 		return false;
 	}
@@ -329,28 +331,27 @@ Piece* Game::getHoldPiece()
 void Game::addTetris()
 {
 	_totalTetris++;
-	if (_controller != nullptr)
-	{
-		_controller->updateSevenSegment(_totalTetris);
-	}
 }
 
-void Game::updateThreat()
-{
+void Game::updateThreatAndLines() {
+
+	if (_controller == nullptr)
+		return;
+
 	int lvl = 22 - _highestPiece;
-	if (_controller != nullptr)
+	int threat = 0;
+	if (lvl <= 7)
 	{
-		if (lvl <= 7)
-		{
-			_controller->updateThreatIndicator(1);
-		}
-		else if (lvl <= 14) {
-			_controller->updateThreatIndicator(2);
-		}
-		else {
-			_controller->updateThreatIndicator(3);
-		}
+		threat = 1;
 	}
+	else if (lvl <= 14) {
+		threat = 2;
+	}
+	else {
+		threat = 3;
+	}
+
+	_controller->updateThreatAndLines(_totalLines, threat);
 }
 
 GameInformation Game::getGameInformation()

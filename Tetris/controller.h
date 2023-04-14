@@ -80,8 +80,7 @@ public:
 	virtual void changedMenuButton(bool value);
 
 	void vibrate(int milliseconds);
-	void updateSevenSegment(int twoDigitNumber);
-	void updateThreatIndicator(int threatLevel);
+	void updateThreatAndLines(int twoDigitNumber, int threatLevel);
 
 	/// <summary>
 	/// This is a blocking action, it will return the last value pressed on the controller

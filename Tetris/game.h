@@ -46,10 +46,10 @@ private:
 	void putPieceInBoard();
 	bool gameLost();
 	void updateLvlAndGravity();
+	void updateThreatAndLines();
 	void setGravity();
-	Piece* getHoldPiece();
 	void addTetris();
-	void updateThreat();
+	Piece* getHoldPiece();
 public:
 	Game(int level);
 	~Game();

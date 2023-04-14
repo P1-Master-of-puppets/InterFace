@@ -226,28 +226,25 @@ void Controller::vibrate(int milliseconds)
 	_arduino->writeSerialPort(data, 2);
 }
 
-void Controller::updateSevenSegment(int twoDigitNumber)
-{
-	if (twoDigitNumber > 99 || twoDigitNumber < 0)
-		return;
-	twoDigitNumber++;
-	char data[2];
-	data[0] = 'S';
-	//We send value + 1 because 0 is considered as \0 in char (end of string character)
-	data[1] = twoDigitNumber;
-	_arduino->writeSerialPort(data, 2);
-}
-
-void Controller::updateThreatIndicator(int threatLevel)
+void Controller::updateThreatAndLines(int twoDigitNumber, int threatLevel)
 {
 	if (threatLevel > 3 || threatLevel < 0)
-		return;
+		threatLevel = 0;
+
+	if (twoDigitNumber > 99 || twoDigitNumber < 0)
+		twoDigitNumber = 99;
+
+	char data[4];
 	threatLevel++;
-	char data[2];
 	data[0] = 'T';
 	//We send value + 1 because 0 is considered as \0 in char (end of string character)
 	data[1] = threatLevel;
-	_arduino->writeSerialPort(data, 2);
+
+	twoDigitNumber++;
+	data[2] = 'S';
+	//We send value + 1 because 0 is considered as \0 in char (end of string character)
+	data[3] = twoDigitNumber;
+	_arduino->writeSerialPort(data, 4);
 }
 
 ControllerInputOutput Controller::getLastButtonPressed()
