@@ -6,7 +6,7 @@ MainGameScene::MainGameScene(QSize viewSize, QGraphicsView* parent, int level) :
 	_game = new Game(level);
 	_keyboard = new Keyboard();
 	if (SceneManager::controller != nullptr) {
-		_game.setController(SceneManager::controller);
+		_game->setController(SceneManager::controller);
 		_actions = new GameActions(SceneManager::controller, _keyboard);
 	}
 	else
@@ -15,7 +15,7 @@ MainGameScene::MainGameScene(QSize viewSize, QGraphicsView* parent, int level) :
 	}
 
 	_actions->initAllActions();
-	_game.start();
+	_game->start();
 
 	QPixmap background(BACKGROUND_IMAGE_PATH);
 	setBackground(background);
@@ -102,14 +102,15 @@ void MainGameScene::keyPressEvent(QKeyEvent* event)
 	if (_isPaused)
 	{
 		_pauseMenu->_pauseButtonGroup->keyPressEvent(event);
+		return;
 	}
 
-	if (_game.getState() == GameState::Finished) {
+	if (_game->getState() == GameState::Finished) {
 		exitGame();
 	}
 
 
-	if (event->key() == Qt::Key_M || event->key() == Qt::Key_Escape )
+	if (event->key() == Qt::Key_M || event->key() == Qt::Key_Escape)
 	{
 
 		if (!_isPaused) {
