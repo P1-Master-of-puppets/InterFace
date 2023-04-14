@@ -100,6 +100,8 @@ void GameActions::loadSettings(InputSetting setting)
 	addInputsToAction(&dropFasterAction, setting.dropFaster);
 	addInputsToAction(&dropInstantAction, setting.dropInstant);
 	addInputsToAction(&holdPieceAction, setting.holdPiece);
+	//Toujours ajouter l'accelerometre
+	dropInstantAction.addInput(new Input(_controller, &Control::getInstantDrop));
 }
 
 bool GameActions::holdPiece()
