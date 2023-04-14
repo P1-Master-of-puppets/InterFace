@@ -118,5 +118,10 @@ bool InputSetting::alreadyExist(ControllerInputOutput input)
 		if (holdPiece[i] == input)
 			return true;
 	}
+	for (int i = 0; i < dropFaster.size(); i++)
+	{
+		if (dropFaster[i] == input)
+			return true;
+	}
 	return false;
 }
