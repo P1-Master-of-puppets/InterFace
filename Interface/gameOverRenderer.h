@@ -9,6 +9,7 @@
 #include "coordinate.h"
 #include "flashingTextRenderer.h"
 #include "textRenderer.h"
+#include "gameSoundPlayer.h"
 
 class GameOverRenderer
 {

@@ -9,6 +9,7 @@
 #include <QFontDatabase>
 #include <QGraphicsView>
 #include "textRenderer.h"
+#include "gameSoundPlayer.h"
 
 class FlashingTextRenderer : public TextRenderer
 {

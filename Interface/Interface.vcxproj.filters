@@ -51,6 +51,9 @@
     <ClCompile Include="gameOverRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gameSoundPlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="gamemenuscene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -111,6 +114,9 @@
       <Filter>Header Files</Filter>
     </CustomBuild>
     <ClInclude Include="gameOverRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gameSoundPlayer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <CustomBuild Include="gamemenuscene.h">

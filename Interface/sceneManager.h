@@ -13,6 +13,7 @@
 #include "controlSelectionScene.h"
 #include "qGameController.h"
 #include "controllerEventHandler.h"
+#include "gameSoundPlayer.h"
 
 class SceneManager : public QObject
 {

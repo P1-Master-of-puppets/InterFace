@@ -10,6 +10,7 @@
 #include <QRandomGenerator>
 #include <QKeyEvent>
 #include <QObject>
+#include "gameSoundPlayer.h"
 #include "pauseMenuRenderer.h"
 #include "applicationScene.h"
 #include "gameOverRenderer.h"
