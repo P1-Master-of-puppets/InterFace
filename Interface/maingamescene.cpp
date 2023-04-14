@@ -1,13 +1,15 @@
 #include "maingamescene.h"
 
-MainGameScene::MainGameScene(QSize viewSize, QGraphicsView* parent) : ApplicationScene(viewSize), _game(Game(0)), _gameView(parent)
+
+MainGameScene::MainGameScene(QSize viewSize, QGraphicsView* parent, int level) : ApplicationScene(viewSize), _gameView(parent)
 {
+	_game = new Game(level);
 	_keyboard = new Keyboard();
 	_controller = new Controller(7, 115200);
 	_actions = new GameActions(_keyboard);
 	_actions->initAllActions();
-	_game.setController(_controller);
-	_game.start();
+	_game->setController(_controller);
+	_game->start();
 	QPixmap background(BACKGROUND_IMAGE_PATH);
 	setBackground(background);
 
@@ -22,12 +24,12 @@ MainGameScene::MainGameScene(QSize viewSize, QGraphicsView* parent) : Applicatio
 
 	_holdPiece = new PieceRenderer(this, ScreenMapper::mapCoords(1398, 697, this->width(), this->height()), ScreenMapper::mapCoords(250, 206, this->width(), this->height()));
 	_nextPiece = new PieceRenderer(this, ScreenMapper::mapCoords(1398, 278, this->width(), this->height()), ScreenMapper::mapCoords(255, 212, this->width(), this->height()));
-	
+
 	_pauseMenu = new PauseMenuRenderer(this);
 	_GO = new GameOverRenderer(this);
-	
+
 	_gameView->grabKeyboard();
-	
+
 	startGame();
 }
 
@@ -89,7 +91,7 @@ void MainGameScene::startGame()
 
 void MainGameScene::keyPressEvent(QKeyEvent* event)
 {
-	if (_game.getState() == GameState::Finished) {
+	if (_game->getState() == GameState::Finished) {
 		exitGame();
 	}
 
@@ -127,44 +129,44 @@ void MainGameScene::exitGame()
 
 void MainGameScene::gameLoop()
 {
-	if (_game.getState() == GameState::Finished)
+	if (_game->getState() == GameState::Finished)
 	{
 		gameFinished();
 	}
 
 	if (_actions->holdPiece())
 	{
-		_game.swapPiece();
+		_game->swapPiece();
 	}
 
 	if (_actions->translateLeft())
-		_game.translatePieceLeft();
+		_game->translatePieceLeft();
 	else if (_actions->translateRight())
-		_game.translatePieceRight();
+		_game->translatePieceRight();
 
 	if (_actions->rotateRight())
-		_game.rotatePieceRight();
+		_game->rotatePieceRight();
 	else if (_actions->rotateLeft())
-		_game.rotatePieceLeft();
+		_game->rotatePieceLeft();
 
 	if (_actions->dropInstant())
 	{
 		GameSoundPlayer::playBoop();
-		_game.instantDrop();
+		_game->instantDrop();
 	}
 	if (_actions->dropFaster()) {
-		if (!_game.translatePieceDown()) {
+		if (!_game->translatePieceDown()) {
 			GameSoundPlayer::playBoop();
 		}
 	}
 
-	if (duration_cast<milliseconds>(high_resolution_clock::now() - _lastAutomaticDrop).count() > _game.getGravitySpeed()) {
-		if (duration_cast<milliseconds>(high_resolution_clock::now() - _lastAutomaticDrop).count() > _game.getGravitySpeed()) {
+	if (duration_cast<milliseconds>(high_resolution_clock::now() - _lastAutomaticDrop).count() > _game->getGravitySpeed()) {
+		if (duration_cast<milliseconds>(high_resolution_clock::now() - _lastAutomaticDrop).count() > _game->getGravitySpeed()) {
 			_lastAutomaticDrop = high_resolution_clock::now();
-			_game.translatePieceDown();
+			_game->translatePieceDown();
 		}
 	}
-	_game.refreshUI(this);
+	_game->refreshUI(this);
 }
 
 

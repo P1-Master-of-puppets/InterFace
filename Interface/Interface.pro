@@ -27,7 +27,9 @@ SOURCES += \
     controlSelectionButton.cpp \
     pauseMenuRenderer.cpp \
     gameOverRenderer.cpp \
-    gameSoundPlayer.cpp
+    gameSoundPlayer.cpp \
+    levelSelectScene.cpp \
+    selectButton.cpp
 
 
 HEADERS += \
@@ -48,7 +50,9 @@ HEADERS += \
     controlSelectionButton.h \
     pauseMenuRenderer.h \
     gameOverRenderer.h \
-    gameSoundPlayer.h
+    gameSoundPlayer.h \
+    levelSelectScene.h \
+    selectButton.h
 
 INCLUDEPATH += ..\Tetris
 DEPENDPATH += ..\Tetris

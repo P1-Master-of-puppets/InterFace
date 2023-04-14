@@ -2,9 +2,9 @@
 
 using namespace std::chrono;
 
-TranslateAction::TranslateAction() : HoldAction(100)
+TranslateAction::TranslateAction() : HoldAction(70)
 {
-	initialInterval = 500;
+	initialInterval = 350;
 	lastInput = high_resolution_clock::now() - milliseconds(initialInterval);
 	initialPress = true;
 }

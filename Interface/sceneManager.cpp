@@ -19,13 +19,19 @@ void SceneManager::goToMainMenu() {
 	changeView(new GameMenuScene(getSize()));
 }
 
+void SceneManager::goToLevelSelect()
+{
+	changeView(new LevelSelectScene(getSize(), _mainView));
+}
+
 void SceneManager::goToControlSetup() {
 	changeView(new ControlSelectionScene(getSize()));
 }
 
-void SceneManager::goToMainGame() {
+void SceneManager::goToMainGame(int level)
+{
 	GameSoundPlayer::playMainTheme();
-	MainGameScene* scene = new MainGameScene(getSize(), _mainView);
+	MainGameScene* scene = new MainGameScene(getSize(), _mainView, level);
 	changeView(scene);
 	scene->startGame();
 }
@@ -46,6 +52,7 @@ void SceneManager::changeView(ApplicationScene* newScene)
 	QObject::connect(newScene, &ApplicationScene::goToMainMenu, this, &SceneManager::goToMainMenu);
 	QObject::connect(newScene, &ApplicationScene::goToControlSetup, this, &SceneManager::goToControlSetup);
 	QObject::connect(newScene, &ApplicationScene::goToMainGame, this, &SceneManager::goToMainGame);
+	QObject::connect(newScene, &ApplicationScene::goToLevelSelect, this, &SceneManager::goToLevelSelect);
 
 	if (_currentScene != nullptr)
 		delete temp;
