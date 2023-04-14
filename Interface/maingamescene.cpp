@@ -125,11 +125,6 @@ void MainGameScene::keyPressEvent(QKeyEvent* event)
 			_pauseMenu->show();
 			_isPaused = true;
 		}
-		else
-		{
-			resumeGame();
-			_isPaused = false;
-		}
 	}
 
 
@@ -137,6 +132,7 @@ void MainGameScene::keyPressEvent(QKeyEvent* event)
 
 void MainGameScene::resumeGame()
 {
+	_isPaused = false;
 	GameSoundPlayer::playMainTheme();
 	_pauseMenu->dismiss();
 	_gameTimer.start(1);

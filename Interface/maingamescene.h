@@ -73,10 +73,10 @@ private:
 	Game* _game;
 	high_resolution_clock::time_point _lastAutomaticDrop = high_resolution_clock::now();
 	void gameLoop();
-	int _scoreVal=0;
-	int _tetrisVal=0;
-	int _levelVal=0;
-	int _lineVal=0;
+	int _scoreVal = 0;
+	int _tetrisVal = 0;
+	int _levelVal = 0;
+	int _lineVal = 0;
 
 };
 
