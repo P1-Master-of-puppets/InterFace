@@ -95,6 +95,8 @@ ControlSelectionScene::~ControlSelectionScene() {
 
 
 void ControlSelectionScene::translateLeftOptionClicked() {
+	if (SceneManager::controller == nullptr)
+		return;
 	//Put menu all dark and wait for button
 	ControllerInputOutput input = waitForInput();
 	if (!_inputSetting.alreadyExist(input))
@@ -103,6 +105,8 @@ void ControlSelectionScene::translateLeftOptionClicked() {
 }
 
 void ControlSelectionScene::translateRightOptionClicked() {
+	if (SceneManager::controller == nullptr)
+		return;
 	ControllerInputOutput input = waitForInput();
 	if (!_inputSetting.alreadyExist(input))
 		_inputSetting.translateRight.push_back(input);
@@ -110,6 +114,8 @@ void ControlSelectionScene::translateRightOptionClicked() {
 }
 
 void ControlSelectionScene::rotateRightOptionClicked() {
+	if (SceneManager::controller == nullptr)
+		return;
 	ControllerInputOutput input = waitForInput();
 	if (!_inputSetting.alreadyExist(input))
 		_inputSetting.rotateRight.push_back(input);
@@ -117,6 +123,8 @@ void ControlSelectionScene::rotateRightOptionClicked() {
 }
 
 void ControlSelectionScene::rotateLeftOptionClicked() {
+	if (SceneManager::controller == nullptr)
+		return;
 	ControllerInputOutput input = waitForInput();
 	if (!_inputSetting.alreadyExist(input))
 		_inputSetting.rotateLeft.push_back(input);
@@ -124,6 +132,8 @@ void ControlSelectionScene::rotateLeftOptionClicked() {
 }
 
 void ControlSelectionScene::dropInstantOptionClicked() {
+	if (SceneManager::controller == nullptr)
+		return;
 	ControllerInputOutput input = waitForInput();
 	if (!_inputSetting.alreadyExist(input))
 		_inputSetting.dropInstant.push_back(input);
@@ -131,6 +141,8 @@ void ControlSelectionScene::dropInstantOptionClicked() {
 }
 
 void ControlSelectionScene::dropFasterOptionClicked() {
+	if (SceneManager::controller == nullptr)
+		return;
 	ControllerInputOutput input = waitForInput();
 	if (!_inputSetting.alreadyExist(input))
 		_inputSetting.dropFaster.push_back(input);
@@ -138,6 +150,8 @@ void ControlSelectionScene::dropFasterOptionClicked() {
 }
 
 void ControlSelectionScene::holdPieceOptionClicked() {
+	if (SceneManager::controller == nullptr)
+		return;
 	ControllerInputOutput input = waitForInput();
 	if (!_inputSetting.alreadyExist(input))
 		_inputSetting.holdPiece.push_back(input);

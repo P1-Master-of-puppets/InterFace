@@ -146,9 +146,6 @@ Controller::Controller(int cumport, int baudRate)
 	_baudRate = baudRate;
 	std::string port = "COM" + std::to_string(_comport);
 	_arduino = new SerialPort(port.c_str(), _baudRate);
-	if (!_arduino->isConnected())
-		return;
-
 	_isRunning = true;
 	_communicationThread = std::thread(&Controller::readThread, this);
 }
@@ -158,7 +155,6 @@ Controller::~Controller()
 	_isRunning = false;
 	// Wait for the thread to finish before destroying the object
 	_communicationThread.join();
-	delete _arduino;
 }
 
 bool Controller::getLeftTrigger()
