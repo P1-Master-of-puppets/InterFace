@@ -44,7 +44,7 @@ public:
 	~MainGameScene();
 	void startGame();
 public slots:
-	void refreshUI(ColorArray2D* board, Piece* piece, Piece* holdPiece, Piece* nextPiece, int score, int tetris, int level);
+	void refreshUI(ColorArray2D* board, Piece* piece, Piece* holdPiece, Piece* nextPiece, int score, int tetris, int level, int lines);
 	void gameFinished();
 	void resumeGame();
 	void exitGame();
@@ -76,6 +76,7 @@ private:
 	int _scoreVal=0;
 	int _tetrisVal=0;
 	int _levelVal=0;
+	int _lineVal=0;
 
 };
 

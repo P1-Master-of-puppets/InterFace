@@ -38,6 +38,6 @@ void GameOverRenderer::show(int score, int tetris, int level)
 	_score->updateText(score);
 	_tetris->updateText(tetris);
 	_level->updateText(level);
-	_textGameOver = new FlashingTextRenderer(QString("Press any key to restart!"), _renderScene, ScreenMapper::mapCoords(960, 800, _renderScene->width(), _renderScene->height()), 750);
+	_textGameOver = new FlashingTextRenderer(QString("Press menu to restart!"), _renderScene, ScreenMapper::mapCoords(960, 800, _renderScene->width(), _renderScene->height()), 750);
 }
 
