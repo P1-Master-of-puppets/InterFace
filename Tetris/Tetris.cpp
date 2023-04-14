@@ -16,7 +16,7 @@ int main()
 
 	Controller* controller = new Controller(7, 115200);
 	Game game = Game(startingLevel);
-	game.setController(controller);
+	game.setController(controller); 
 	game.start();
 	//game.refreshUI();
 	Keyboard* keyboard = new Keyboard();

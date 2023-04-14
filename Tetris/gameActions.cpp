@@ -46,6 +46,7 @@ void GameActions::initAllActions()
 
 bool GameActions::translateLeft()
 {
+
 	return translateLeftAction.isActive();
 }
 

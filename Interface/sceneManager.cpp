@@ -1,9 +1,30 @@
 #include <sceneManager.h>
 
+QGameController* SceneManager::controller = nullptr;
+
 SceneManager::SceneManager(QGraphicsView* mainView) : _mainView(mainView)
 {
+
+	_eventHandler = new ControllerEventHandler();
+	SceneManager::controller = new QGameController(7, 115200);
+	if (!SceneManager::controller->getIsRunning())
+	{
+		delete SceneManager::controller;
+		SceneManager::controller = nullptr;
+	}
+	else
+	{
+		controller->setSceneManager(_eventHandler);
+		_eventHandler->setGraphicsView(mainView);
+		SceneManager::controller->enableKeyBoardEvent();
+	}
 	_currentScene = nullptr;
 	goToSplashScreen();
+}
+
+SceneManager::~SceneManager()
+{
+	delete _eventHandler;
 }
 
 QSize SceneManager::getSize()

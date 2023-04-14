@@ -22,6 +22,7 @@ public:
 	~PauseMenuRenderer();
 	void show();
 	void dismiss();
+	ButtonGroup2D* _pauseButtonGroup;
 
 public slots:
 	void exitButtonClickedSlot();
@@ -33,7 +34,6 @@ signals:
 
 private:
 	ApplicationScene* _renderScene;
-	ButtonGroup2D* _pauseButtonGroup;
 	ToggledButton* _resumeButton;
 	ToggledButton* _exitButton;
 	QGraphicsPixmapItem* _overlayFilterItem;

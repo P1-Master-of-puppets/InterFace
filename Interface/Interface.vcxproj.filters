@@ -42,6 +42,9 @@
     <ClCompile Include="controlSelectionScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="controllerEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="flashingTextRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -64,6 +67,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="pieceRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qGameController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="sceneManager.cpp">
@@ -98,6 +104,9 @@
     <CustomBuild Include="controlSelectionScene.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="controllerEventHandler.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="flashingTextRenderer.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
@@ -117,6 +126,9 @@
       <Filter>Header Files</Filter>
     </CustomBuild>
     <ClInclude Include="pieceRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="qGameController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <CustomBuild Include="sceneManager.h">
@@ -155,6 +167,12 @@
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="release\moc_controlSelectionScene.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_controllerEventHandler.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_controllerEventHandler.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="debug\moc_flashingTextRenderer.cpp">

@@ -29,7 +29,6 @@ private:
 	TextRenderer* _score;
 	TextRenderer* _tetris;
 	TextRenderer* _level;
-
 };
 
 #endif // !GAMEOVERRENDERER_H

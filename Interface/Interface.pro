@@ -25,7 +25,9 @@ SOURCES += \
     controlSelectionScene.cpp \
     controlSelectionButton.cpp \
     pauseMenuRenderer.cpp \
-    gameOverRenderer.cpp
+    gameOverRenderer.cpp \
+    qGameController.cpp \
+	controllerEventHandler.cpp
 
 
 HEADERS += \
@@ -45,7 +47,9 @@ HEADERS += \
     controlSelectionScene.h \
     controlSelectionButton.h \
     pauseMenuRenderer.h \
-    gameOverRenderer.h
+    gameOverRenderer.h \
+    qGameController.h \
+	controllerEventHandler.h
 
 INCLUDEPATH += ..\Tetris
 DEPENDPATH += ..\Tetris

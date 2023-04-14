@@ -52,6 +52,9 @@ private:
 	InputSetting _inputSetting;
 
 	ControllerInputOutput waitForInput();
+
+protected:
+	void keyPressEvent(QKeyEvent* event);
 };
 
 #endif // CONTROLSELECTIONSCENE_H

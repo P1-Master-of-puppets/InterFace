@@ -30,6 +30,7 @@
 #include "QTimer"
 #include <chrono>
 #include <atomic>
+#include "sceneManager.h"
 
 
 using namespace std::chrono;
@@ -67,7 +68,6 @@ private:
 	std::atomic<bool>  _isPaused = false;
 	QTimer _gameTimer;
 	Keyboard* _keyboard;
-	Controller* _controller; //	 = new Controller(7, 115200);
 	GameActions* _actions;
 	Game _game;
 	high_resolution_clock::time_point _lastAutomaticDrop = high_resolution_clock::now();

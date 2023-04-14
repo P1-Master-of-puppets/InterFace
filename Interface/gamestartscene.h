@@ -12,6 +12,7 @@
 #include "flashingTextRenderer.h"
 #include "screenMapper.h"
 #include "assets.h"
+#include "sceneManager.h"
 
 class GameStartScene : public ApplicationScene
 {

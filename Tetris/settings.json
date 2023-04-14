@@ -4,10 +4,11 @@
         3
     ],
     "dropInstant": [
-        0
+        6
     ],
     "holdPiece": [
-        6
+        0,
+        1
     ],
     "rotateLeft": [
         8
@@ -21,5 +22,5 @@
     "translateRight": [
         5
     ],
-    "vibration": false
+    "vibration": true
 }

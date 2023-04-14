@@ -37,6 +37,17 @@ private:
 
 	void updateControllerValues(char buffer[]);
 	void updateJoystickValues(char value);
+
+	void setLeftTrigger(bool value);
+	void setRightTrigger(bool value);
+	void setJoyStickUp(bool value);
+	void setJoyStickDown(bool value);
+	void setJoystickLeft(bool value);
+	void setJoyStickRight(bool value);
+	void setJoyStickButton(bool value);
+	void setAButton(bool value);
+	void setBButton(bool value);
+	void setMenuButton(bool value);
 public:
 	Controller(int cumport, int baudRate);
 	~Controller();
@@ -55,6 +66,18 @@ public:
 	bool getBButton();
 	bool getMenuButton();
 	bool getInstantDrop();
+	bool getIsRunning();
+
+	virtual void changedLeftTrigger(bool value);
+	virtual void changedRightTrigger(bool value);
+	virtual void changedJoyStickUp(bool value);
+	virtual void changedJoyStickDown(bool value);
+	virtual void changedJoystickLeft(bool value);
+	virtual void changedJoyStickRight(bool value);
+	virtual void changedJoyStickButton(bool value);
+	virtual void changedAButton(bool value);
+	virtual void changedBButton(bool value);
+	virtual void changedMenuButton(bool value);
 
 	void vibrate(int milliseconds);
 	void updateSevenSegment(int twoDigitNumber);

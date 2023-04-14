@@ -16,8 +16,8 @@ public:
 	ButtonGroup2D(int height, int width);
 	~ButtonGroup2D();
 	int setButton(int x, int y, ToggledButton* button);
-protected:
 	void keyPressEvent(QKeyEvent* event);
+protected:
 	void mouseReleaseEvent(QMouseEvent* event);
 public slots:
 	void buttonToggledByMouse(int id, bool state);

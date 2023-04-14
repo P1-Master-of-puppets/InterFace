@@ -182,3 +182,8 @@ ControllerInputOutput ControlSelectionScene::waitForInput()
 
 	return ControllerInputOutput();
 }
+
+void ControlSelectionScene::keyPressEvent(QKeyEvent* event)
+{
+	_buttonGroup->keyPressEvent(event);
+}

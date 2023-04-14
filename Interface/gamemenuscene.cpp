@@ -2,7 +2,6 @@
 
 GameMenuScene::GameMenuScene(QSize windowSize) : ApplicationScene(windowSize)
 {
-
 #pragma region BackgroundSetup
 	QPixmap* backgroundImage = new QPixmap(BACKGROUND_IMAGE_PATH);
 	QPixmap filtreImage(FILTER_IMAGE_PATH);
@@ -65,4 +64,9 @@ void GameMenuScene::controlButtonClicked() {
 
 void GameMenuScene::startButtonClicked() {
 	emit goToMainGame();
+}
+
+void GameMenuScene::keyPressEvent(QKeyEvent* event)
+{
+	_buttonGroup->keyPressEvent(event);
 }

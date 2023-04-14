@@ -11,6 +11,8 @@
 #include "maingamescene.h"
 #include "gamemenuscene.h"
 #include "controlSelectionScene.h"
+#include "qGameController.h"
+#include "controllerEventHandler.h"
 
 class SceneManager : public QObject
 {
@@ -18,7 +20,9 @@ class SceneManager : public QObject
 public:
 
 	SceneManager(QGraphicsView* mainView);
+	~SceneManager();
 	QSize getSize();
+	static QGameController* controller;
 private slots:
 	void exitApplication();
 	void goToSplashScreen();
@@ -28,9 +32,9 @@ private slots:
 
 private:
 	void changeView(ApplicationScene* newScene);
-
 	QGraphicsView* _mainView;
 	ApplicationScene* _currentScene;
+	ControllerEventHandler* _eventHandler;
 };
 
 #endif // !SCENEMANAGER_H

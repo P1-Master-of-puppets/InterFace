@@ -3,7 +3,7 @@
 void Controller::readThread()
 {
 	std::string input;
-	
+
 	int maxValue = 2;
 	while (_isRunning)
 	{
@@ -27,29 +27,29 @@ void Controller::updateControllerValues(char buffer[]) {
 	switch (buffer[0])
 	{
 	case 'L':
-		_leftTrigger = buffer[1] == '1';
+		setLeftTrigger(buffer[1] == '1');
 		_lastInput = ControllerInputOutput::LeftTrigger;
 		return;
 	case 'R':
-		_rightTrigger = buffer[1] == '1';
+		setRightTrigger(buffer[1] == '1');
 		_lastInput = ControllerInputOutput::RightTrigger;
 		return;
 	case 'J':
 		updateJoystickValues(buffer[1]);
 		return;
 	case 'A':
-		_aButton = buffer[1] == '1';
+		setAButton(buffer[1] == '1');
 		_lastInput = ControllerInputOutput::AButton;
 		return;
 	case 'B':
-		_bButton = buffer[1] == '1';
+		setBButton(buffer[1] == '1');
 		_lastInput = ControllerInputOutput::BButton;
 		return;
 	case 'M':
-		_menuButton = buffer[1] == '1';
+		setMenuButton(buffer[1] == '1');
 		return;
 	case 'G':
-		_joyStickButton = buffer[1] == '1';
+		setJoyStickButton(buffer[1] == '1');
 		_lastInput = ControllerInputOutput::JoyStickButton;
 		return;
 	case 'Y':
@@ -61,10 +61,10 @@ void Controller::updateControllerValues(char buffer[]) {
 }
 
 void Controller::updateJoystickValues(char value) {
-	_joyStickUp = value == 'U';
-	_joyStickDown = value == 'D';
-	_joystickLeft = value == 'L';
-	_joyStickRight = value == 'R';
+	setJoyStickUp(value == 'U');
+	setJoyStickDown(value == 'D');
+	setJoystickLeft(value == 'L');
+	setJoyStickRight(value == 'R');
 	switch (value)
 	{
 	case 'U':
@@ -82,12 +82,75 @@ void Controller::updateJoystickValues(char value) {
 	}
 }
 
+void Controller::setLeftTrigger(bool value)
+{
+	_leftTrigger = value;
+	changedLeftTrigger(value);
+}
+
+void Controller::setRightTrigger(bool value)
+{
+	_rightTrigger = value;
+	changedRightTrigger(value);
+}
+
+void Controller::setJoyStickUp(bool value)
+{
+	_joyStickUp = value;
+	changedJoyStickUp(value);
+}
+
+void Controller::setJoyStickDown(bool value)
+{
+	_joyStickDown = value;
+	changedJoyStickUp(value);
+}
+
+void Controller::setJoystickLeft(bool value)
+{
+	_joystickLeft = value;
+	changedJoystickLeft(value);
+}
+
+void Controller::setJoyStickRight(bool value)
+{
+	_joyStickRight = value;
+	changedJoyStickRight(value);
+}
+
+void Controller::setJoyStickButton(bool value)
+{
+	_joyStickButton = value;
+	changedJoyStickButton(value);
+}
+
+void Controller::setAButton(bool value)
+{
+	_aButton = value;
+	changedAButton(value);
+}
+
+void Controller::setBButton(bool value)
+{
+	_bButton = value;
+	changedBButton(value);
+}
+
+void Controller::setMenuButton(bool value)
+{
+	_menuButton = value;
+	changedMenuButton(value);
+}
+
 Controller::Controller(int cumport, int baudRate)
 {
 	_comport = cumport;
 	_baudRate = baudRate;
 	std::string port = "COM" + std::to_string(_comport);
 	_arduino = new SerialPort(port.c_str(), _baudRate);
+	if (!_arduino->isConnected())
+		return;
+
 	_isRunning = true;
 	_communicationThread = std::thread(&Controller::readThread, this);
 }
@@ -233,4 +296,48 @@ FunctionPtr Controller::controllerInputOutPutToFunctionPointer(ControllerInputOu
 		break;
 	}
 	return FunctionPtr();
+}
+
+bool Controller::getIsRunning() {
+	return _isRunning;
+}
+
+void Controller::changedLeftTrigger(bool value)
+{
+}
+
+void Controller::changedRightTrigger(bool value)
+{
+}
+
+void Controller::changedJoyStickUp(bool value)
+{
+}
+
+void Controller::changedJoyStickDown(bool value)
+{
+}
+
+void Controller::changedJoystickLeft(bool value)
+{
+}
+
+void Controller::changedJoyStickRight(bool value)
+{
+}
+
+void Controller::changedJoyStickButton(bool value)
+{
+}
+
+void Controller::changedAButton(bool value)
+{
+}
+
+void Controller::changedBButton(bool value)
+{
+}
+
+void Controller::changedMenuButton(bool value)
+{
 }

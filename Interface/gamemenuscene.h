@@ -24,6 +24,7 @@ public slots:
 	void exitButtonClicked();
 	void controlButtonClicked();
 	void startButtonClicked();
+	void keyPressEvent(QKeyEvent* event);
 
 private:
 	QGraphicsView* _mainView;
