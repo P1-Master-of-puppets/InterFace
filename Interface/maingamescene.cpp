@@ -1,7 +1,9 @@
 #include "maingamescene.h"
 
-MainGameScene::MainGameScene(QSize viewSize, QGraphicsView* parent) : ApplicationScene(viewSize), _game(Game(0)), _gameView(parent)
+
+MainGameScene::MainGameScene(QSize viewSize, QGraphicsView* parent, int level) : ApplicationScene(viewSize), _gameView(parent)
 {
+	_game = new Game(level);
 	_keyboard = new Keyboard();
 	if (SceneManager::controller != nullptr) {
 		_game.setController(SceneManager::controller);
@@ -33,6 +35,7 @@ MainGameScene::MainGameScene(QSize viewSize, QGraphicsView* parent) : Applicatio
 	_pauseMenu = new PauseMenuRenderer(this);
 
 	_GO = new GameOverRenderer(this);
+
 	_gameView->grabKeyboard();
 
 	startGame();
@@ -140,44 +143,44 @@ void MainGameScene::exitGame()
 
 void MainGameScene::gameLoop()
 {
-	if (_game.getState() == GameState::Finished)
+	if (_game->getState() == GameState::Finished)
 	{
 		gameFinished();
 	}
 
 	if (_actions->holdPiece())
 	{
-		_game.swapPiece();
+		_game->swapPiece();
 	}
 
 	if (_actions->translateLeft())
-		_game.translatePieceLeft();
+		_game->translatePieceLeft();
 	else if (_actions->translateRight())
-		_game.translatePieceRight();
+		_game->translatePieceRight();
 
 	if (_actions->rotateRight())
-		_game.rotatePieceRight();
+		_game->rotatePieceRight();
 	else if (_actions->rotateLeft())
-		_game.rotatePieceLeft();
+		_game->rotatePieceLeft();
 
 	if (_actions->dropInstant())
 	{
 		GameSoundPlayer::playBoop();
-		_game.instantDrop();
+		_game->instantDrop();
 	}
 	if (_actions->dropFaster()) {
-		if (!_game.translatePieceDown()) {
+		if (!_game->translatePieceDown()) {
 			GameSoundPlayer::playBoop();
 		}
 	}
 
-	if (duration_cast<milliseconds>(high_resolution_clock::now() - _lastAutomaticDrop).count() > _game.getGravitySpeed()) {
-		if (duration_cast<milliseconds>(high_resolution_clock::now() - _lastAutomaticDrop).count() > _game.getGravitySpeed()) {
+	if (duration_cast<milliseconds>(high_resolution_clock::now() - _lastAutomaticDrop).count() > _game->getGravitySpeed()) {
+		if (duration_cast<milliseconds>(high_resolution_clock::now() - _lastAutomaticDrop).count() > _game->getGravitySpeed()) {
 			_lastAutomaticDrop = high_resolution_clock::now();
-			_game.translatePieceDown();
+			_game->translatePieceDown();
 		}
 	}
-	_game.refreshUI(this);
+	_game->refreshUI(this);
 }
 
 

@@ -14,6 +14,7 @@
 #include "qGameController.h"
 #include "controllerEventHandler.h"
 #include "gameSoundPlayer.h"
+#include "levelSelectScene.h"
 
 class SceneManager : public QObject
 {
@@ -28,8 +29,9 @@ private slots:
 	void exitApplication();
 	void goToSplashScreen();
 	void goToMainMenu();
+	void goToLevelSelect();
 	void goToControlSetup();
-	void goToMainGame();
+	void goToMainGame(int level);
 
 private:
 	void changeView(ApplicationScene* newScene);

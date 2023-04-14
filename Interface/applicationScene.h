@@ -19,8 +19,9 @@ signals:
 	void exitApplication();
 	void goToSplashScreen();
 	void goToMainMenu();
+	void goToLevelSelect();
 	void goToControlSetup();
-	void goToMainGame();
+	void goToMainGame(int level);
 
 protected:
 	QGraphicsView* _applicationView;

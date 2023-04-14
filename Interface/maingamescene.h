@@ -40,7 +40,7 @@ class MainGameScene : public ApplicationScene, public GameDisplay
 {
 	Q_OBJECT
 public:
-	MainGameScene(QSize viewSize, QGraphicsView* parent);
+	MainGameScene(QSize viewSize, QGraphicsView* parent, int level);
 	~MainGameScene();
 	void startGame();
 public slots:
@@ -70,7 +70,7 @@ private:
 	QTimer _gameTimer;
 	Keyboard* _keyboard;
 	GameActions* _actions;
-	Game _game;
+	Game* _game;
 	high_resolution_clock::time_point _lastAutomaticDrop = high_resolution_clock::now();
 	void gameLoop();
 	int _scoreVal=0;

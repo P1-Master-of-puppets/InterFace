@@ -42,7 +42,7 @@ int Game::getGravitySpeed()
 
 bool Game::rotatePieceLeft()
 {
-	if (_currentPiece->rotateRight(_board))
+	if (_currentPiece->rotateLeft(_board))
 	{
 		_isDirty = true;
 		return true;

@@ -63,7 +63,7 @@ void GameMenuScene::controlButtonClicked() {
 }
 
 void GameMenuScene::startButtonClicked() {
-	emit goToMainGame();
+	emit goToLevelSelect();
 }
 
 void GameMenuScene::keyPressEvent(QKeyEvent* event)

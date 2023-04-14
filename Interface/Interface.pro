@@ -29,7 +29,10 @@ SOURCES += \
     gameOverRenderer.cpp \
     qGameController.cpp \
 	controllerEventHandler.cpp \
-    gameSoundPlayer.cpp
+    gameSoundPlayer.cpp \
+    gameSoundPlayer.cpp \
+    levelSelectScene.cpp \
+    selectButton.cpp
 
 
 HEADERS += \
@@ -52,7 +55,10 @@ HEADERS += \
     gameOverRenderer.h \
     qGameController.h \
 	controllerEventHandler.h \
-    gameSoundPlayer.h
+    gameSoundPlayer.h \
+    gameSoundPlayer.h \
+    levelSelectScene.h \
+    selectButton.h
 
 INCLUDEPATH += ..\Tetris
 DEPENDPATH += ..\Tetris
