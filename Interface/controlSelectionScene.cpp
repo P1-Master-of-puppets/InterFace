@@ -38,7 +38,7 @@ ControlSelectionScene::ControlSelectionScene(QSize windowSize) :ApplicationScene
 	leftBar.y += 150;
 
 	_rotateLeftButton = new ControlSelectionButton("Rotate Left", optionButtonGlow, optionButton, leftBar);
-	_rotateLeftButton->setSettings(_inputSetting.rotateRight);
+	_rotateLeftButton->setSettings(_inputSetting.rotateLeft);
 	QObject::connect(_rotateLeftButton, &ToggledButton::clicked, this, &ControlSelectionScene::rotateLeftOptionClicked);
 	QObject::connect(_rotateLeftButton, &ToggledButton::secondClicked, this, &ControlSelectionScene::rotateLeftDeleteClicked);
 
@@ -96,31 +96,52 @@ ControlSelectionScene::~ControlSelectionScene() {
 
 void ControlSelectionScene::translateLeftOptionClicked() {
 	//Put menu all dark and wait for button
-
+	ControllerInputOutput input = waitForInput();
+	if (!_inputSetting.alreadyExist(input))
+		_inputSetting.translateLeft.push_back(input);
+	_translateLeftButton->setSettings(_inputSetting.translateLeft);
 }
 
 void ControlSelectionScene::translateRightOptionClicked() {
-
+	ControllerInputOutput input = waitForInput();
+	if (!_inputSetting.alreadyExist(input))
+		_inputSetting.translateRight.push_back(input);
+	_translateRightButton->setSettings(_inputSetting.translateRight);
 }
 
 void ControlSelectionScene::rotateRightOptionClicked() {
-
+	ControllerInputOutput input = waitForInput();
+	if (!_inputSetting.alreadyExist(input))
+		_inputSetting.rotateRight.push_back(input);
+	_rotateRightButton->setSettings(_inputSetting.rotateRight);
 }
 
 void ControlSelectionScene::rotateLeftOptionClicked() {
-
+	ControllerInputOutput input = waitForInput();
+	if (!_inputSetting.alreadyExist(input))
+		_inputSetting.rotateLeft.push_back(input);
+	_rotateLeftButton->setSettings(_inputSetting.rotateLeft);
 }
 
 void ControlSelectionScene::dropInstantOptionClicked() {
-
+	ControllerInputOutput input = waitForInput();
+	if (!_inputSetting.alreadyExist(input))
+		_inputSetting.dropInstant.push_back(input);
+	_dropInstantButton->setSettings(_inputSetting.dropInstant);
 }
 
 void ControlSelectionScene::dropFasterOptionClicked() {
-
+	ControllerInputOutput input = waitForInput();
+	if (!_inputSetting.alreadyExist(input))
+		_inputSetting.dropFaster.push_back(input);
+	_dropFasterButton->setSettings(_inputSetting.dropFaster);
 }
 
 void ControlSelectionScene::holdPieceOptionClicked() {
-
+	ControllerInputOutput input = waitForInput();
+	if (!_inputSetting.alreadyExist(input))
+		_inputSetting.holdPiece.push_back(input);
+	_holdPieceButton->setSettings(_inputSetting.holdPiece);
 }
 
 void ControlSelectionScene::translateLeftDeleteClicked()
@@ -173,14 +194,18 @@ void ControlSelectionScene::exitPage()
 
 ControllerInputOutput ControlSelectionScene::waitForInput()
 {
-	QPixmap backgroundImage = QPixmap(BACKGROUND_IMAGE_PATH);
+	QPixmap backgroundImage = QPixmap(FILTER_IMAGE_PATH);
 	QGraphicsPixmapItem* backgroundGraphics = new QGraphicsPixmapItem();
 	backgroundGraphics->setPixmap(backgroundImage.scaled(_sceneSize));
 	addItem(backgroundGraphics);
-	//Utiliser la méthode de la manette
-	//ControllerInputOutput input = 
 
-	return ControllerInputOutput();
+	SceneManager::controller->disableKeyboardEvent();
+	ControllerInputOutput input = SceneManager::controller->getLastButtonPressed();
+	SceneManager::controller->enableKeyBoardEvent();
+
+	removeItem(backgroundGraphics);
+	delete backgroundGraphics;
+	return input;
 }
 
 void ControlSelectionScene::keyPressEvent(QKeyEvent* event)

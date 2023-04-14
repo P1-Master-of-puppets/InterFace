@@ -10,6 +10,7 @@
 #include "assets.h"
 #include "screenMapper.h"
 #include "inputSetting.h"
+#include "sceneManager.h"
 
 class ControlSelectionScene : public ApplicationScene
 {

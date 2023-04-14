@@ -61,11 +61,7 @@ void ControlSelectionButton::setSettings(std::vector<ControllerInputOutput> sett
 
 	for (int i = 0; i < settings.size(); i++)
 	{
-		text += ControllerInputOutputToString(settings[i]);
-		if (i == settings.size() - 2)
-		{
-			text += ", ";
-		}
+		text += ControllerInputOutputToString(settings[i]) + " ";
 	}
 	//Construct String
 

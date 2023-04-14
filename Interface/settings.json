@@ -3,11 +3,24 @@
     "dropFaster": [
         3
     ],
-    "dropInstant": [],
-    "holdPiece": [],
-    "rotateLeft": [],
-    "rotateRight": [],
-    "translateLeft": [],
-    "translateRight": [],
+    "dropInstant": [
+        6
+    ],
+    "holdPiece": [
+        1,
+        0
+    ],
+    "rotateLeft": [
+        8
+    ],
+    "rotateRight": [
+        7
+    ],
+    "translateLeft": [
+        4
+    ],
+    "translateRight": [
+        5
+    ],
     "vibration": true
 }

@@ -106,7 +106,7 @@ void MainGameScene::keyPressEvent(QKeyEvent* event)
 	}
 
 
-	if (event->key() == Qt::Key_P || event->key() == Qt::Key_Escape)
+	if (event->key() == Qt::Key_M || event->key() == Qt::Key_Escape )
 	{
 
 		if (!_isPaused) {
@@ -120,10 +120,6 @@ void MainGameScene::keyPressEvent(QKeyEvent* event)
 			resumeGame();
 			_isPaused = false;
 		}
-	}
-	else if (event->key() == Qt::Key_M)
-	{
-		emit goToMainMenu();
 	}
 
 

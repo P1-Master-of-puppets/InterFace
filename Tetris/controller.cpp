@@ -28,29 +28,24 @@ void Controller::updateControllerValues(char buffer[]) {
 	{
 	case 'L':
 		setLeftTrigger(buffer[1] == '1');
-		_lastInput = ControllerInputOutput::LeftTrigger;
 		return;
 	case 'R':
 		setRightTrigger(buffer[1] == '1');
-		_lastInput = ControllerInputOutput::RightTrigger;
 		return;
 	case 'J':
 		updateJoystickValues(buffer[1]);
 		return;
 	case 'A':
 		setAButton(buffer[1] == '1');
-		_lastInput = ControllerInputOutput::AButton;
 		return;
 	case 'B':
 		setBButton(buffer[1] == '1');
-		_lastInput = ControllerInputOutput::BButton;
 		return;
 	case 'M':
 		setMenuButton(buffer[1] == '1');
 		return;
 	case 'G':
 		setJoyStickButton(buffer[1] == '1');
-		_lastInput = ControllerInputOutput::JoyStickButton;
 		return;
 	case 'Y':
 		_fastDrop = true;
@@ -65,73 +60,76 @@ void Controller::updateJoystickValues(char value) {
 	setJoyStickDown(value == 'D');
 	setJoystickLeft(value == 'L');
 	setJoyStickRight(value == 'R');
-	switch (value)
-	{
-	case 'U':
-		_lastInput = ControllerInputOutput::JoyStickUp;
-		break;
-	case 'D':
-		_lastInput = ControllerInputOutput::JoyStickDown;
-		break;
-	case 'L':
-		_lastInput = ControllerInputOutput::JoyStickLeft;
-		break;
-	case 'R':
-		_lastInput = ControllerInputOutput::JoyStickRight;
-		break;
-	}
 }
 
 void Controller::setLeftTrigger(bool value)
 {
+	if (value)
+		_lastInput = ControllerInputOutput::LeftTrigger;
 	_leftTrigger = value;
 	changedLeftTrigger(value);
 }
 
 void Controller::setRightTrigger(bool value)
 {
+	if (value)
+		_lastInput = ControllerInputOutput::RightTrigger;
 	_rightTrigger = value;
 	changedRightTrigger(value);
 }
 
 void Controller::setJoyStickUp(bool value)
 {
+	if (value)
+		_lastInput = ControllerInputOutput::JoyStickUp;
 	_joyStickUp = value;
 	changedJoyStickUp(value);
 }
 
 void Controller::setJoyStickDown(bool value)
 {
+	if (value)
+		_lastInput = ControllerInputOutput::JoyStickDown;
 	_joyStickDown = value;
-	changedJoyStickUp(value);
+	changedJoyStickDown(value);
 }
 
 void Controller::setJoystickLeft(bool value)
 {
+	if (value)
+		_lastInput = ControllerInputOutput::JoyStickLeft;
 	_joystickLeft = value;
 	changedJoystickLeft(value);
 }
 
 void Controller::setJoyStickRight(bool value)
 {
+	if (value)
+		_lastInput = ControllerInputOutput::JoyStickRight;
 	_joyStickRight = value;
 	changedJoyStickRight(value);
 }
 
 void Controller::setJoyStickButton(bool value)
 {
+	if (value)
+		_lastInput = ControllerInputOutput::JoyStickButton;
 	_joyStickButton = value;
 	changedJoyStickButton(value);
 }
 
 void Controller::setAButton(bool value)
 {
+	if (value)
+		_lastInput = ControllerInputOutput::AButton;
 	_aButton = value;
 	changedAButton(value);
 }
 
 void Controller::setBButton(bool value)
 {
+	if (value)
+		_lastInput = ControllerInputOutput::BButton;
 	_bButton = value;
 	changedBButton(value);
 }
@@ -259,6 +257,7 @@ void Controller::updateThreatIndicator(int threatLevel)
 ControllerInputOutput Controller::getLastButtonPressed()
 {
 	_lastInput = ControllerInputOutput::None;
+
 	// Wait for an other thread to change the value
 	while (_lastInput == ControllerInputOutput::None)
 	{

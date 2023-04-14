@@ -25,25 +25,25 @@ void QGameController::changedRightTrigger(bool value)
 
 void QGameController::changedJoyStickUp(bool value)
 {
-	if (value)
+	if (value && _sendQevent)
 		sendKeyBoardEvent(1);
 }
 
 void QGameController::changedJoyStickDown(bool value)
 {
-	if (value)
+	if (value && _sendQevent)
 		sendKeyBoardEvent(2);
 }
 
 void QGameController::changedJoystickLeft(bool value)
 {
-	if (value)
+	if (value && _sendQevent)
 		sendKeyBoardEvent(3);
 }
 
 void QGameController::changedJoyStickRight(bool value)
 {
-	if (value)
+	if (value && _sendQevent)
 		sendKeyBoardEvent(4);
 }
 
@@ -53,19 +53,19 @@ void QGameController::changedJoyStickButton(bool value)
 
 void QGameController::changedAButton(bool value)
 {
-	if (value)
+	if (value && _sendQevent)
 		sendKeyBoardEvent(5);
 }
 
 void QGameController::changedBButton(bool value)
 {
-	if (value)
+	if (value && _sendQevent)
 		sendKeyBoardEvent(6);
 }
 
 void QGameController::changedMenuButton(bool value)
 {
-	if (value)
+	if (value && _sendQevent)
 		sendKeyBoardEvent(7);
 }
 
