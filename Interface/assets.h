@@ -8,6 +8,10 @@ class Assets {
 #define TICK_SOUND "assets/tick.wav"
 #define SELECT_SOUND "assets/select.wav"
 #define BOOP_SOUND "assets/boop.wav"
+#define GAME_OVER_SOUND "assets/gameover.wav"
+#define DENY_SOUND "assets/deny.wav"
+#define TETRIS_SOUND "assets/tetris2.wav"
+#define LINE_COMPLETE_SOUND "assets/line.wav"
 
 //Main Menu
 #define START_BUTTON_IMAGE_PATH "assets/start.png"

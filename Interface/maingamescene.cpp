@@ -63,11 +63,19 @@ MainGameScene::~MainGameScene()
 
 
 void MainGameScene::refreshUI(ColorArray2D* board, Piece* piece, Piece* holdPiece, Piece* nextPiece,
-	int score, int tetris, int level) {
+	int score, int tetris, int level, int lines) {
+
+	if (tetris > _tetrisVal) {
+		GameSoundPlayer::playTetris();
+	}
+	else if (lines > _lineVal) {
+		GameSoundPlayer::playLineComplete();
+	}
 
 	_scoreVal = score;
 	_tetrisVal = tetris;
 	_levelVal = level;
+	_lineVal = lines;
 	//Images
 	_monBoard->renderBoard(board);
 	_gamePiece->renderPiece(piece);
@@ -105,12 +113,10 @@ void MainGameScene::keyPressEvent(QKeyEvent* event)
 		return;
 	}
 
-	if (_game->getState() == GameState::Finished) {
+	if (_game->getState() == GameState::Finished && event->key() == Qt::Key_M) {
 		exitGame();
 	}
-
-
-	if (event->key() == Qt::Key_M || event->key() == Qt::Key_Escape)
+	else if (event->key() == Qt::Key_M || event->key() == Qt::Key_Escape)
 	{
 
 		if (!_isPaused) {
@@ -186,6 +192,7 @@ void MainGameScene::gameLoop()
 
 
 void MainGameScene::gameFinished() {
+	GameSoundPlayer::playGameOver();
 	_gameTimer.stop();
 	_GO->show(_scoreVal, _tetrisVal, _levelVal);
 }

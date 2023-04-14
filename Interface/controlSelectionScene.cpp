@@ -93,13 +93,19 @@ ControlSelectionScene::~ControlSelectionScene() {
 	delete _buttonGroup;
 }
 
+ bool ControlSelectionScene::verifyInput(ControllerInputOutput input) {
+	if (!_inputSetting.alreadyExist(input)) {
+		GameSoundPlayer::playDeny();
+		return true;
+	}
+}
 
 void ControlSelectionScene::translateLeftOptionClicked() {
 	if (SceneManager::controller == nullptr)
 		return;
 	//Put menu all dark and wait for button
 	ControllerInputOutput input = waitForInput();
-	if (!_inputSetting.alreadyExist(input))
+	if (verifyInput(input))
 		_inputSetting.translateLeft.push_back(input);
 	_translateLeftButton->setSettings(_inputSetting.translateLeft);
 }
@@ -108,7 +114,7 @@ void ControlSelectionScene::translateRightOptionClicked() {
 	if (SceneManager::controller == nullptr)
 		return;
 	ControllerInputOutput input = waitForInput();
-	if (!_inputSetting.alreadyExist(input))
+	if (verifyInput(input))
 		_inputSetting.translateRight.push_back(input);
 	_translateRightButton->setSettings(_inputSetting.translateRight);
 }
@@ -117,7 +123,7 @@ void ControlSelectionScene::rotateRightOptionClicked() {
 	if (SceneManager::controller == nullptr)
 		return;
 	ControllerInputOutput input = waitForInput();
-	if (!_inputSetting.alreadyExist(input))
+	if (verifyInput(input))
 		_inputSetting.rotateRight.push_back(input);
 	_rotateRightButton->setSettings(_inputSetting.rotateRight);
 }
@@ -126,7 +132,7 @@ void ControlSelectionScene::rotateLeftOptionClicked() {
 	if (SceneManager::controller == nullptr)
 		return;
 	ControllerInputOutput input = waitForInput();
-	if (!_inputSetting.alreadyExist(input))
+	if (verifyInput(input))
 		_inputSetting.rotateLeft.push_back(input);
 	_rotateLeftButton->setSettings(_inputSetting.rotateLeft);
 }
@@ -135,7 +141,7 @@ void ControlSelectionScene::dropInstantOptionClicked() {
 	if (SceneManager::controller == nullptr)
 		return;
 	ControllerInputOutput input = waitForInput();
-	if (!_inputSetting.alreadyExist(input))
+	if (verifyInput(input))
 		_inputSetting.dropInstant.push_back(input);
 	_dropInstantButton->setSettings(_inputSetting.dropInstant);
 }
@@ -144,7 +150,7 @@ void ControlSelectionScene::dropFasterOptionClicked() {
 	if (SceneManager::controller == nullptr)
 		return;
 	ControllerInputOutput input = waitForInput();
-	if (!_inputSetting.alreadyExist(input))
+	if (verifyInput(input))
 		_inputSetting.dropFaster.push_back(input);
 	_dropFasterButton->setSettings(_inputSetting.dropFaster);
 }
@@ -153,7 +159,7 @@ void ControlSelectionScene::holdPieceOptionClicked() {
 	if (SceneManager::controller == nullptr)
 		return;
 	ControllerInputOutput input = waitForInput();
-	if (!_inputSetting.alreadyExist(input))
+	if (verifyInput(input))
 		_inputSetting.holdPiece.push_back(input);
 	_holdPieceButton->setSettings(_inputSetting.holdPiece);
 }

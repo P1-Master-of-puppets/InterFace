@@ -12,6 +12,10 @@ public:
 	static void playTic();
 	static void playSelect();
 	static void playBoop();
+	static void playTetris();
+	static void playDeny();
+	static void playGameOver();
+	static void playLineComplete();
 };
 
 

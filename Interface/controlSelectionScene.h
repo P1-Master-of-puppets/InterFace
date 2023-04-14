@@ -39,6 +39,7 @@ public slots:
 	void exitPage();
 
 private:
+	bool verifyInput(ControllerInputOutput input);
 	ButtonGroup2D* _buttonGroup;
 	InputSetting settings;
 	ControlSelectionButton* _translateLeftButton;
